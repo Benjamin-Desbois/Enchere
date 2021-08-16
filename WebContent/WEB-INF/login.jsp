@@ -13,6 +13,7 @@
 		<input type="text" name="password">
 		<input type="submit" value="Connexion" class="bouton"/>
 	</form>
+	<button type="submit" value="s'inscrire" class="bouton">s'inscire</button>
 	${message}
 </body>
 

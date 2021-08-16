@@ -43,10 +43,14 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("message", "Veuillez indiquer un mot de passe");
 				}
 				if (request.getParameter("password") == null) {
-					nextPage = "/GuessServlet";
+					/** nextPage = "/InscriptionServlet"; **/
 				}
 			}
 		}
+		if (request.getParameter("s'inscrire") != null) {
+			nextPage = "/InscriptionServlet";
+		System.out.println("coucou");}
+
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
