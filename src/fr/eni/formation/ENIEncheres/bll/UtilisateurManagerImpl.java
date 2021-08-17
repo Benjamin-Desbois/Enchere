@@ -7,17 +7,32 @@ import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurFact;
 
-
 public class UtilisateurManagerImpl implements UtilisateurManager {
 	public UtilisateurDAO dao = UtilisateurFact.getInstance();
 
 	@Override
 	public void addUtilisateur(Utilisateur utilisateur) throws UtilisateurManagerException {
+		boolean valide = true;
 		try {
-			dao.insert(utilisateur);
+			for (Utilisateur util : getAllUtilisateurs()) {
+				System.out.println("boucle");
+				if (util.getPseudo().equals(utilisateur.getPseudo())) {
+					valide = false;
+					System.out.println("Le pseudo est déjà pris");
+					// TODO Faire remonter l'erreur.
+					break;
+				}
+
+			}
+			if (valide) {
+
+				dao.insert(utilisateur);
+			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
 
 	@Override
@@ -27,7 +42,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;	}
-
+		return null;
+	}
 
 }
