@@ -17,7 +17,7 @@
 		code postal : <input type="number" name="cpt"/><br>
 		ville : <input type="text" name="ville"/><br>
 		mot de passe : <input type="text" name="password">
-		<input type="submit" value="s'inscrire" class="bouton"/>
+		<input type="submit" value="Inscription" class="bouton"/>
 	</form>
 	${message}
 </body>

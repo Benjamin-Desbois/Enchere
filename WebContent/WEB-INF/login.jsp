@@ -13,7 +13,9 @@
 		<input type="text" name="password">
 		<input type="submit" value="Connexion" class="bouton"/>
 	</form>
-	<button type="submit" value="s'inscrire" class="bouton">s'inscire</button>
+	<form action="InscriptionServlet" method="post">
+	<input type="submit" value="s'inscrire" class="bouton">
+	</form>
 	${message}
 </body>
 
