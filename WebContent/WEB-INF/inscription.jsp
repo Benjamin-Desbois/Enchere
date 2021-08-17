@@ -14,10 +14,10 @@
 		email : <input type="text" name="email"/><br>
 		telephone : <input type="number" name="telephone"/><br>
 		rue : <input type="text" name="rue"/><br>
-		code postal : <input type="number" name="cpt"/><br>
+		code postal : <input type="number" name="codePostal"/><br>
 		ville : <input type="text" name="ville"/><br>
-		mot de passe : <input type="text" name="password">
-		<input type="submit" value="Inscription" class="bouton"/>
+		mot de passe : <input type="text" name="motdepasse">
+		<input type="submit" value="inscription" class="bouton"/>
 	</form>
 	${message}
 </body>

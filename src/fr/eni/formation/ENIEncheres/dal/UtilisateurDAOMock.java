@@ -1,5 +1,6 @@
 package fr.eni.formation.ENIEncheres.dal;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,11 @@ public class UtilisateurDAOMock implements UtilisateurDAO {
 		lst.add(utilisateur);
 	}
 
-	/**@Override
-	public List<Utilisateur> getAll() {
-		return lst;
+	@Override
+	public List<Utilisateur> getAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
-**/
+
+
 }

@@ -11,10 +11,16 @@ public class JdbcTools {
 	
 	public  static Connection getConnection() {
 		
-		String url= "jdbc:sqlserver://localhost:1433;databaseName=projet";
+		String url= "jdbc:sqlserver://localhost:1433;databaseName=PROJET";
 		String user="sa";
 		String password ="Pa$$w0rd";
-		if(connection==null) {			
+		if(connection==null) {	
+			try {
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			try {
 				connection = DriverManager.getConnection(url, user, password);			
 			} catch (SQLException e) {
