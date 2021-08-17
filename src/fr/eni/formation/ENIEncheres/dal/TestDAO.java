@@ -7,8 +7,9 @@ import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 public class TestDAO {
 
 	public static void main(String[] args) throws SQLException {
+		System.out.println("1");
 		UtilisateurDAO dao = UtilisateurFact.getInstance();
-		dao.insert(new Utilisateur("hezi", "Pourtaud" , "Gignac" , "pourtaud.gignac@gmail.com" , "0682456978" , "30 allée des mimosas" , "44000", "Nantes", "mamoutte" , 0 , false));
+		dao.insert(new Utilisateur("hezi", "Pourtaud" , "Gignac" , "po.gic@gmail.com" , "0682456978" , "30 allée des mimosas" , "44000", "Nantes", "mamoutte" , 0 , false));
 		
 		//System.out.println(dao.getAll());
 

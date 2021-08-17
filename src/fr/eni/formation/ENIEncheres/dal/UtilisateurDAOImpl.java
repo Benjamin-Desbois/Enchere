@@ -11,7 +11,7 @@ import java.util.List;
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
-	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, codepostale, ville, motdepasse, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	//private final String SELECT = "SELECT pseudo, nom, prenom, email, telephone, rue, codepostale, ville, motdepasse, credit, administrateur FROM utilisateur";
 	
 	@Override
@@ -30,6 +30,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		stmt.setInt(10, utilisateur.getCredit());
 		stmt.setBoolean(11, utilisateur.isAdministrateur());
 		int nb = stmt.executeUpdate();
+	System.out.println("nb="+nb);
 		if (nb > 0) {
 			ResultSet rs = stmt.getGeneratedKeys();
 			if (rs.next()) {
