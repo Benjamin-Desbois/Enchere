@@ -12,27 +12,38 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
 	@Override
 	public void addUtilisateur(Utilisateur utilisateur) throws UtilisateurManagerException {
-		boolean valide = true;
+
+		Boolean valide = true;
 		try {
-			for (Utilisateur util : getAllUtilisateurs()) {
-				System.out.println("boucle");
+			List<Utilisateur> lstUtilisateur = dao.getAll();
+
+			for (Utilisateur util : lstUtilisateur) {
 				if (util.getPseudo().equals(utilisateur.getPseudo())) {
 					valide = false;
-					System.out.println("Le pseudo est déjà pris");
+					System.out.println("Le pseudo est déjà attribué");
 					// TODO Faire remonter l'erreur.
 					break;
 				}
-
+				if (util.getEmail().equals(utilisateur.getEmail())) {
+					valide = false;
+					System.out.println("Cette adresse mail est déjà utilisée");
+					// TODO Faire remonter l'erreur.
+					break;
+				}
 			}
-			if (valide) {
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
+		try {
+			if (valide) {
 				dao.insert(utilisateur);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
@@ -45,4 +56,20 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		return null;
 	}
 
+	@Override
+	public boolean isExist(Utilisateur utilisateur) throws UtilisateurManagerException, SQLException {
+		boolean existe = false;
+		List<Utilisateur> lstUtilisateur = dao.getAll();
+		for (Utilisateur util : lstUtilisateur) {
+			if (util.getPseudo().equals(utilisateur.getPseudo())
+					& util.getMotDePasse().contentEquals(utilisateur.getMotDePasse())) {
+				existe = true;
+				
+				break;
+			}
+
+		}
+		return existe;
+
+	}
 }
