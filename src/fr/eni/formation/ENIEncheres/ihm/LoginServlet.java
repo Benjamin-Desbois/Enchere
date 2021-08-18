@@ -36,20 +36,23 @@ public class LoginServlet extends HttpServlet {
 
 			
 			// mise en session du nom si non vide
-			/*
-			 * if ("".equals(request.getParameter("nom"))) { request.setAttribute("message",
-			 * "le nom ne peux pas être vide"); if
-			 * ("".equals(request.getParameter("password"))) {
-			 * request.setAttribute("message",
-			 * "Veuillez indiquer un nom d'utilisateur et un mot de passe"); } } else {
-			 * request.getSession().setAttribute("nom", request.getParameter("nom"));
-			 * request.getSession().setAttribute("password",
-			 * request.getParameter("password")); if
-			 * ("".equals(request.getParameter("password"))) {
-			 * request.setAttribute("message", "Veuillez indiquer un mot de passe"); } if
-			 * (request.getParameter("password") == null) { nextPage =
-			 * "/InscriptionServlet"; } }
-			 */
+			  if ("".equals(request.getParameter("nom"))) { request.setAttribute("message",
+			  "le nom ne peux pas être vide"); if
+			 ("".equals(request.getParameter("password"))) {
+			 request.setAttribute("message",
+						"Veuillez indiquer un nom d'utilisateur et un mot de passe");
+			}
+		} else {
+			request.getSession().setAttribute("nom", request.getParameter("nom"));
+			request.getSession().setAttribute("password", request.getParameter("password"));
+			if ("".equals(request.getParameter("password"))) {
+				request.setAttribute("message", "Veuillez indiquer un mot de passe");
+			}
+			if (request.getParameter("password") == null) {
+				nextPage = "/InscriptionServlet";
+			}
+		}
+			 
 		}
 
 		if (request.getParameter("s'inscrire") != null) {
