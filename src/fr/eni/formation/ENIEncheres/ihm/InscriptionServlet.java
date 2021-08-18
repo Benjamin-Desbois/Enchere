@@ -69,7 +69,7 @@ public class InscriptionServlet extends HttpServlet {
 				request.setAttribute("message", "Veuillez remplir tous les champs");
 			}
 			
-// coucou je suis a supprimer
+// coucou je suis a supprimer now
 		} catch (UtilisateurManagerException e) {
 			e.printStackTrace();
 		}

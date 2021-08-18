@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 			nextPage = "/InscriptionServlet";
 			System.out.println("coucou");
 		}
-		// coucou je suis a supprimer
+		// coucou je suis a supprimer now
 
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
