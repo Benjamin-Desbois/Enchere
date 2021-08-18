@@ -51,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 					nextPage = "/InscriptionServlet";
 				}
 			}
-
+// bonjour il faut e supprimer
 		}
 
 		if (request.getParameter("s'inscrire") != null) {
