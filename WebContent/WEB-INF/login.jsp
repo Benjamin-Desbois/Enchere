@@ -7,7 +7,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
   <head>
     <meta charset="UTF-8" />
     <title>ENI-Enchères | Se connecter</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
