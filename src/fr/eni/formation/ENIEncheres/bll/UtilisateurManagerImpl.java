@@ -15,8 +15,9 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
 		Boolean valide = true;
 		try {
-			for (Utilisateur util : dao.getAll()) {
-				System.out.println("boucle");
+			List<Utilisateur> lstUtilisateur = dao.getAll();
+
+			for (Utilisateur util : lstUtilisateur) {
 				if (util.getPseudo().equals(utilisateur.getPseudo())) {
 					valide = false;
 					System.out.println("Pas deux fois le même pseudo");

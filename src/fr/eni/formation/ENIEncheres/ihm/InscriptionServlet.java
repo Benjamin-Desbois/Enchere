@@ -1,6 +1,7 @@
 package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,7 +38,12 @@ public class InscriptionServlet extends HttpServlet {
 		String nextPage = "/WEB-INF/inscription.jsp";
 		UtilisateurModel model = null;
 		try {
-			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
+			try {
+				model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			if (request.getParameter("pseudo") != null) {
 				model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
@@ -51,7 +57,12 @@ public class InscriptionServlet extends HttpServlet {
 				model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
 				manager.addUtilisateur(model.getUtilisateur());
-				model.setLstUtilisateurs(manager.getAllUtilisateurs());
+				try {
+					model.setLstUtilisateurs(manager.getAllUtilisateurs());
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 			}
 			if (request.getParameter("pseudo") == null) {
