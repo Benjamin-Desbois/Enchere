@@ -51,13 +51,13 @@ public class LoginServlet extends HttpServlet {
 					nextPage = "/InscriptionServlet";
 				}
 			}
-// bonjour il faut e supprimer
 		}
 
 		if (request.getParameter("s'inscrire") != null) {
 			nextPage = "/InscriptionServlet";
 			System.out.println("coucou");
 		}
+		// coucou je suis a supprimer
 
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
