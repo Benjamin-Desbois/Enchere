@@ -8,5 +8,7 @@
 </head>
 <body>
 <h1>C'est l'accueil</h1>
+	<button value="connexion">Se connecter</button>
+	<button value="inscription">S'inscrire</button>	
 </body>
 </html>

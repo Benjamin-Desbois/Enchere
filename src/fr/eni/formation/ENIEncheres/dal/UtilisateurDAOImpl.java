@@ -13,7 +13,7 @@ import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-	private final String SELECTALL = "SELECT pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM utilisateurs";
+	private final String SELECTALL = "SELECT * FROM utilisateurs";
 
 	@Override
 	public void insert(Utilisateur utilisateur) throws SQLException {
