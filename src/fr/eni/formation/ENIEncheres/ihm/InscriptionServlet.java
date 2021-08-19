@@ -58,15 +58,19 @@ public class InscriptionServlet extends HttpServlet {
 				model.getUtilisateur().setVille(request.getParameter("ville"));
 				model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
-			
-					
+				boolean alpha = manager.isAlphanumeric(request.getParameter("pseudo"));
+				if (alpha) {
+					request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
+
+				} else {
+					manager.addUtilisateur(model.getUtilisateur());
 					try {
 						model.setLstUtilisateurs(manager.getAllUtilisateurs());
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				
+				}
 
 			}
 			if (request.getParameter("pseudo") == null) {
