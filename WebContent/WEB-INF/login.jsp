@@ -33,7 +33,7 @@ uri="http://java.sun.com/jsp/jstl/fmt"%>
             <div class="col-5 d-flex justify-content-center"><label>Identifiant :</label></div>
             <div class="col-7">
               <input
-                type="email"
+                type="text"
                 name="nom"
                 id="inputEmail"
                 class="form-control"
