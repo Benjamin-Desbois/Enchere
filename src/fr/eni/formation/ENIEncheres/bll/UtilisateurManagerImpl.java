@@ -2,6 +2,8 @@ package fr.eni.formation.ENIEncheres.bll;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
@@ -61,7 +63,8 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		Boolean existe = false;
 		List<Utilisateur> lstUtilisateur = dao.getAll();
 		for (Utilisateur util : lstUtilisateur) {
-			if (util.getPseudo().equals(utilisateur.getPseudo()) && util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
+			if (util.getPseudo().equals(utilisateur.getPseudo())
+					&& util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
 
 				existe = true;
 
@@ -69,6 +72,20 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 			}
 		}
 		return existe;
+
+	}
+
+	public boolean isAlphanumeric(String pseudo) {
+		boolean alpha = false;
+		Pattern pattern;
+		Matcher matcher;
+		pattern = Pattern.compile("[^a-zA-Z0-9]");
+		matcher = pattern.matcher(pseudo);
+		if (matcher.find()) {
+			alpha = true;
+		}
+
+		return alpha;
 
 	}
 }

@@ -18,7 +18,7 @@
 		code postal : <input type="number" name="codePostal"/><br>
 		ville : <input type="text" name="ville"/><br>
 		mot de passe : <input type="text" name="motdepasse">
-		<input type="submit" value="inscription" name="inscrit" class="bouton"/>
+		<button type="submit" value="inscription" name="inscrit">Inscription</button>
 	</form>	
  
 	
