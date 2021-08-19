@@ -2,6 +2,8 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -56,18 +58,28 @@ public class InscriptionServlet extends HttpServlet {
 				model.getUtilisateur().setVille(request.getParameter("ville"));
 				model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
-				manager.addUtilisateur(model.getUtilisateur());
-				try {
-					model.setLstUtilisateurs(manager.getAllUtilisateurs());
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				boolean alpha = manager.isAlphanumeric(request.getParameter("pseudo"));
+				if (alpha) {
+					request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
+
+				} else {
+					manager.addUtilisateur(model.getUtilisateur());
+					try {
+						model.setLstUtilisateurs(manager.getAllUtilisateurs());
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 
 			}
 			if (request.getParameter("pseudo") == null) {
 				request.setAttribute("message", "Veuillez remplir tous les champs");
 			}
+			if ("inscrit".equals(request.getParameter("inscription"))) {
+				nextPage = "/WEB-INF/accueil.jsp";
+			}
+
 		} catch (UtilisateurManagerException e) {
 			e.printStackTrace();
 		}

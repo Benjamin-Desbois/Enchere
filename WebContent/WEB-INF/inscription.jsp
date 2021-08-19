@@ -1,12 +1,14 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>ENI-Enchères | Se connecter</title>
+<title>ENI-EnchÃ¨res | Se connecter</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap -->
 <link rel="stylesheet"
@@ -19,6 +21,7 @@
 </head>
 
 <body>
+
 	<div class="container">
 		<div class="card card-container d-flex justify-content-center ">
 
@@ -67,7 +70,7 @@
 
 				<div class="groupeFormulaire row mt-3">
 					<div class="col-5 ">
-						<label>Prénom :</label>
+						<label>PrÃ©nom :</label>
 					</div>
 					<div class="col-7">
 						<input type="text" name="prenom" id="inputPrenom"
@@ -88,7 +91,7 @@
 
 				<div class="groupeFormulaire row mt-3">
 					<div class="col-5 ">
-						<label>Téléphone :</label>
+						<label>TÃ©lÃ©phone :</label>
 					</div>
 					<div class="col-7">
 						<input type="text" name="telephone" id="inputTelephone"
@@ -148,7 +151,7 @@
 				<div class="groupeFormulaire row mt-5">
 					<div class="col-6 ">
 						<form action="AccueilServlet" method="post">
-							<input type="submit" value="Créer"
+							<input type="submit" value="CrÃ©er"
 								class="btn btn-lg btn-primary btn-block btn-signin bouton" />
 						</form>
 					</div>

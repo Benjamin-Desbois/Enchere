@@ -7,12 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.formation.ENIEncheres.bll.UtilisateurManager;
+import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerSingl;
+import fr.eni.formation.ENIEncheres.bo.Utilisateur;
+
 /**
- * Servlet implementation class AccueilServlet
+ * Servlet implementation class AcceuilServlet
  */
-@WebServlet("/AccueilServlet")
+@WebServlet({"/", "/AcceuilServlet"})
 public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -26,8 +31,23 @@ public class AccueilServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nextPage = "/AccueilServlet";
-		  request.getRequestDispatcher(nextPage).forward(request, response);
+		UtilisateurModel model = new UtilisateurModel(new Utilisateur("","","","","","","","","", null, false, null), null);
+		String nextPage = "/WEB-INF/acceuilnonconnecte.jsp";
+		
+		if (request.getParameter("pseudo") != null) {
+			model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
+		}
+		
+		if (request.getParameter("inscrit") != null) {
+			nextPage = "/WEB-INF/inscription.jsp";
+		}
+		
+		if (request.getParameter("connecter") != null) {
+			nextPage = "/WEB-INF/login.jsp";
+		}
+		
+		request.setAttribute("model", model);
+		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
 	/**

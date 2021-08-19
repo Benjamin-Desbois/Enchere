@@ -34,69 +34,53 @@ public class LoginServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String nextPage = "/WEB-INF/login.jsp";
-        UtilisateurModel model = null;
-        boolean existe = false;
+			throws ServletException, IOException {
+		String nextPage = "/WEB-INF/login.jsp";
+		UtilisateurModel model = null;
+		boolean existe = true;
 
- 
+		try {
+			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
+		} catch (UtilisateurManagerException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-                try {
-                    model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
-                } catch (UtilisateurManagerException | SQLException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+		if ("".equals(request.getParameter("nom"))) {
+			request.setAttribute("message", "le nom ne peux pas être vide");
+			if ("".equals(request.getParameter("password"))) {
+				request.setAttribute("message", "Veuillez indiquer un nom d'utilisateur et un mot de passe");
+			}
+		} else {
+			request.getSession().setAttribute("nom", request.getParameter("nom"));
+			request.getSession().setAttribute("password", request.getParameter("password"));
+			if ("".equals(request.getParameter("password"))) {
+				request.setAttribute("message", "Veuillez indiquer un mot de passe");
+			}
+			if (request.getParameter("password") == null) {
+				nextPage = "/WEB-INF/login.jsp";
+			}
+		}
+		model.getUtilisateur().setPseudo(request.getParameter("nom"));
+		model.getUtilisateur().setMotDePasse(request.getParameter("password"));
+		try {
+			existe = manager.isExist(model.getUtilisateur());
+		} catch (UtilisateurManagerException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (existe) {
+			nextPage = "/WEB-INF/accueil.jsp";
+		} else {
+			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
+		}
 
- 
+		if (request.getParameter("s'inscrire") != null) {
+			nextPage = "/WEB-INF/inscription.jsp";
+		}
 
-        if (request.getParameter("nom") != null && request.getParameter("password") != null) {
-
- 
-
-            // mise en session du nom si non vide
-
- 
-
-            if ("".equals(request.getParameter("nom"))) {
-                request.setAttribute("message", "le nom ne peux pas être vide");
-                if ("".equals(request.getParameter("password"))) {
-                    request.setAttribute("message", "Veuillez indiquer un nom d'utilisateur et un mot de passe");
-                }
-            } else {
-                request.getSession().setAttribute("nom", request.getParameter("nom"));
-                request.getSession().setAttribute("password", request.getParameter("password"));
-                if ("".equals(request.getParameter("password"))) {
-                    request.setAttribute("message", "Veuillez indiquer un mot de passe");
-                }
-                if (request.getParameter("password") == null) {
-                    nextPage = "/WEB-INF/inscription.jsp";
-                }
-            }
-            model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
-            model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
-            try {
-                manager.isExist(model.getUtilisateur());
-            } catch (UtilisateurManagerException | SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
- 
-
-        if (request.getParameter("s'inscrire") != null) {
-            nextPage = "/WEB-INF/inscription.jsp";
-            System.out.println("coucou");
-        }
-        if (existe) {
-            nextPage = "/WEB-INF/accueil.jsp";
-        }
-        else {
-            request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
-        }
-        request.getRequestDispatcher(nextPage).forward(request, response);
-    }
+		request.getRequestDispatcher(nextPage).forward(request, response);
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

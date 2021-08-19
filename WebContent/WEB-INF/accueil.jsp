@@ -7,8 +7,9 @@
 <title>Accueil !</title>
 </head>
 <body>
-<h1>C'est l'accueil</h1>
-	<button value="connexion">Se connecter</button>
-	<button value="inscription">S'inscrire</button>	
+<h1>C'est l'accueil connecte</h1>
+<form action="AcceuilServlet" method="post">
+	/>
+</form>
 </body>
 </html>

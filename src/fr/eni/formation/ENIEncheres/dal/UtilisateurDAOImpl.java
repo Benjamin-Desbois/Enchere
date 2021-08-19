@@ -61,6 +61,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 			utilisateur.setCredit(rs.getInt("credit"));
 			utilisateur.setAdministrateur(rs.getBoolean("administrateur"));
 			result.add(utilisateur);
+			
 		}
 
 		return result;
