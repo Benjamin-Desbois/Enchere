@@ -30,139 +30,55 @@
 				class="form-inscription mb-5">
 				<h1 class="text-center mb-5">Mon Profil</h1>
 				
-				
-<div class="container">
+<!-- ----------------------------------------------------------------- -->
+<div class="container"><!--bigger container open -->
 <div class="row">
-<div class="col col-sm-6">
 
+<div class="col col-md-6"><!--bigger col open(1st)-->
 
-<div class="container">
-<div class="groupeFormulaire row mt-3">
+<!-- ---------1----------- -->
+<div class="container"><!-- small container open -->
+<div class="groupeFormulaire row">
 				
-					<div class="col-5 ">
-						<label>Pseudo :</label>
-					</div>
+<div class="col-5 ">
+<label>Pseudo :</label>
+</div>
 					
-					<div class="col-7">
-						<input type="text" name="pseudo" id="inputPseudo"
-							class="form-control" placeholder="JeanMichMich" required
-							autofocus />
-					</div>
+<div class="col-7">
+<input type="text" name="pseudo" id="inputPseudo"
+class="form-control" placeholder="JeanMichMich" required autofocus />
+</div>
 					
 </div>
-</div>
+</div><!--small container close-->
+<!-- -----------1--------- -->
+
+</div><!-- bigger col close(1st) -->
 
 
-<div class="col col-sm-6">
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Nom :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="nom" id="inputNom" class="form-control"
-							placeholder="DUPONT" required autofocus />
-					</div>
-				</div>
+<div class="col col-md-6"><!-- bigger col open(2nd) -->
+<!-- ----------2---------- -->
+<div class="container"><!--small container open  -->
+<div class="groupeFormulaire row">
+				
+<div class="col-5 ">
+<label>Pseudo :</label>
 </div>
+					
+<div class="col-7">
+<input type="text" name="pseudo" id="inputPseudo"
+class="form-control" placeholder="JeanMichMich" required autofocus />
+</div>
+					
+</div>
+</div><!-- small container close -->
+<!-- -----------2--------- -->
+</div><!-- bigger col close(2nd) -->
 
 <div>
 </div>
 
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>PrÃ©nom :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="prenom" id="inputPrenom"
-							class="form-control" placeholder="Jean-Michel" required autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Email : </label>
-					</div>
-					<div class="col-7">
-						<input type="email" name="email" id="inputEmail"
-							class="form-control" placeholder="jm-dupont@123.com" required
-							autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>TÃ©lÃ©phone :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="telephone" id="inputTelephone"
-							class="form-control" placeholder="06********" required autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Rue :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="rue" id="inputRue" class="form-control"
-							placeholder="15 rue de la paix" required autofocus />
-					</div>
-				</div>
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Code Postal :</label>
-					</div>
-					<div class="col-7">
-						<input type="number" name="codepostal" id="inputCodePostal"
-							class="form-control" placeholder="75000" required autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Ville :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="ville" id="inputVille"
-							class="form-control" placeholder="Paris" required autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Mot de passe :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="motdepasse" id="inputMotDePasse"
-							class="form-control" placeholder="******" required autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Confirmation :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="confirmation" id="inputConfirmation"
-							class="form-control" placeholder="******" required autofocus />
-					</div>
-				</div>
-
-				<div class="groupeFormulaire row mt-5">
-					<div class="col-6 ">
-						<form action="AccueilServlet" method="post">
-							<input type="submit" value="CrÃ©er"
-								class="btn btn-lg btn-primary btn-block btn-signin bouton" />
-						</form>
-					</div>
-					<div class="col-6">
-						<form action="AccueilServlet" method="post">
-							<input type="submit" value="Annuler"
-								class="btn btn-lg btn-primary btn-block btn-signin bouton" />
-						</form>
-					</div>
-				</div>
-
+<!-- ----------------------------------------------------------------- -->			
 
 
 			</form>
