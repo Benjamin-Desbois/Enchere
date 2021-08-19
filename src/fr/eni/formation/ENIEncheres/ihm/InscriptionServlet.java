@@ -2,8 +2,6 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.formation.ENIEncheres.bll.BLLException;
 import fr.eni.formation.ENIEncheres.bll.UtilisateurManager;
-import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerException;
 import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerSingl;
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
@@ -39,49 +37,53 @@ public class InscriptionServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String nextPage = "/WEB-INF/inscription.jsp";
 		UtilisateurModel model = null;
+		boolean valide = true;
 		try {
-			try {
-				model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-			if (request.getParameter("pseudo") != null) {
-				model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
-				model.getUtilisateur().setNom(request.getParameter("nom"));
-				model.getUtilisateur().setPrenom(request.getParameter("prenom"));
-				model.getUtilisateur().setEmail(request.getParameter("email"));
-				model.getUtilisateur().setTelephone(request.getParameter("telephone"));
-				model.getUtilisateur().setRue(request.getParameter("rue"));
-				model.getUtilisateur().setCodePostal(request.getParameter("codePostal"));
-				model.getUtilisateur().setVille(request.getParameter("ville"));
-				model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
+		if (request.getParameter("pseudo") != null) {
+			model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
+			model.getUtilisateur().setNom(request.getParameter("nom"));
+			model.getUtilisateur().setPrenom(request.getParameter("prenom"));
+			model.getUtilisateur().setEmail(request.getParameter("email"));
+			model.getUtilisateur().setTelephone(request.getParameter("telephone"));
+			model.getUtilisateur().setRue(request.getParameter("rue"));
+			model.getUtilisateur().setCodePostal(request.getParameter("codePostal"));
+			model.getUtilisateur().setVille(request.getParameter("ville"));
+			model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
-				boolean alpha = manager.isAlphanumeric(request.getParameter("pseudo"));
-				if (alpha) {
-					request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
+			boolean alpha = manager.isAlphanumeric(request.getParameter("pseudo"));
+			if (alpha) {
+				request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
 
+			} else {
+				if (request.getParameter("pseudo") == null) {
+					request.setAttribute("message", "Veuillez remplir tous les champs");
 				} else {
-					manager.addUtilisateur(model.getUtilisateur());
 					try {
-						model.setLstUtilisateurs(manager.getAllUtilisateurs());
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						manager.addUtilisateur(model.getUtilisateur());
+					} catch (BLLException e) {
+						request.setAttribute("message", e.getMessage());
+						System.out.println("pas créé");
+						valide = false;
+
+					}
+					if (valide) {
+						try {
+							model.setLstUtilisateurs(manager.getAllUtilisateurs());
+							nextPage = "/WEB-INF/accueil.jsp";
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				}
-
-			}
-			if (request.getParameter("pseudo") == null) {
-				request.setAttribute("message", "Veuillez remplir tous les champs");
-			}
-			if ("inscrit".equals(request.getParameter("inscription"))) {
-				nextPage = "/WEB-INF/accueil.jsp";
 			}
 
-		} catch (UtilisateurManagerException e) {
-			e.printStackTrace();
 		}
 		request.setAttribute("model", model);
 		request.getRequestDispatcher(nextPage).forward(request, response);

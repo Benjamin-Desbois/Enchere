@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>ENI-EnchÃ¨res | Se connecter</title>
+<title>ENI-Enchères | Se connecter</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap -->
 <link rel="stylesheet"
@@ -70,7 +70,7 @@
 
 				<div class="groupeFormulaire row mt-3">
 					<div class="col-5 ">
-						<label>PrÃ©nom :</label>
+						<label>Prénom :</label>
 					</div>
 					<div class="col-7">
 						<input type="text" name="prenom" id="inputPrenom"
@@ -91,7 +91,7 @@
 
 				<div class="groupeFormulaire row mt-3">
 					<div class="col-5 ">
-						<label>TÃ©lÃ©phone :</label>
+						<label>Téléphone :</label>
 					</div>
 					<div class="col-7">
 						<input type="text" name="telephone" id="inputTelephone"
@@ -151,7 +151,7 @@
 				<div class="groupeFormulaire row mt-5">
 					<div class="col-6 ">
 						<form action="AccueilServlet" method="post">
-							<input type="submit" value="CrÃ©er"
+							<input type="submit" value="Créer"
 								class="btn btn-lg btn-primary btn-block btn-signin bouton" />
 						</form>
 					</div>

@@ -13,7 +13,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 	public UtilisateurDAO dao = UtilisateurFact.getInstance();
 
 	@Override
-	public void addUtilisateur(Utilisateur utilisateur) throws UtilisateurManagerException {
+	public void addUtilisateur(Utilisateur utilisateur) throws BLLException {
 
 		Boolean valide = true;
 		try {
@@ -22,15 +22,11 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 			for (Utilisateur util : lstUtilisateur) {
 				if (util.getPseudo().equals(utilisateur.getPseudo())) {
 					valide = false;
-					System.out.println("Le pseudo est déjà attribué");
-					// TODO Faire remonter l'erreur.
-					break;
+					throw new BLLException("Le pseudo est déjà attribué");
 				}
 				if (util.getEmail().equals(utilisateur.getEmail())) {
 					valide = false;
-					System.out.println("Cette adresse mail est déjà utilisée");
-					// TODO Faire remonter l'erreur.
-					break;
+					throw new BLLException("Cette adresse mail est déjà utilisée");
 				}
 			}
 		} catch (SQLException e1) {
@@ -49,7 +45,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 	}
 
 	@Override
-	public List<Utilisateur> getAllUtilisateurs() throws UtilisateurManagerException {
+	public List<Utilisateur> getAllUtilisateurs(){
 		try {
 			return dao.getAll();
 		} catch (SQLException e) {
@@ -59,7 +55,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 	}
 
 	@Override
-	public boolean isExist(Utilisateur utilisateur) throws UtilisateurManagerException, SQLException {
+	public boolean isExist(Utilisateur utilisateur) throws SQLException {
 		Boolean existe = false;
 		List<Utilisateur> lstUtilisateur = dao.getAll();
 		for (Utilisateur util : lstUtilisateur) {
