@@ -58,16 +58,17 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
 	@Override
 	public boolean isExist(Utilisateur utilisateur) throws UtilisateurManagerException, SQLException {
-		boolean existe = false;
+		Boolean existe = false;
 		List<Utilisateur> lstUtilisateur = dao.getAll();
 		for (Utilisateur util : lstUtilisateur) {
-			if (util.getPseudo().equals(utilisateur.getPseudo())
-					& util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
+			if (util.getPseudo().equals(utilisateur.getPseudo()) & util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
 				existe = true;
-				
+
 				break;
 			}
-
+			System.out.println(existe);
+			System.out.println(util.getPseudo());
+			System.out.println(utilisateur.getPseudo());
 		}
 		return existe;
 
