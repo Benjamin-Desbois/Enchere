@@ -30,43 +30,55 @@
 				class="form-inscription mb-5">
 				<h1 class="text-center mb-5">Mon Profil</h1>
 				
-				
-<div class="container">
+<!-- ----------------------------------------------------------------- -->
+<div class="container"><!--bigger container open -->
 <div class="row">
-<div class="col col-sm-6">
 
+<div class="col col-md-6"><!--bigger col open(1st)-->
 
-<div class="container">
-<div class="groupeFormulaire row mt-3">
+<!-- ---------1----------- -->
+<div class="container"><!-- small container open -->
+<div class="groupeFormulaire row">
 				
-					<div class="col-5 ">
-						<label>Pseudo :</label>
-					</div>
+<div class="col-5 ">
+<label>Pseudo :</label>
+</div>
 					
-					<div class="col-7">
-						<input type="text" name="pseudo" id="inputPseudo"
-							class="form-control" placeholder="JeanMichMich" required
-							autofocus />
-					</div>
+<div class="col-7">
+<input type="text" name="pseudo" id="inputPseudo"
+class="form-control" placeholder="JeanMichMich" required autofocus />
+</div>
 					
 </div>
-</div>
+</div><!--small container close-->
+<!-- -----------1--------- -->
+
+</div><!-- bigger col close(1st) -->
 
 
-<div class="col col-sm-6">
-				<div class="groupeFormulaire row mt-3">
-					<div class="col-5 ">
-						<label>Nom :</label>
-					</div>
-					<div class="col-7">
-						<input type="text" name="nom" id="inputNom" class="form-control"
-							placeholder="DUPONT" required autofocus />
-					</div>
-				</div>
+<div class="col col-md-6"><!-- bigger col open(2nd) -->
+<!-- ----------2---------- -->
+<div class="container"><!--small container open  -->
+<div class="groupeFormulaire row">
+				
+<div class="col-5 ">
+<label>Pseudo :</label>
 </div>
+					
+<div class="col-7">
+<input type="text" name="pseudo" id="inputPseudo"
+class="form-control" placeholder="JeanMichMich" required autofocus />
+</div>
+					
+</div>
+</div><!-- small container close -->
+<!-- -----------2--------- -->
+</div><!-- bigger col close(2nd) -->
 
 <div>
 </div>
+
+		
 
 				<div class="groupeFormulaire row mt-3">
 					<div class="col-5 ">
