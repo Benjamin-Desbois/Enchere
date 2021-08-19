@@ -59,7 +59,7 @@ public class LoginServlet extends HttpServlet {
 					request.setAttribute("message", "Veuillez indiquer un mot de passe");
 				}
 				if (request.getParameter("password") == null) {
-					nextPage = "/WEB-INF/inscription.jsp";
+					nextPage = "/WEB-INF/login.jsp";
 				}
 			}
 			model.getUtilisateur().setPseudo(request.getParameter("nom"));
