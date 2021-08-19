@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.formation.ENIEncheres.bll.UtilisateurManager;
-import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerException;
 import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerSingl;
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
@@ -41,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 
 		try {
 			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
-		} catch (UtilisateurManagerException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -65,7 +64,7 @@ public class LoginServlet extends HttpServlet {
 		model.getUtilisateur().setMotDePasse(request.getParameter("password"));
 		try {
 			existe = manager.isExist(model.getUtilisateur());
-		} catch (UtilisateurManagerException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
