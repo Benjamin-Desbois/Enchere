@@ -1,4 +1,4 @@
-package fr.eni.formation.ENIEncheres.dal;
+package fr.eni.formation.ENIEncheres.dal.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

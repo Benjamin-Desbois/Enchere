@@ -113,7 +113,7 @@
 						<label>Code Postal :</label>
 					</div>
 					<div class="col-7">
-						<input type="number" name="codepostal" id="inputCodePostal"
+						<input type="number" name="codePostal" id="inputCodePostal"
 							class="form-control" placeholder="75000" required autofocus />
 					</div>
 				</div>
@@ -133,7 +133,7 @@
 						<label>Mot de passe :</label>
 					</div>
 					<div class="col-7">
-						<input type="text" name="motdepasse" id="inputMotDePasse"
+						<input type="password" name="motdepasse" id="inputMotDePasse"
 							class="form-control" placeholder="******" required autofocus />
 					</div>
 				</div>
@@ -143,7 +143,7 @@
 						<label>Confirmation :</label>
 					</div>
 					<div class="col-7">
-						<input type="text" name="confirmation" id="inputConfirmation"
+						<input type="password" name="confirmation" id="inputConfirmation"
 							class="form-control" placeholder="******" required autofocus />
 					</div>
 				</div>

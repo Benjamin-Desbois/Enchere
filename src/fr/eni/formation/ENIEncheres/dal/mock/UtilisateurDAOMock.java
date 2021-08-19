@@ -1,10 +1,11 @@
-package fr.eni.formation.ENIEncheres.dal;
+package fr.eni.formation.ENIEncheres.dal.mock;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
+import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 
 public class UtilisateurDAOMock implements UtilisateurDAO {
 	public static List<Utilisateur> lst = new ArrayList<Utilisateur>();	

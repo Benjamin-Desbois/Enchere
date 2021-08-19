@@ -1,4 +1,4 @@
-package fr.eni.formation.ENIEncheres.dal;
+package fr.eni.formation.ENIEncheres.dal.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
+import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
