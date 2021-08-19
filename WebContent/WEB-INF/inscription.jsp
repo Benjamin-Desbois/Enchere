@@ -17,6 +17,8 @@
 		code postal : <input type="number" name="codePostal"/><br>
 		ville : <input type="text" name="ville"/><br>
 		mot de passe : <input type="text" name="motdepasse">
+	</form>	
+	<form action="AcceuilServlet" method="post">
 		<input type="submit" value="inscription" class="bouton"/>
 	</form>
 	${message}
