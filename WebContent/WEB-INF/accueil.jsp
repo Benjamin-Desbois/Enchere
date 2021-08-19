@@ -8,7 +8,8 @@
 </head>
 <body>
 <h1>C'est l'accueil</h1>
-	<button value="connexion">Se connecter</button>
-	<button value="inscription">S'inscrire</button>	
+<form action="AcceuilServlet" method="post">
+	pseudo :<input type="text" name="pseudo" value="${model.utilisateur.pseudo}"/>
+</form>
 </body>
 </html>

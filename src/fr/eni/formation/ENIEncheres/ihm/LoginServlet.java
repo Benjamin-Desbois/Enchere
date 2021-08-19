@@ -46,9 +46,6 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		if (request.getParameter("nom") != null && request.getParameter("password") != null) {
-
-			// mise en session du nom si non vide
 
 			if ("".equals(request.getParameter("nom"))) {
 				request.setAttribute("message", "le nom ne peux pas être vide");
@@ -78,7 +75,8 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
 			}
-		}
+		
+
 
 		if (request.getParameter("s'inscrire") != null) {
 			nextPage = "/WEB-INF/inscription.jsp";
@@ -86,6 +84,7 @@ public class LoginServlet extends HttpServlet {
 
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

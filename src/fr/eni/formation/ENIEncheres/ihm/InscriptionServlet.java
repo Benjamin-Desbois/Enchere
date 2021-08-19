@@ -63,11 +63,13 @@ public class InscriptionServlet extends HttpServlet {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-
+				
 			}
 			if (request.getParameter("pseudo") == null) {
 				request.setAttribute("message", "Veuillez remplir tous les champs");
 			}
+			
+// coucou je suis a supprimer now
 		} catch (UtilisateurManagerException e) {
 			e.printStackTrace();
 		}
