@@ -9,6 +9,9 @@ html {
   height: 100%;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
@@ -23,11 +26,7 @@ html {
 /*
  * Card component
  */
- .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
+ 
 .card {
   width: 80%;
   background-color: #f7f7f7;
