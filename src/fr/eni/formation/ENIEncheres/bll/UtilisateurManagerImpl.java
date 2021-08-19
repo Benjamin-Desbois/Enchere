@@ -61,7 +61,8 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		Boolean existe = false;
 		List<Utilisateur> lstUtilisateur = dao.getAll();
 		for (Utilisateur util : lstUtilisateur) {
-			if (util.getPseudo().equals(utilisateur.getPseudo()) & util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
+			if (util.getPseudo().equals(utilisateur.getPseudo()) && util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
+
 				existe = true;
 
 				break;
