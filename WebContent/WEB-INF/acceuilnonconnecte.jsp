@@ -9,6 +9,8 @@
 <body>
 <h1>C'est l'accueil non connecte</h1>
 <form action="AcceuilServlet" method="post">
+	<button type="submit" value="inscription" name="connecter">Se connecter</button>
+	<button type="submit" value="inscription" name="inscrit">Inscription</button>
 </form>
 </body>
 </html>

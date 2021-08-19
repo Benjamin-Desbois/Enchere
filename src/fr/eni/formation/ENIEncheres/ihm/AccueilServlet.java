@@ -38,6 +38,14 @@ public class AccueilServlet extends HttpServlet {
 			model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
 		}
 		
+		if (request.getParameter("inscrit") != null) {
+			nextPage = "/WEB-INF/inscription.jsp";
+		}
+		
+		if (request.getParameter("connecter") != null) {
+			nextPage = "/WEB-INF/login.jsp";
+		}
+		
 		request.setAttribute("model", model);
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
