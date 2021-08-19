@@ -45,7 +45,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 	}
 
 	@Override
-	public List<Utilisateur> getAllUtilisateurs(){
+	public List<Utilisateur> getAllUtilisateurs() {
 		try {
 			return dao.getAll();
 		} catch (SQLException e) {
@@ -59,12 +59,13 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		Boolean existe = false;
 		List<Utilisateur> lstUtilisateur = dao.getAll();
 		for (Utilisateur util : lstUtilisateur) {
-			if (util.getPseudo().equals(utilisateur.getPseudo())
-					&& util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
+			if (util.getPseudo().equals(utilisateur.getPseudo()) || util.getEmail().equals(utilisateur.getPseudo())) {
+				if (util.getMotDePasse().equals(utilisateur.getMotDePasse())) {
 
-				existe = true;
+					existe = true;
 
-				break;
+					break;
+				}
 			}
 		}
 		return existe;
