@@ -66,9 +66,6 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
 				break;
 			}
-			System.out.println(existe);
-			System.out.println(util.getPseudo());
-			System.out.println(utilisateur.getPseudo());
 		}
 		return existe;
 
