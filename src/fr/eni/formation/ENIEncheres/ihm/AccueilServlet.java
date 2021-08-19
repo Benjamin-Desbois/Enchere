@@ -14,10 +14,10 @@ import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 /**
  * Servlet implementation class AcceuilServlet
  */
-@WebServlet("/AcceuilServlet")
+@WebServlet({"/", "/AcceuilServlet"})
 public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private UtilisateurManager manager = UtilisateurManagerSingl.getInstance();
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,7 +32,7 @@ public class AccueilServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UtilisateurModel model = new UtilisateurModel(new Utilisateur("","","","","","","","","", null, false, null), null);
-		String nextPage = "/WEB-INF/accueil.jsp";
+		String nextPage = "/WEB-INF/acceuilnonconnecte.jsp";
 		
 		if (request.getParameter("pseudo") != null) {
 			model.getUtilisateur().setPseudo(request.getParameter("pseudo"));
