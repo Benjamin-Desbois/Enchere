@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +18,12 @@
 		code postal : <input type="number" name="codePostal"/><br>
 		ville : <input type="text" name="ville"/><br>
 		mot de passe : <input type="text" name="motdepasse">
+		<input type="submit" value="inscription" name="inscrit" class="bouton"/>
 	</form>	
-	<form action="AcceuilServlet" method="post">
-		<input type="submit" value="inscription" class="bouton"/>
-	</form>
+ 
+	
+
+
 	${message}
 </body>
 </html>

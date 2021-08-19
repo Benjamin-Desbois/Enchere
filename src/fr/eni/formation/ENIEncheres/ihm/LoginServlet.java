@@ -80,7 +80,6 @@ public class LoginServlet extends HttpServlet {
 
 		if (request.getParameter("s'inscrire") != null) {
 			nextPage = "/WEB-INF/inscription.jsp";
-			System.out.println("coucou");
 		}
 
 		request.getRequestDispatcher(nextPage).forward(request, response);
