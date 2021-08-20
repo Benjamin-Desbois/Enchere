@@ -3,6 +3,7 @@ package fr.eni.formation.ENIEncheres.ihm;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		if ("".equals(request.getParameter("nom"))) {
-			request.setAttribute("message", "le nom ne peux pas être vide");
+			request.setAttribute("message", "le nom ne peux pas ï¿½tre vide");
 			if ("".equals(request.getParameter("password"))) {
 				request.setAttribute("message", "Veuillez indiquer un nom d'utilisateur et un mot de passe");
 			}
@@ -70,6 +71,10 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if (existe) {
+			HttpSession session = request.getSession();
+			request.getSession().setAttribute("NoUtilisateur", request.getParameter(""));
+			session.setAttribute("NoUtilisateur", model.getUtilisateur());
+			System.out.println("je passe par lÃ ");
 			nextPage = "/WEB-INF/accueil.jsp";
 		} else {
 			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
@@ -78,8 +83,7 @@ public class LoginServlet extends HttpServlet {
 		if (request.getParameter("s'inscrire") != null) {
 			nextPage = "/WEB-INF/inscription.jsp";
 		}
-		
-		
+
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 

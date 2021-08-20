@@ -43,7 +43,7 @@ public class VenteArticleServlet extends HttpServlet {
 		boolean valide = true;
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
-			retraitModel = new RetraitModel(new Retrait(),managerRetrait.getAllRetraits());
+			//retraitModel = new RetraitModel(new Retrait(),managerRetrait.getAllRetraits());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

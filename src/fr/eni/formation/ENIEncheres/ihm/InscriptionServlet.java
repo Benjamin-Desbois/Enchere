@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.eni.formation.ENIEncheres.bll.BLLException;
 import fr.eni.formation.ENIEncheres.bll.UtilisateurManager;
@@ -58,7 +59,7 @@ public class InscriptionServlet extends HttpServlet {
 
 			
 			if (manager.isAlphanumeric(request.getParameter("pseudo"))) {
-				request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
+				request.setAttribute("message", "Le pseudo ne peut contenir de caractï¿½res spï¿½ciaux");
 
 			} else {
 				if (request.getParameter("pseudo") == null) {
@@ -68,13 +69,17 @@ public class InscriptionServlet extends HttpServlet {
 						manager.addUtilisateur(model.getUtilisateur());
 					} catch (BLLException e) {
 						request.setAttribute("message", e.getMessage());
-						System.out.println("pas créé");
+						System.out.println("pas crÃ©Ã©");
 						valide = false;
 
 					}
 					if (valide) {
 						try {
 							model.setLstUtilisateurs(manager.getAllUtilisateurs());
+							HttpSession session = request.getSession();
+							request.getSession().setAttribute("NoUtilisateur", request.getParameter(""));
+							session.setAttribute("NoUtilisateur", model.getUtilisateur());
+							System.out.println("je passe aussi par lÃ ");
 							nextPage = "/WEB-INF/accueil.jsp";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
