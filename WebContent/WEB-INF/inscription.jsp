@@ -246,7 +246,7 @@
 														</div>
 
 														<div class="col-7">
-															<input type="number" name="codepostal"
+															<input type="number" name="codePostal"
 																id="inputCodePostal" class="form-control"
 																placeholder="44000" required autofocus />
 														</div>

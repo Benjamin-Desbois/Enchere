@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Acceuil connecte</h1>
-<form action="AccueilServlet" method="post">
-		<button type="submit" name="profil" value="profil">Mon Profil</button>
-</form>
-
+<h1>Mon profil</h1>
 </body>
 </html>
