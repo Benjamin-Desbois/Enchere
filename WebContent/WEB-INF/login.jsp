@@ -20,12 +20,7 @@
 
 
 <body>
-
-	<form action="LoginServlet" method="post"
-		class="d-flex justify-content-left">
-		<input type="submit" value="ENI-Enchères" />
-	</form>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="card card-container d-flex justify-content-center ">
 			<img id="profile-img" class="profile-img-card" src="images/user.png" />
 			<form action="LoginServlet" method="post" class="form-signin mb-5">
