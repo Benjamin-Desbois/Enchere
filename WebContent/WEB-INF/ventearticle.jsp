@@ -26,7 +26,7 @@
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
 			<a class="navbar-brand" href="AccueilServlet"> <img
 				class="logo-gris me-3" src="./images/auction.png" width="50">
-				ENI Enchère
+				ENI Enchères
 			</a>
 
 		</div>
@@ -46,11 +46,12 @@
 					</div>
 					<div class="col-12 col-md-4 ">
 					<label>Catégorie :</label>
-						<select class="form-select" aria-label="Default select example">
-							<option selected>Toutes les Categories</option>
-							<option value="1">One</option>
-							<option value="2">Two</option>
-							<option value="3">Three</option>
+						<select class="form-select" aria-label="Default select example" name="categorie">
+							<option selected>Toutes les Catégories</option>
+							<option value="Mobilier">Mobilier</option>
+							<option value="Véhicule">Véhicule</option>
+							<option value="Electronique">Electronique</option>
+							<option value="Autre (Précisez dans la description)">Autre (Précisez dans la description)</option>
 						</select>
 					</div>
 					<div class="col-12 col-md-4 py-2">
@@ -69,7 +70,7 @@
 						<img src="..." class="img-fluid img-thumbnail" alt="..."> </picture>
 					</div>
 					<div class="col-md-6 col-sm-12">
-						<label class="form-label" for="customFile">Upload la photo :</label> <input type="file" class="form-control"
+						<label class="form-label" for="customFile">Upload une photo :</label> <input type="file" class="form-control"
 							id="customFile" />
 					</div>
 
@@ -95,7 +96,7 @@
 				<!--fin  prix initial dubut et fin de l'enchère -->
 				<!-- retrait -->
 				<div class="row align-items-center mx-2 my-5">
-				<h2 class="text-center text-dark">Retait</h2>
+				<h2 class="text-center text-dark">Retrait</h2>
 				<div class="col-12 col-md-4 py-2">
 					<label>Rue :</label>
 						<input  class="form-control" type="text" name="adresse" class="form-control" aria-describedby="Recherche"
@@ -114,7 +115,7 @@
 				<!-- fin retrait -->
 				<div class="row align-items-center mx-2 my-5">
 				<div class="col-6">
-				<button type="button" class="btn btn-success">Enregistrer</button>
+				<input type="submit" class="btn btn-success" name="Enregistrer" value="Enregistrer">
 				</div>
 				<div class="col-6">
 				<button type="button" class="btn btn-danger">Annuler</button>
