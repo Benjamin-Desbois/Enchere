@@ -59,7 +59,7 @@ public class InscriptionServlet extends HttpServlet {
 
 			
 			if (manager.isAlphanumeric(request.getParameter("pseudo"))) {
-				request.setAttribute("message", "Le pseudo ne peut contenir de caractï¿½res spï¿½ciaux");
+				request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
 
 			} else {
 				if (request.getParameter("pseudo") == null) {
@@ -69,7 +69,7 @@ public class InscriptionServlet extends HttpServlet {
 						manager.addUtilisateur(model.getUtilisateur());
 					} catch (BLLException e) {
 						request.setAttribute("message", e.getMessage());
-						System.out.println("pas crÃ©Ã©");
+						System.out.println("pas créé");
 						valide = false;
 
 					}
@@ -79,7 +79,7 @@ public class InscriptionServlet extends HttpServlet {
 							HttpSession session = request.getSession();
 							request.getSession().setAttribute("NoUtilisateur", request.getParameter(""));
 							session.setAttribute("NoUtilisateur", model.getUtilisateur());
-							System.out.println("je passe aussi par lÃ ");
+							System.out.println("je passe aussi par là ");
 							nextPage = "/WEB-INF/accueil.jsp";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
