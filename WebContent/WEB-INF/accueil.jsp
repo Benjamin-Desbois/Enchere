@@ -24,9 +24,8 @@
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
 body {
-	  background-repeat: no-repeat;
-      background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
-	/* background-image: linear-gradient(rgb(104, 145, 162),rgb(59, 115, 89));   */
+	height: 100%;
+background-color: #7395AE;
 }
 
 .txt-ombre {

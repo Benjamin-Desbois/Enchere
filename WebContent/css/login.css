@@ -6,20 +6,11 @@
  */
 body,
 html {
-  height: 100%;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+ height: 100%;
+background-color: #7395AE;
    
 }
 
-.btn {
-  font-weight: 700;
-  height: 36px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
 
 /*
  * Card component
