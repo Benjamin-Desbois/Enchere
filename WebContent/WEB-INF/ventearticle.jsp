@@ -35,8 +35,9 @@
 		<div class="card card-container d-flex justify-content-center ">
 			<h1 class="text-center my-3">Nouvelle Vente</h1>
 			<!-- Call to Action-->
-			<div class="card text-white bg-secondary   text-center">
+			<div class="card text-white bg_nouvelleVente text-center">
 				<!-- article catégoreie description -->
+				<form action="VenteArticleServlet" method="post"> 
 				<div class="row align-items-center mx-2">
 					<div class="col-12 col-md-4 py-2">
 					<label>Article :</label>
@@ -94,7 +95,7 @@
 				<!--fin  prix initial dubut et fin de l'enchère -->
 				<!-- retrait -->
 				<div class="row align-items-center mx-2 my-5">
-				<h2 class="text-center">Retait</h2>
+				<h2 class="text-center text-dark">Retait</h2>
 				<div class="col-12 col-md-4 py-2">
 					<label>Rue :</label>
 						<input  class="form-control" type="text" name="adresse" class="form-control" aria-describedby="Recherche"
@@ -119,7 +120,7 @@
 				<button type="button" class="btn btn-danger">Annuler</button>
 				</div>
 				</div>
-
+</form>
 			</div>
 
 
