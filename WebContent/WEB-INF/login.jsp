@@ -20,11 +20,16 @@
 
 
 <body>
-
-	<form action="LoginServlet" method="post"
-		class="d-flex justify-content-left">
-		<input type="submit" value="ENI-Enchères" />
-	</form>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
+		<div class="container ">
+        
+			<!--<img class="mr-3" src="eni.jpg" width="50">-->
+			<a class="navbar-brand" href="AccueilServlet"> <img class="logo-gris me-3"
+				src="./images/auction.png" width="50"> ENI Enchère
+			</a>
+			
+			</div>
+	</nav>
 	<div class="container">
 		<div class="card card-container d-flex justify-content-center ">
 			<img id="profile-img" class="profile-img-card" src="images/user.png" />

@@ -40,7 +40,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 				utilisateur.setNoUtilisateur(rs.getInt(1));
 			}
 		}
-	}
+	} 
 
 	@Override
 	public List<Utilisateur> getAll() throws SQLException {

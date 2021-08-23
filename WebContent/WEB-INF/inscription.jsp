@@ -24,10 +24,19 @@
 
 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark  mb-5">
+		<div class="container ">
+        
+			<!--<img class="mr-3" src="eni.jpg" width="50">-->
+			<a class="navbar-brand" href="AccueilServlet"> <img class="logo-gris me-3"
+				src="./images/auction.png" width="50"> ENI Enchère
+			</a>
+			
+			</div>
+	</nav>
 
 
-
-	<div class="card card-container ">
+	<div class="card card-container mt-5">
 
 
 
@@ -246,7 +255,7 @@
 														</div>
 
 														<div class="col-7">
-															<input type="number" name="codepostal"
+															<input type="number" name="codePostal"
 																id="inputCodePostal" class="form-control"
 																placeholder="44000" required autofocus />
 														</div>

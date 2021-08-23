@@ -23,6 +23,28 @@
 <title>ENI Enchère | S'enregistrer</title>
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
+.logo-gris {
+	filter: invert(94%) sepia(100%) saturate(24%) hue-rotate(248deg)
+		brightness(104%) contrast(100%);
+}
+
+li
+{ 
+display:inline; 
+} 
+.btn-outline-primary{
+style:transparent !important;
+}
+</style>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+	integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+	rel="stylesheet">
+<style>
 body {
 	  background-repeat: no-repeat;
       background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
@@ -52,28 +74,7 @@ body {
 .btn-nav{
 background-color:transparent;
 }
-.logo-gris {
-	filter: invert(94%) sepia(100%) saturate(24%) hue-rotate(248deg)
-		brightness(104%) contrast(100%);
-}
-
-li
-{ 
-display:inline; 
-} 
-.btn-outline-primary{
-style:transparent !important;
-}
 </style>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-	integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<link
-	href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
-	rel="stylesheet">
-
 </head>
 <body>
 
@@ -96,7 +97,7 @@ style:transparent !important;
 					 <form action="AccueilServlet" method="post">
 						<c:choose>
 							<c:when test="${nom == null}">
-								<li class="nav-item"><button type="submit" name="login"
+								<li class="nav-item"><button type="submit" name="connecter"
 										value=" se connecter" class="btn btn-nav">Se connecter</button></li>
 								<li class="nav-item"><button type="submit" name="inscrit"
 										value="inscrit" class="btn btn-nav">S'incrire</button></li>
