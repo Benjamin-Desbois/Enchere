@@ -36,6 +36,9 @@ background-color: #7395AE;
 /*
  * Form styles
  */
+ .bg_nouvelleVente{
+ background-color: #938e94 !important;
+ }
 
 .profile-img-card {
   width: 120px;
