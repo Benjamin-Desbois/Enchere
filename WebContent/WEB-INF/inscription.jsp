@@ -24,7 +24,7 @@
 
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark  mb-5">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar mb-5">
 		<div class="container ">
         
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
@@ -34,9 +34,8 @@
 			
 			</div>
 	</nav>
-
-
-	<div class="card card-container mt-5">
+<div class="container ">
+	<div class="card card-container mt-5 d-flex justify-content-center">
 
 
 
@@ -360,7 +359,7 @@
 													<!-- bigger col close(2nd) -->
 
 
-													<div></div>
+												
 
 													<!-- ----------------------------------------------------------------- -->
 													<div class="container mt-3">
@@ -382,7 +381,7 @@
 													</div>
 		</form>
 
-
+</div>
 	</div>
 	<!-- /card-container -->
 
