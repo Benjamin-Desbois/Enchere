@@ -94,7 +94,7 @@ background-color:transparent;
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-					 <form action="AccueilServlet" method="post">
+					 
 						<c:choose>
 							<c:when test="${nom == null}">
 								<li class="nav-item"><button type="submit" name="connecter"
@@ -114,7 +114,7 @@ background-color:transparent;
 										value="deconnextion" class="btn btn-nav">Déconnextion</button></li>
 							</c:otherwise>
 						</c:choose>
-					</form>
+					
 				</ul>
 				<!--
     <form class="d-flex">
