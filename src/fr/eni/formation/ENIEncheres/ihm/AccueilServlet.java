@@ -32,7 +32,7 @@ public class AccueilServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		if (session.getAttribute("nom") != null) {
+		if (session.getAttribute("NoUtilisateur") != null) {
 
 			this.getServletContext().getRequestDispatcher("/ListeEnchereConnecte").forward(request, response);
 		} else {
