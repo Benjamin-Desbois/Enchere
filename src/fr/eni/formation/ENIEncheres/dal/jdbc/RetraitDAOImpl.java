@@ -13,8 +13,8 @@ import fr.eni.formation.ENIEncheres.bo.Retrait;
 import fr.eni.formation.ENIEncheres.dal.RetraitDAO;
 
 public class RetraitDAOImpl implements RetraitDAO {
-	private final String INSERT = "INSERT INTO retrait(rue, code_postal, ville) VALUES (?,?,?)";
-	private final String SELECTALL = "SELECT * FROM RETRAIT";
+	private final String INSERT = "INSERT INTO retraits(rue, code_postal, ville) VALUES (?,?,?)";
+	private final String SELECTALL = "SELECT * FROM RETRAITS";
 
 	public void insert(Retrait retrait) throws SQLException {
 		Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Projet", "sa",

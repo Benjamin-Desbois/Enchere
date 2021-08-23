@@ -20,7 +20,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 	integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>ENI Enchère | S'enregistrer</title>
+<title>ENI Enchère | Accueil non connecté</title>
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
 .logo-gris {
@@ -104,10 +104,14 @@ background-color:transparent;
 
 							</c:when>
 							<c:otherwise>
+							<li class="nav-item"><button type="submit"
+										name="encheres" value="encheres" class="btn btn-nav">Enchères</button></li>
+										<li class="nav-item"><button type="submit"
+										name="vendreUnArticle" value="vendreUnArticle" class="btn btn-nav">Vendre un article</button></li>
 								<li class="nav-item"><button type="submit"
-										name="deconnecter" value="connecter" class="btn btn-nav">Se déconnecter</button></li>
-								<li class="nav-item"><button type="submit" name="profil"
-										value="profil" class="btn btn-nav">Mon Profil</button></li>
+										name="monProfil" value="monProfil" class="btn btn-nav">Mon profil</button></li>
+								<li class="nav-item"><button type="submit" name="deconnextion"
+										value="deconnextion" class="btn btn-nav">Déconnextion</button></li>
 							</c:otherwise>
 						</c:choose>
 					</form>
@@ -126,65 +130,7 @@ background-color:transparent;
 	<div class="container pt-3  px-4 px-lg-5 bg-white">
 
 		<!-- Heading Row-->
-		<!-- cache sous md d et affcihe sous xl  et plus ... -->
-		<div class=" d-none d-xl-block">
-			<div class="row gx-4 gx-lg-5 align-items-center my-5">
-				<div class="col-lg-7">
-
-					<div id="carouselExampleCaptions" class="carousel slide"
-						data-bs-ride="carousel">
-						<div class="carousel-indicators">
-							<button type="button" data-bs-target="#carouselExampleCaptions"
-								data-bs-slide-to="0" class="active txt-ombre"
-								aria-current="true" aria-label="Slide 1"></button>
-							<button type="button" data-bs-target="#carouselExampleCaptions"
-								data-bs-slide-to="1" aria-label="Slide 2  txt-ombre"></button>
-							<button type="button" data-bs-target="#carouselExampleCaptions"
-								data-bs-slide-to="2" aria-label="Slide 3  txt-ombre"></button>
-						</div>
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<img src="./images/bid.png" class="d-block w-100" alt="...">
-								<div class="carousel-caption d-none d-md-block">
-									<h5 class="txt-ombre"></h5>
-
-								</div>
-							</div>
-							 <div class="carousel-item">
-								<img src="./images/auction1.jpg" class="d-block w-100" alt="...">
-								<div class="carousel-caption d-none d-md-block">
-									<h5 class="txt-ombre"></h5>
-
-								</div>
-							</div>
-							
-						</div>
-						<button class="carousel-control-prev" type="button"
-							data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button"
-							data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Next</span>
-						</button>
-					</div>
-					<!--
-                <img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." />
-     -->
-				</div>
-				<div class="col-lg-5">
-					<h4 class="font-weight-light">
-						Eni propose désormais un service inédit à ses Etudiants!
-						</h1>
-						<p class="mt-4">This is a template that is great for small
-							businesses. It doesn't have too much fancy flare to it, but it
-							makes a great use of the standard Bootstrap core components. Feel
-							free to use this template for any project you want!</p>
-				</div>
-			</div>
-		</div>
+	
 		<!-- Call to Action-->
 		<div class="card text-white bg-secondary my-5  text-center">
 
@@ -199,9 +145,10 @@ background-color:transparent;
 				<div class="col-12 col-md-3 py-2">
 					<select class="form-select" aria-label="Default select example">
 						<option selected>Toutes les Categories</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						<option value="informatique">Informatique</option>
+						<option value="ameublement">Ameublement</option>
+						<option value="vetement">vêtement</option>
+						<option value="sportLoisirs">Sport&Loisirs</option>
 					</select>
 				</div>
 				<div class="col-12 col-md-3 py-2">
