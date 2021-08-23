@@ -3,7 +3,6 @@ package fr.eni.formation.ENIEncheres.bll;
 import java.sql.SQLException;
 import java.util.List;
 
-import fr.eni.formation.ENIEncheres.bo.Article;
 import fr.eni.formation.ENIEncheres.bo.Retrait;
 import fr.eni.formation.ENIEncheres.dal.RetraitDAO;
 import fr.eni.formation.ENIEncheres.dal.RetraitFact;

@@ -55,7 +55,7 @@ public class VenteArticleServlet extends HttpServlet {
 		RetraitModel retraitModel = null;
 		CategorieModel categorieModel = null;
 		UtilisateurModel utilisateurModel = null;
-		boolean valide = true;
+		//boolean valide = true;
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
 			retraitModel = new RetraitModel(new Retrait(), retraitManager.getAllRetraits());
