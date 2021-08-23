@@ -7,7 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,19 +20,21 @@ import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurFact;
 
 public class ArticleDAOImpl implements ArticleDAO {
-	private final String INSERT = "INSERT INTO ARTICLES_VENDUS(nom_article, description, date_debut_enchere, date_fin_encheres, prix_initial, no_utilisateur, no_categorie) VALUES (?,?,?,?,?,?,?)";
+	private final String INSERT = "INSERT INTO ARTICLES_VENDUS(nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, no_utilisateur, no_categorie) VALUES (?,?,?,?,?,?,?)";
 	private final String SELECTALL = "SELECT * FROM ARTICLES_VENDUS";
 	public UtilisateurDAO dao = UtilisateurFact.getInstance();
+	LocalDateTime lol;
 
 	@Override
 	public void insert(Article article) throws SQLException {
 		Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Projet", "sa",
 				"Pa$$w0rd");
+		
 		PreparedStatement stmt = con.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
 		stmt.setString(1, article.getNomArticle());
 		stmt.setString(2, article.getDescription());
-		stmt.setDate(3, Date.valueOf(article.getDateDebutEncheres()));
-		stmt.setDate(4, Date.valueOf(article.getDateFinEncheres()));
+		stmt.setTimestamp(3, Timestamp.valueOf(article.getDateDebutEncheres()));
+		stmt.setTimestamp(4, Timestamp.valueOf(article.getDateDebutEncheres()));
 		stmt.setInt(5, article.getMiseAPrix());
 		stmt.setInt(6, article.getVendeur().getNoUtilisateur());
 		stmt.setInt(7, article.getCategorieArticle().getNoCategorie());
@@ -54,8 +58,10 @@ public class ArticleDAOImpl implements ArticleDAO {
 			Article article = new Article();
 			article.setNomArticle(rs.getString("nom_article"));
 			article.setDescription(rs.getString("descritpion"));
-			article.setDateDebutEncheres(rs.getDate("date_debut_encheres").toLocalDate());
-			article.setDateFinEncheres(rs.getDate("date_fin_encheres").toLocalDate());
+			article.setDateDebutEncheres(LocalDateTime.ofInstant(rs.getDate("date_debut_encheres").toInstant(),
+                    ZoneId.systemDefault()));
+			article.setDateFinEncheres(LocalDateTime.ofInstant(rs.getDate("date_fin_encheres").toInstant(),
+                    ZoneId.systemDefault()));
 			article.setMiseAPrix(rs.getInt("prix_initial"));
 			article.setPrixVente(rs.getInt("prix_vente"));
 			List<Utilisateur> lstUtilisateur = dao.getAll();
