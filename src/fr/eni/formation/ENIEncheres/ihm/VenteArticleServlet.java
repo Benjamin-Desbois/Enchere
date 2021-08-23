@@ -50,7 +50,7 @@ public class VenteArticleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nextPage = "/WEB-INF/ventearticle.jsp";
+		String nextPage = "/WEB-INF/venteArticle.jsp";
 		ArticleModel model = null;
 		RetraitModel retraitModel = null;
 		CategorieModel categorieModel = null;

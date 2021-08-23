@@ -37,7 +37,7 @@ public class ListeEnchereConnecte extends HttpServlet {
         }
 		
 		if (request.getParameter("profil") != null) {
-			nextPage = "/WEB-INF/monprofil.jsp";
+			nextPage = "/WEB-INF/afficherMonProfil.jsp";
 		}
 	}
 

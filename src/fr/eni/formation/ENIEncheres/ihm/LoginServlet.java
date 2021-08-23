@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nextPage = "/WEB-INF/login.jsp";
+		String nextPage = "/WEB-INF/logIn.jsp";
 		UtilisateurModel model = null;
 		boolean existe = true;
 
@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("message", "Veuillez indiquer un mot de passe");
 			}
 			if (request.getParameter("password") == null) {
-				nextPage = "/WEB-INF/login.jsp";
+				nextPage = "/WEB-INF/logIn.jsp";
 			}
 		}
 		model.getUtilisateur().setPseudo(request.getParameter("nom"));
