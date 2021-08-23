@@ -26,14 +26,14 @@ public class ListeEnchereNonConnecte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nextPage = "/WEB-INF/accueilnonconnecte.jsp";
+		String nextPage = "/WEB-INF/accueilNonConnecte.jsp";
 
 		if (request.getParameter("inscrit") != null) {
 			nextPage = "/WEB-INF/inscription.jsp";
 		}
 
 		if (request.getParameter("connecter") != null) {
-			nextPage = "/WEB-INF/login.jsp";
+			nextPage = "/WEB-INF/logIn.jsp";
 		}
 		
 

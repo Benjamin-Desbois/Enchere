@@ -26,83 +26,148 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar mb-5">
 		<div class="container ">
-        
+
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
-			<a class="navbar-brand" href="AccueilServlet"> <img class="logo-gris me-3"
-				src="./images/auction.png" width="50"> ENI Enchère
+			<a class="navbar-brand" href="AccueilServlet"> <img
+				class="logo-gris me-3" src="./images/auction.png" width="50">
+				ENI Enchère
 			</a>
-			
-			</div>
+
+		</div>
 	</nav>
-<div class="container ">
-	<div class="card card-container mt-5 d-flex justify-content-center">
+	<div class="container d-flex justify-content-center">
+		<div class="card card-container mt-5 ">
 
 
 
-		<form action="InscriptionServlet" method="post"
-			class="form-inscription mb-5">
-			<h1 class="text-center mb-5">Mon Profil</h1>
+			<form action="InscriptionServlet" method="post"
+				class="form-inscription mb-5">
+				<h1 class="text-center mb-5">Mon Profil</h1>
 
-			<!-- ----------------------------------------------------------------- -->
-			<div class="container mt-3">
-				<!--bigger container open -->
-				<div class="row">
-
-
-					<div class="col-lg-6 col-md-12 mb-3">
-						<!--bigger col open(1st)-->
+				<!-- ----------------------------------------------------------------- -->
+				<div class="container mt-3">
+					<!--bigger container open -->
+					<div class="row">
 
 
-						<!-- ---------1----------- -->
-						<div class="container-fluid">
-							<!-- small container open -->
-							<div class="groupeFormulaire row">
+						<div class="col-lg-6 col-md-12 mb-3">
+							<!--bigger col open(1st)-->
 
-								<div class="col-5">
-									<label>Pseudo :</label>
+
+							<!-- ---------1----------- -->
+							<div class="container-fluid">
+								<!-- small container open -->
+								<div class="groupeFormulaire row">
+
+									<div class="col-5">
+										<label>Pseudo :</label>
+									</div>
+
+									<div class="col-7">
+										<input type="text" name="pseudo" id="inputPseudo"
+											class="form-control"  required
+											autofocus />
+									</div>
+
 								</div>
-
-								<div class="col-7">
-									<input type="text" name="pseudo" id="inputPseudo"
-										class="form-control" placeholder="JeanMichMich" required
-										autofocus />
-								</div>
-
 							</div>
-						</div>
-						<!--small container close-->
-						<!-- -----------1--------- -->
+							<!--small container close-->
+							<!-- -----------1--------- -->
 
+
+						</div>
+						<!-- bigger col close(1st) -->
+
+
+
+						<div class="col-lg-6 col-md-12 mb-3">
+							<!-- bigger col open(2nd) -->
+							<!-- ----------2---------- -->
+							<div class="container-fluid">
+								<!--small container open  -->
+								<div class="groupeFormulaire row">
+
+									<div class="col-5">
+										<label>Nom :</label>
+									</div>
+
+									<div class="col-7">
+										<input type="text" name="nom" id="inputNom"
+											class="form-control" required autofocus />
+									</div>
+
+								</div>
+							</div>
+							<!-- small container close -->
+							<!-- -----------2--------- -->
+						</div>
+						<!-- bigger col close(2nd) -->
 
 					</div>
-					<!-- bigger col close(1st) -->
+				</div>
+				<!-- ----------------------------------------------------------------- -->
+
+				<!-- ----------------------------------------------------------------- -->
+				<div class="container mt-3">
+					<!--bigger container open -->
+					<div class="row">
 
 
+						<div class="col-lg-6 col-md-12 mb-3">
+							<!--bigger col open(1st)-->
 
-					<div class="col-lg-6 col-md-12 mb-3">
-						<!-- bigger col open(2nd) -->
-						<!-- ----------2---------- -->
-						<div class="container-fluid">
-							<!--small container open  -->
-							<div class="groupeFormulaire row">
 
-								<div class="col-5">
-									<label>Nom :</label>
+							<!-- ---------1----------- -->
+							<div class="container-fluid">
+								<!-- small container open -->
+								<div class="groupeFormulaire row">
+
+									<div class="col-5 ">
+										<label>Prénom :</label>
+									</div>
+
+									<div class="col-7">
+										<input type="text" name="prenom" id="inputPrenom"
+											class="form-control"  required
+											autofocus />
+									</div>
+
 								</div>
-
-								<div class="col-7">
-									<input type="text" name="nom" id="inputNom"
-										class="form-control" placeholder="DUPONT" required autofocus />
-								</div>
-
 							</div>
+							<!--small container close-->
+							<!-- -----------1--------- -->
+
+
 						</div>
-						<!-- small container close -->
-						<!-- -----------2--------- -->
-					</div>
-					<!-- bigger col close(2nd) -->
+						<!-- bigger col close(1st) -->
 
 
+
+						<div class="col-lg-6 col-md-12 mb-3">
+							<!-- bigger col open(2nd) -->
+							<!-- ----------2---------- -->
+							<div class="container-fluid">
+								<!--small container open  -->
+								<div class="groupeFormulaire row">
+
+									<div class="col-5 ">
+										<label>Email :</label>
+									</div>
+
+									<div class="col-7">
+										<input type="email" name="email" id="inputEmail"
+											class="form-control"  required
+											autofocus />
+									</div>
+
+								</div>
+							</div>
+							<!-- small container close -->
+							<!-- -----------2--------- -->
+						</div>
+						<!-- bigger col close(2nd) -->
+
+</div>
 					</div>
 					<!-- ----------------------------------------------------------------- -->
 
@@ -121,13 +186,13 @@
 									<!-- small container open -->
 									<div class="groupeFormulaire row">
 
-										<div class="col-5 ">
-											<label>Prénom :</label>
+										<div class="col-5">
+											<label>Téléphone :</label>
 										</div>
 
 										<div class="col-7">
-											<input type="text" name="prenom" id="inputPrenom"
-												class="form-control" placeholder="Jean-Michel" required
+											<input type="number" name="telephone" id="inputPseudo"
+												class="form-control" placeholder="06********" required
 												autofocus />
 										</div>
 
@@ -149,13 +214,13 @@
 									<!--small container open  -->
 									<div class="groupeFormulaire row">
 
-										<div class="col-5 ">
-											<label>Email :</label>
+										<div class="col-5">
+											<label>Rue :</label>
 										</div>
 
 										<div class="col-7">
-											<input type="email" name="email" id="inputEmail"
-												class="form-control" placeholder="jm-dupont@123.com"
+											<input type="text" name="rue" id="inputRue"
+												class="form-control" 
 												required autofocus />
 										</div>
 
@@ -165,223 +230,159 @@
 								<!-- -----------2--------- -->
 							</div>
 							<!-- bigger col close(2nd) -->
+</div>
+
+						</div>
+						<!-- ----------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------- -->
+					<div class="container mt-3">
+						<!--bigger container open -->
+						<div class="row">
+
+
+							<div class="col-lg-6 col-md-12 mb-3">
+								<!--bigger col open(1st)-->
+
+
+								<!-- ---------1----------- -->
+								<div class="container-fluid">
+									<!-- small container open -->
+									<div class="groupeFormulaire row">
+
+										<div class="col-5">
+											<label>Code Postal :</label>
+										</div>
+
+										<div class="col-7">
+											<input type="number" name="codepostal" id="inputCodePostal"
+												class="form-control"  required
+												autofocus />
+										</div>
+
+									</div>
+								</div>
+								<!--small container close-->
+								<!-- -----------1--------- -->
 
 
 							</div>
-							<!-- ----------------------------------------------------------------- -->
-
-							<!-- ----------------------------------------------------------------- -->
-							<div class="container mt-3">
-								<!--bigger container open -->
-								<div class="row">
+							<!-- bigger col close(1st) -->
 
 
-									<div class="col-lg-6 col-md-12 mb-3">
-										<!--bigger col open(1st)-->
 
+							<div class="col-lg-6 col-md-12 mb-3">
+								<!-- bigger col open(2nd) -->
+								<!-- ----------2---------- -->
+								<div class="container-fluid">
+									<!--small container open  -->
+									<div class="groupeFormulaire row">
 
-										<!-- ---------1----------- -->
-										<div class="container-fluid">
-											<!-- small container open -->
-											<div class="groupeFormulaire row">
-
-												<div class="col-5">
-													<label>Téléphone :</label>
-												</div>
-
-												<div class="col-7">
-													<input type="number" name="telephone" id="inputPseudo"
-														class="form-control" placeholder="06********" required
-														autofocus />
-												</div>
-
-											</div>
+										<div class="col-5">
+											<label>Ville :</label>
 										</div>
-										<!--small container close-->
-										<!-- -----------1--------- -->
 
+										<div class="col-7">
+											<input type="text" name="ville" id="inputVille"
+												class="form-control" 
+												required autofocus />
+										</div>
 
 									</div>
-									<!-- bigger col close(1st) -->
-
-
-
-									<div class="col-lg-6 col-md-12 mb-3">
-										<!-- bigger col open(2nd) -->
-										<!-- ----------2---------- -->
-										<div class="container-fluid">
-											<!--small container open  -->
-											<div class="groupeFormulaire row">
-
-												<div class="col-5">
-													<label>Rue :</label>
-												</div>
-
-												<div class="col-7">
-													<input type="text" name="rue" id="inputRue"
-														class="form-control" placeholder="15 rue de la paix"
-														required autofocus />
-												</div>
-
-											</div>
-										</div>
-										<!-- small container close -->
-										<!-- -----------2--------- -->
-									</div>
-									<!-- bigger col close(2nd) -->
-
-
 								</div>
-									<!-- ----------------------------------------------------------------- -->
+								<!-- small container close -->
+								<!-- -----------2--------- -->
+							</div>
+							<!-- bigger col close(2nd) -->
+</div>
 
-									<!-- ----------------------------------------------------------------- -->
+						</div>
+						<!-- ----------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------- -->
+					<div class="container mt-3">
+						<!--bigger container open -->
+						<div class="row">
+
+
+							<div class="col-lg-6 col-md-12 mb-3">
+								<!--bigger col open(1st)-->
+
+
+								<!-- ---------1----------- -->
+								<div class="container-fluid">
+									<!-- small container open -->
+									<div class="groupeFormulaire row">
+
+										<div class="col-5">
+											<label>Mot de passe :</label>
+										</div>
+
+										<div class="col-7">
+											<input type="text" name="motdepasse" id="inputMotDePasse"
+												class="form-control" placeholder="******" required
+												autofocus />
+										</div>
+
+									</div>
+								</div>
+								<!--small container close-->
+								<!-- -----------1--------- -->
+
+
+							</div>
+							<!-- bigger col close(1st) -->
+
+
+
+							<div class="col-lg-6 col-md-12 mb-3">
+								<!-- bigger col open(2nd) -->
+								<!-- ----------2---------- -->
+								<div class="container-fluid">
+									<!--small container open  -->
+									<div class="groupeFormulaire row">
+
+										<div class="col-5">
+											<label>Confirmation :</label>
+										</div>
+
+										<div class="col-7">
+											<input type="text" name="confirmation" id="inputConfirmation"
+												class="form-control" placeholder="******"
+												required autofocus />
+										</div>
+
+									</div>
+								</div>
+								<!-- small container close -->
+								<!-- -----------2--------- -->
+							</div>
+							<!-- bigger col close(2nd) -->
+</div>
+
+						</div>
+						<!-- ----------------------------------------------------------------- -->
+
+					
+
 									<div class="container mt-3">
 										<!--bigger container open -->
 										<div class="row">
-
-
-											<div class="col-lg-6 col-md-12 mb-3">
-												<!--bigger col open(1st)-->
-
-
-												<!-- ---------1----------- -->
-												<div class="container-fluid">
-													<!-- small container open -->
-													<div class="groupeFormulaire row">
-
-														<div class="col-5">
-															<label>Code Postal :</label>
-														</div>
-
-														<div class="col-7">
-															<input type="number" name="codePostal"
-																id="inputCodePostal" class="form-control"
-																placeholder="44000" required autofocus />
-														</div>
-
-													</div>
-												</div>
-												<!--small container close-->
-												<!-- -----------1--------- -->
-
-
+											<div class="col-6 ">
+												<form action="AccueilServlet" method="post">
+													<input type="submit" value="Créer"
+														class="btn btn-lg btn-primary btn-block btn-signin bouton text-center" />
+												</form>
 											</div>
-											<!-- bigger col close(1st) -->
-
-
-
-											<div class="col-lg-6 col-md-12 mb-3">
-												<!-- bigger col open(2nd) -->
-												<!-- ----------2---------- -->
-												<div class="container-fluid">
-													<!--small container open  -->
-													<div class="groupeFormulaire row">
-
-														<div class="col-5">
-															<label>Ville :</label>
-														</div>
-
-														<div class="col-7">
-															<input type="text" name="ville" id="inputVille"
-																class="form-control" placeholder="Nantes" required
-																autofocus />
-														</div>
-
-													</div>
-												</div>
-												<!-- small container close -->
-												<!-- -----------2--------- -->
+											<div class="col-6 ">
+												<form action="AccueilServlet" method="post">
+													<input type="submit" value="Annuler"
+														class="btn btn-lg btn-primary btn-block btn-signin bouton" />
+												</form>
 											</div>
-											<!-- bigger col close(2nd) -->
+										</div>
+									</div>
+			</form>
 
-
-											</div>
-											<!-- ----------------------------------------------------------------- -->
-
-											<!-- ----------------------------------------------------------------- -->
-											<div class="container mt-3">
-												<!--bigger container open -->
-												<div class="row">
-
-
-													<div class="col-lg-6 col-md-12 mb-3">
-														<!--bigger col open(1st)-->
-
-
-														<!-- ---------1----------- -->
-														<div class="container-fluid">
-															<!-- small container open -->
-															<div class="groupeFormulaire row">
-
-																<div class="col-5">
-																	<label>Mot de passe :</label>
-																</div>
-
-																<div class="col-7">
-																	<input type="text" name="motdepasse"
-																		id="inputMotDePasse" class="form-control"
-																		placeholder="******" required autofocus />
-																</div>
-
-															</div>
-														</div>
-														<!--small container close-->
-														<!-- -----------1--------- -->
-
-
-													</div>
-													<!-- bigger col close(1st) -->
-
-
-
-													<div class="col-md-6 col-sm-12 mb-3">
-														<!-- bigger col open(2nd) -->
-														<!-- ----------2---------- -->
-														<div class="container-fluid">
-															<!--small container open  -->
-															<div class="groupeFormulaire row">
-
-																<div class="col-5">
-																	<label>Confirmation :</label>
-																</div>
-
-																<div class="col-7">
-																	<input type="text" name="confirmation"
-																		id="inputConfirmation" class="form-control"
-																		placeholder="******" required autofocus />
-																</div>
-
-															</div>
-														</div>
-														<!-- small container close -->
-														<!-- -----------2--------- -->
-													</div>
-													<!-- bigger col close(2nd) -->
-
-
-												
-
-													<!-- ----------------------------------------------------------------- -->
-													<div class="container mt-3">
-														<!--bigger container open -->
-														<div class="row">
-															<div class="col-6 ">
-																<form action="AccueilServlet" method="post">
-																	<input type="submit" value="Créer"
-																		class="btn btn-lg btn-primary btn-block btn-signin bouton text-center" />
-																</form>
-															</div>
-															<div class="col-6 ">
-																<form action="AccueilServlet" method="post">
-																	<input type="submit" value="Annuler"
-																		class="btn btn-lg btn-primary btn-block btn-signin bouton" />
-																</form>
-															</div>
-														</div>
-													</div>
-		</form>
-
-</div>
+		</div>
 	</div>
 	<!-- /card-container -->
 
