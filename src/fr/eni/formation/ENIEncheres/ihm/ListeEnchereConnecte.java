@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ListeEnchereConnecte
@@ -26,12 +27,18 @@ public class ListeEnchereConnecte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nextPage = "/WEB-INF/accueilconnecte.jsp";
+		String nextPage = "/WEB-INF/accueil.jsp";
+		
+		HttpSession session = request.getSession(true);
+		
+		if(session.getAttribute("NoUtilisateur") != null ){  
+            session.invalidate();
+            this.getServletContext().getRequestDispatcher("/AccueilServlet").forward(request, response);
+        }
 		
 		if (request.getParameter("profil") != null) {
 			nextPage = "/WEB-INF/monprofil.jsp";
 		}
-		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
 	/**
