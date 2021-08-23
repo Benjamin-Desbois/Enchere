@@ -27,7 +27,7 @@ public class ListeEnchereConnecte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nextPage = "/WEB-INF/accueil.jsp";
+		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 		
 		HttpSession session = request.getSession(true);
 		

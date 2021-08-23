@@ -100,7 +100,7 @@ background-color:transparent;
 								<li class="nav-item"><button type="submit" name="connecter"
 										value=" se connecter" class="btn btn-nav">Se connecter</button></li>
 								<li class="nav-item"><button type="submit" name="inscrit"
-										value="inscrit" class="btn btn-nav">S'incrire</button></li>
+										value="inscrit" class="btn btn-nav">S'enregistrer</button></li>
 
 							</c:when>
 							<c:otherwise>
