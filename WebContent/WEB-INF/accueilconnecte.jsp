@@ -92,7 +92,6 @@ style:transparent !important;
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-					 <form action="AccueilServlet" method="post">
 						<c:choose>
 							<c:when test="${nom == null}">
 								<li class="nav-item"><button type="submit" name="login"
@@ -102,13 +101,10 @@ style:transparent !important;
 
 							</c:when>
 							<c:otherwise>
-								<li class="nav-item"><button type="submit"
-										name="deconnecter" value="connecter" class="btn btn-nav">Se déconnecter</button></li>
-								<li class="nav-item"><button type="submit" name="profil"
-										value="profil" class="btn btn-nav">Mon Profil</button></li>
+								<li class="nav-item"><a href="deconnect" class="btn btn-nav">Se déconnecter</a></li>
+								<li class="nav-item"><a href="profil" class="btn btn-nav">Mon profil</a></li>
 							</c:otherwise>
 						</c:choose>
-					</form>
 				</ul>
 				<!--
     <form class="d-flex">
