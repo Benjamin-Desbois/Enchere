@@ -14,16 +14,10 @@ import javax.servlet.http.HttpSession;
 import fr.eni.formation.ENIEncheres.bll.ArticleManager;
 import fr.eni.formation.ENIEncheres.bll.ArticleManagerSingl;
 import fr.eni.formation.ENIEncheres.bll.BLLException;
-import fr.eni.formation.ENIEncheres.bll.CategorieManager;
-import fr.eni.formation.ENIEncheres.bll.CategorieManagerSingl;
 import fr.eni.formation.ENIEncheres.bll.RetraitManager;
 import fr.eni.formation.ENIEncheres.bll.RetraitManagerSingl;
-import fr.eni.formation.ENIEncheres.bll.UtilisateurManager;
-import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerSingl;
 import fr.eni.formation.ENIEncheres.bo.Article;
-import fr.eni.formation.ENIEncheres.bo.Categorie;
 import fr.eni.formation.ENIEncheres.bo.Retrait;
-import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
 /**
  * Servlet implementation class VenteArticleServlet
@@ -33,8 +27,6 @@ public class VenteArticleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ArticleManager manager = ArticleManagerSingl.getInstance();
 	private RetraitManager retraitManager = RetraitManagerSingl.getInstance();
-	private CategorieManager categorieManager = CategorieManagerSingl.getInstance();
-	private UtilisateurManager Utilisateurmanager = UtilisateurManagerSingl.getInstance();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -76,6 +68,7 @@ public class VenteArticleServlet extends HttpServlet {
 			case "Mobilier" : model.getArticle().getCategorieArticle().setNoCategorie(1);break;
 			case "Vehicule" : model.getArticle().getCategorieArticle().setNoCategorie(2);break;
 			case "Electronique" : model.getArticle().getCategorieArticle().setNoCategorie(3);break;
+			case "Autre" : model.getArticle().getCategorieArticle().setNoCategorie(4);break;
 			default : System.out.println("Sélectionnez une catégorie");
 			}
 
@@ -84,9 +77,11 @@ public class VenteArticleServlet extends HttpServlet {
 
 			nextPage = "/WEB-INF/accueilConnecte.jsp";
 			try {
+				//Futures contraintes
 				model.setLstArticles(manager.getAllArticles());
+				//Ajout dans la BDD
 				manager.addArticles(model.getArticle());
-				System.out.println("je tente");
+				System.out.println("Ajout réussi (normalement)");
 			} catch (SQLException | BLLException e) {
 				e.printStackTrace();
 			}
