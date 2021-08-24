@@ -155,10 +155,10 @@ background-color:#e76f51;
 				<div class="col-12 col-md-3 py-2">
 					<select class="form-select" aria-label="Default select example">
 						<option selected>Toutes les Categories</option>
-						<option value="informatique">Informatique</option>
-						<option value="ameublement">Ameublement</option>
-						<option value="vetement">vêtement</option>
-						<option value="sportLoisirs">Sport&Loisirs</option>
+						<option value="Mobilier">Mobilier</option>
+						<option value="Vehicule">Véhicule</option>
+						<option value="Electronique">Electronique</option>
+						<option value="Autre">Autre</option>
 					</select>
 				</div>
 				<div class="col-12 col-md-3 py-2">
