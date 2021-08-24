@@ -62,7 +62,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 			article.setPrixVente(rs.getInt("prix_vente"));
 			List<Utilisateur> lstUtilisateur = dao.getAll();
 			for (Utilisateur util : lstUtilisateur) {
-				if(util.getNoUtilisateur()==rs.getInt("vendeur")) {
+				if(util.getNoUtilisateur()==rs.getInt("No_utilisateur")) {
 					article.setVendeur(util);
 				}
 			}
