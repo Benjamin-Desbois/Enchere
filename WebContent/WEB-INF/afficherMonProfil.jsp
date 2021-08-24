@@ -65,7 +65,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.nom}</p>
+										<p>${utilisateur.pseudo}</p>
 									</div>
 
 								</div>
@@ -87,11 +87,11 @@
 								<div class="groupeFormulaire row">
 
 									<div class="col-5">
-										<p>Pseudo :</p>
+										<p>Nom :</p>
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.nom}</p>
+										<p>${utilisateur.nom}</p>
 									</div>
 
 								</div>
