@@ -7,11 +7,13 @@
 body,
 html {
  height: 100%;
-background-color: #7395AE;
+background-color:#2A9D8F;
    
 }
 
-
+h1{
+	color:#264653;
+}
 /*
  * Card component
  */
@@ -92,6 +94,7 @@ background-color: #7395AE;
   -moz-transition: all 0.218s;
   -webkit-transition: all 0.218s;
   transition: all 0.218s;
+  
 }
 
 .btn.btn-signin:hover,

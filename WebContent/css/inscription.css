@@ -8,9 +8,22 @@
 body,
 html {
 height: 100%;
-background-color: #7395AE;
+background-color:#2A9D8F;
    
 }
+h1{
+	color:#264653;
+}
+a{
+  text-decoration: none;
+  font-size:25px;
+  padding:6px;
+  color:black;
+}
+a:hover {
+  color: white;
+}
+
 
 input{
 	width:100%;

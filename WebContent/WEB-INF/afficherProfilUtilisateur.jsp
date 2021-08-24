@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="UTF-8" />
-<title>ENI-Enchères | Mon profil</title>
+<title>ENI-Enchères | profil Utilisateur</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap -->
 <link rel="stylesheet"
@@ -289,6 +289,16 @@
 		</div>
 	</div>
 	<!-- /card-container -->
+		<!-- Footer-->
+	<footer class="py-5  my-navbar mt-5">
+		<div class="container  ">
+
+			<p class="m-0  text-white text-center ">
+				<!-- <img class="me-3" src="./images/eni.jpg" width="100">-->
+				Copyright &copy; ENI Enchère ENI 2021
+			</p>
+		</div>
+	</footer>
 
 
 </body>

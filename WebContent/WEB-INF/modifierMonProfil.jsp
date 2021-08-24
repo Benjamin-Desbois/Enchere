@@ -391,6 +391,16 @@
 
 
 	${message}
+		<!-- Footer-->
+	<footer class="py-5  my-navbar mt-5">
+		<div class="container  ">
+
+			<p class="m-0  text-white text-center ">
+				<!-- <img class="me-3" src="./images/eni.jpg" width="100">-->
+				Copyright &copy; ENI Enchère ENI 2021
+			</p>
+		</div>
+	</footer>
 </body>
 
 </html>

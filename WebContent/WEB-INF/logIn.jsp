@@ -30,7 +30,7 @@
 			
 			</div>
 	</nav>
-	<div class="container">
+	<div class="container mt-5">
 		<div class="card card-container d-flex justify-content-center ">
 			<img id="profile-img" class="profile-img-card" src="images/user.png" />
 			<form action="LoginServlet" method="post" class="form-signin mb-5">
@@ -79,6 +79,16 @@
 		<!-- /card-container -->
 	</div>
 	<!-- /container -->
+	<!-- Footer-->
+	<footer class="py-5  my-navbar mt-5">
+		<div class="container  ">
+
+			<p class="m-0  text-white text-center ">
+				<!-- <img class="me-3" src="./images/eni.jpg" width="100">-->
+				Copyright &copy; ENI Enchère ENI 2021
+			</p>
+		</div>
+	</footer>
 
 </body>
 

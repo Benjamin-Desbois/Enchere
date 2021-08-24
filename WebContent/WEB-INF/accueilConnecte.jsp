@@ -20,7 +20,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 	integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>ENI Enchère | Accueil connecté</title>
+<title>ENI Enchère | Accueil Connecté</title>
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
 .logo-gris {
@@ -30,6 +30,12 @@
 
 li {
 	display: inline;
+}
+a{
+  text-decoration: none;
+  font-size:25px;
+  padding:6px;
+  color:black;
 }
 
 .btn-outline-primary {
@@ -46,10 +52,16 @@ li {
 	rel="stylesheet">
 <style>
 body {
-	background-repeat: no-repeat;
-	background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+	background-color:#2A9D8F;
 	/* background-image: linear-gradient(rgb(104, 145, 162),rgb(59, 115, 89));   */
 }
+h1{
+	color:#264653;
+}
+a:hover {
+  color: white;
+}
+
 
 .txt-ombre {
 	text-shadow: 1px 1px 6px #000;
@@ -108,7 +120,7 @@ body {
 							<li class="nav-item"><a href="VenteArticleServlet">Vendre
 									un article</a></li>
 							<li class="nav-item"><a href="MonProfilServlet">Mon profil</a></li>
-							<li class="nav-item"><a href="deconnect">Déconnextion</a></li>
+							<li class="nav-item"><a href="deconnect">Déconnexion</a></li>
 						</c:otherwise>
 					</c:choose>
 
@@ -122,7 +134,7 @@ body {
 			</div>
 		</div>
 	</nav>
-	<h1 class="text-center my-5">Liste d'enchères</h1>
+	<h1 class="text-center my-5">Liste des enchères</h1>
 
 	<div class="container pt-3  px-4 px-lg-5 bg-white">
 
@@ -156,7 +168,49 @@ body {
 			</div>
 
 		</div>
-
+		<!--checkbox et radio  -->
+		
+			<div class=" my-3 d-flex justify-content-between" >
+            <div class="form-check">
+            
+                <input class="form-check-input" type="radio" id="achats" name="type" value="achats" checked>
+                <label for="achats"><b>Achats</b></label>
+                <div class="ml-4">
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="encheresouvertes" name="encheres" value="encheresouvertes" checked>
+                        <label for="encheresouvertes">Enchères ouvertes</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="encheresencours" name="encheres" value="encheresencours">
+                        <label for="encheresencours">Mes enchères en cours</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="encheresremportees" name="encheres" value="encheresremportees">
+                        <label for="encheresremportees">Mes enchères remportées</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="ventes" name="type" value="vente">
+                <label for="ventes"><b>Mes Ventes</b></label>
+                <div id="ventesradio" class="ml-4">
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="ventesencours" name="ventes" value="ventesencours" >
+                        <label for="ventesencours">Mes ventes en cours</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="ventesnondebutees" name="ventes" value="ventesnondebutees">
+                        <label for="ventesnondebutees">Ventes non débutées</label>
+                    </div>
+                    <div>
+                        <input class="form-check-input" type="checkbox" id="ventesterminees" name="ventes" value="ventesterminees">
+                        <label for="ventesterminees">ventes terminées</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+	<!-- fin checkbox et radio  -->
 		<div class="row gx-4 gx-lg-5">
 
 			<!--   1 cards-->
@@ -269,7 +323,7 @@ body {
 		<!-- row -->
 	</div>
 	<!-- Footer-->
-	<footer class="py-5 bg-dark  my-navbar">
+	<footer class="py-5  my-navbar mt-5">
 		<div class="container  ">
 
 			<p class="m-0  text-white text-center ">

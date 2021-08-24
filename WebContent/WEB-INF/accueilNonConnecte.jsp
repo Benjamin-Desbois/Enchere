@@ -23,11 +23,10 @@
 <title>ENI Enchère | Accueil non connecté</title>
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
-.logo-gris {
-	filter: invert(94%) sepia(100%) saturate(24%) hue-rotate(248deg)
-		brightness(104%) contrast(100%);
-}
 
+h1{
+	color:#264653;
+}
 li
 { 
 display:inline; 
@@ -46,9 +45,21 @@ style:transparent !important;
 	rel="stylesheet">
 <style>
 body {
-	  background-repeat: no-repeat;
-      background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+	background-color:#2A9D8F;
 	/* background-image: linear-gradient(rgb(104, 145, 162),rgb(59, 115, 89));   */
+}
+a{
+  text-decoration: none;
+  font-size:25px;
+  padding:6px;
+  color:black;
+}
+a:hover {
+  color: white;
+}
+
+.bg-search{
+background-color:#e76f51;
 }
 
 .txt-ombre {
@@ -94,23 +105,20 @@ background-color:transparent;
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-					 <form action="AccueilServlet" method="post">
-						<c:choose>
-							<c:when test="${nom == null}">
-								<li class="nav-item"><button type="submit" name="connecter"
-										value=" se connecter" class="btn btn-nav">Se connecter</button></li>
-								<li class="nav-item"><button type="submit" name="inscrit"
-										value="inscrit" class="btn btn-nav">S'enregistrer</button></li>
+					<c:choose>
+						<c:when test="${nom == null}">
+							<li class="nav-item"><a href="LoginServlet">Se connecter</a></li>
+							<li class="nav-item"><a href="InscriptionServlet">S'enregistrer</a></li>
 
-							</c:when>
-							<c:otherwise>
-								<li class="nav-item"><button type="submit"
-										name="deconnecter" value="connecter" class="btn btn-nav">Se déconnecter</button></li>
-								<li class="nav-item"><button type="submit" name="profil"
-										value="profil" class="btn btn-nav">Mon Profil</button></li>
-							</c:otherwise>
-						</c:choose>
-					</form>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a href="">Enchères</a></li>
+							<li class="nav-item"><a href="VenteArticleServlet">Vendre
+									un article</a></li>
+							<li class="nav-item"><a href="MonProfilServlet">Mon profil</a></li>
+							<li class="nav-item"><a href="deconnect">Déconnexion</a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 				<!--
     <form class="d-flex">
@@ -121,7 +129,7 @@ background-color:transparent;
 			</div>
 		</div>
 	</nav>
-	<h1 class="text-center my-5">Liste d'enchères</h1>
+	<h1 class="text-center my-5">Liste des enchères</h1>
 
 	<div class="container pt-3  px-4 px-lg-5 bg-white">
 
@@ -186,7 +194,7 @@ background-color:transparent;
 			</div>
 		</div>
 		<!-- Call to Action-->
-		<div class="card text-white bg-secondary my-5  text-center">
+		<div class="card text-white bg-search my-5  text-center">
 
 			<div class="row g-7 align-items-center mx-2 ">
 				<div class="col-12 col-md-3 py-2">
@@ -326,7 +334,7 @@ background-color:transparent;
 		<!-- row -->
 	</div>
 	<!-- Footer-->
-	<footer class="py-5 bg-dark  my-navbar">
+	<footer class="py-5 bg-dark  my-navbar mt-5">
 		<div class="container  ">
 
 			<p class="m-0  text-white text-center ">

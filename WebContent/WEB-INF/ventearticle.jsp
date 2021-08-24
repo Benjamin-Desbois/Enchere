@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>ENI-Enchères | Se connecter</title>
+<title>ENI-Enchères | Vente Article</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap -->
 <link rel="stylesheet"
@@ -130,6 +130,16 @@
 		<!-- /card-container -->
 	</div>
 	<!-- /container -->
+		<!-- Footer-->
+	<footer class="py-5  my-navbar mt-5">
+		<div class="container  ">
+
+			<p class="m-0  text-white text-center ">
+				<!-- <img class="me-3" src="./images/eni.jpg" width="100">-->
+				Copyright &copy; ENI Enchère ENI 2021
+			</p>
+		</div>
+	</footer>
 
 </body>
 
