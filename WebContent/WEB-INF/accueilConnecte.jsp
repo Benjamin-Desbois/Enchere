@@ -20,7 +20,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 	integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>ENI Enchère | Accueil non connecté</title>
+<title>ENI Enchère | Accueil connecté</title>
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
 .logo-gris {
@@ -28,12 +28,12 @@
 		brightness(104%) contrast(100%);
 }
 
-li
-{ 
-display:inline; 
-} 
-.btn-outline-primary{
-style:transparent !important;
+li {
+	display: inline;
+}
+
+.btn-outline-primary {
+	style: transparent !important;
 }
 </style>
 <link rel="stylesheet"
@@ -46,8 +46,8 @@ style:transparent !important;
 	rel="stylesheet">
 <style>
 body {
-	  background-repeat: no-repeat;
-      background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+	background-repeat: no-repeat;
+	background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 	/* background-image: linear-gradient(rgb(104, 145, 162),rgb(59, 115, 89));   */
 }
 
@@ -71,8 +71,9 @@ body {
 	color: #fff;
 	transition: all 0.3s;
 }
-.btn-nav{
-background-color:transparent;
+
+.btn-nav {
+	background-color: transparent;
 }
 </style>
 </head>
@@ -80,10 +81,11 @@ background-color:transparent;
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
 		<div class="container ">
-        
+
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
-			<a class="navbar-brand" href="AccueilServlet"> <img class="logo-gris me-3"
-				src="./images/auction.png" width="50"> ENI Enchère
+			<a class="navbar-brand" href="AccueilServlet"> <img
+				class="logo-gris me-3" src="./images/auction.png" width="50">
+				ENI Enchère
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -94,27 +96,22 @@ background-color:transparent;
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-					 
-						<c:choose>
-							<c:when test="${nom == null}">
-								<li class="nav-item"><button type="submit" name="connecter"
-										value=" se connecter" class="btn btn-nav">Se connecter</button></li>
-								<li class="nav-item"><button type="submit" name="inscrit"
-										value="inscrit" class="btn btn-nav">S'incrire</button></li>
 
-							</c:when>
-							<c:otherwise>
-							<li class="nav-item"><button type="submit"
-										name="encheres" value="encheres" class="btn btn-nav">Enchères</button></li>
-										<li class="nav-item"><button type="submit"
-										name="vendreUnArticle" value="vendreUnArticle" class="btn btn-nav">Vendre un article</button></li>
-								<li class="nav-item"><button type="submit"
-										name="monProfil" value="monProfil" class="btn btn-nav">Mon profil</button></li>
-								<li class="nav-item"><button type="submit" name="deconnextion"
-										value="deconnextion" class="btn btn-nav">Déconnextion</button></li>
-							</c:otherwise>
-						</c:choose>
-					
+					<c:choose>
+						<c:when test="${nom == null}">
+							<li class="nav-item"><a href="LoginServlet">Se connecter</a></li>
+							<li class="nav-item"><a href="InscriptionServlet">S'enregistrer</a></li>
+
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a href="">Enchères</a></li>
+							<li class="nav-item"><a href="VenteArticleServlet">Vendre
+									un article</a></li>
+							<li class="nav-item"><a href="MonProfilServlet">Mon profil</a></li>
+							<li class="nav-item"><a href="deconnect">Déconnextion</a></li>
+						</c:otherwise>
+					</c:choose>
+
 				</ul>
 				<!--
     <form class="d-flex">
@@ -130,7 +127,7 @@ background-color:transparent;
 	<div class="container pt-3  px-4 px-lg-5 bg-white">
 
 		<!-- Heading Row-->
-	
+
 		<!-- Call to Action-->
 		<div class="card text-white bg-secondary my-5  text-center">
 
