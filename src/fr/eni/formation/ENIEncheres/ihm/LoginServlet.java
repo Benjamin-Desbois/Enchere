@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("NoUtilisateur", request.getParameter(""));
 			session.setAttribute("NoUtilisateur", model.getUtilisateur());
 			System.out.println("je passe par là");
-			nextPage = "/WEB-INF/accueil.jsp";
+			nextPage = "/WEB-INF/accueilConnecte.jsp";
 		} else {
 			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
 		}
