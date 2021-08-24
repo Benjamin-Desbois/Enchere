@@ -50,6 +50,7 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		ResultSet rs = stmt.executeQuery();
 		while (rs.next()) {
 			Utilisateur utilisateur = new Utilisateur();
+			utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 			utilisateur.setPseudo(rs.getString("pseudo"));
 			utilisateur.setNom(rs.getString("nom"));
 			utilisateur.setPrenom(rs.getString("prenom"));

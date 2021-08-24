@@ -49,9 +49,9 @@
 						<select class="form-select" aria-label="Default select example" name="categorie">
 							<option selected>Toutes les Catégories</option>
 							<option value="Mobilier">Mobilier</option>
-							<option value="Véhicule">Véhicule</option>
+							<option value="Vehicule">Véhicule</option>
 							<option value="Electronique">Electronique</option>
-							<option value="Autre (Précisez dans la description)">Autre (Précisez dans la description)</option>
+							<option value="Autre">Autre (Précisez dans la description)</option>
 						</select>
 					</div>
 					<div class="col-12 col-md-4 py-2">

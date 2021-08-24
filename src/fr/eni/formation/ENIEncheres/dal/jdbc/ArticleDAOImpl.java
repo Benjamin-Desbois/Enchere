@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,11 +55,9 @@ public class ArticleDAOImpl implements ArticleDAO {
 		while (rs.next()) {
 			Article article = new Article();
 			article.setNomArticle(rs.getString("nom_article"));
-			article.setDescription(rs.getString("descritpion"));
-			article.setDateDebutEncheres(LocalDateTime.ofInstant(rs.getDate("date_debut_encheres").toInstant(),
-                    ZoneId.systemDefault()));
-			article.setDateFinEncheres(LocalDateTime.ofInstant(rs.getDate("date_fin_encheres").toInstant(),
-                    ZoneId.systemDefault()));
+			article.setDescription(rs.getString("description"));
+			article.setDateDebutEncheres((rs.getTimestamp("date_debut_encheres")).toLocalDateTime());
+			article.setDateFinEncheres((rs.getTimestamp("date_fin_encheres")).toLocalDateTime());
 			article.setMiseAPrix(rs.getInt("prix_initial"));
 			article.setPrixVente(rs.getInt("prix_vente"));
 			List<Utilisateur> lstUtilisateur = dao.getAll();
