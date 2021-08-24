@@ -54,6 +54,7 @@ public class ArticleDAOImpl implements ArticleDAO {
 		ResultSet rs = stmt.executeQuery();
 		while (rs.next()) {
 			Article article = new Article();
+			article.setNoArticle(Integer.parseInt(rs.getString("no_article")));
 			article.setNomArticle(rs.getString("nom_article"));
 			article.setDescription(rs.getString("description"));
 			article.setDateDebutEncheres((rs.getTimestamp("date_debut_encheres")).toLocalDateTime());

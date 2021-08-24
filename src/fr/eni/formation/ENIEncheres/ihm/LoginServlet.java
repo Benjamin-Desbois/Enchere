@@ -82,7 +82,6 @@ public class LoginServlet extends HttpServlet {
 				if (util.getPseudo().equals(request.getSession().getAttribute("nom"))) {
 					HttpSession session = request.getSession();
 						session.setAttribute("NoUtilisateur", util.getNoUtilisateur());
-						System.out.println(util.getNoUtilisateur());
 				}
 			}
 		} catch (SQLException e) {

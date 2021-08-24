@@ -220,9 +220,9 @@ background-color:#e76f51;
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title">
-							PC gamer pour travailler
-							</h2>
+						<h5 class="card-title">${nomarticle}</h5>
+							
+							
 							<!--  
                         <p class="card-text">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
