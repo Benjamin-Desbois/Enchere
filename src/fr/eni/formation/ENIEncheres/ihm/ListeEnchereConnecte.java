@@ -32,13 +32,14 @@ public class ListeEnchereConnecte extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		
 		if(session.getAttribute("NoUtilisateur") != null ){  
-            session.invalidate();
             this.getServletContext().getRequestDispatcher("/AccueilServlet").forward(request, response);
         }
 		
 		if (request.getParameter("profil") != null) {
 			nextPage = "/WEB-INF/afficherMonProfil.jsp";
+			
 		}
+		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
 	/**
