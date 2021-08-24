@@ -23,10 +23,7 @@
 <title>ENI Enchère | Accueil Connecté</title>
 <link rel="icon" type="image/png" href="./images/logo.png" />
 <style>
-.logo-gris {
-	filter: invert(94%) sepia(100%) saturate(24%) hue-rotate(248deg)
-		brightness(104%) contrast(100%);
-}
+
 
 li {
 	display: inline;
@@ -72,6 +69,10 @@ a:hover {
 	/* background-color: none !important ; */
 }
 
+.bg-search{
+background-color:#e76f51;
+}
+
 .btn-jinyan {
 	background-color: rgb(121, 165, 184);
 	transition: all 0.3s;
@@ -91,7 +92,7 @@ a:hover {
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
+	<nav class="navbar navbar-expand-lg  bg-dark my-navbar">
 		<div class="container ">
 
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
@@ -141,7 +142,7 @@ a:hover {
 		<!-- Heading Row-->
 
 		<!-- Call to Action-->
-		<div class="card text-white bg-secondary my-5  text-center">
+		<div class="card text-white bg-search my-5  text-center">
 
 			<div class="row g-7 align-items-center mx-2 ">
 				<div class="col-12 col-md-3 py-2">
