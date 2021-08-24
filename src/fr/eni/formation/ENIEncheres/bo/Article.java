@@ -20,6 +20,9 @@ public class Article {
 
 	public Article() {
 		// TODO Auto-generated constructor stub
+		vendeur = new Utilisateur();
+		acheteur = new Utilisateur();
+		categorieArticle = new Categorie();
 	}
 
 	public Article(String nomArticle, String description, LocalDateTime dateDebutEncheres,

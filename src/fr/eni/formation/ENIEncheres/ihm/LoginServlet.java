@@ -2,6 +2,7 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -70,13 +71,23 @@ public class LoginServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if (existe) {
-			HttpSession session = request.getSession();
-			request.getSession().setAttribute("NoUtilisateur", request.getParameter(""));
-			session.setAttribute("NoUtilisateur", model.getUtilisateur());
-			System.out.println("je passe par là");
 			nextPage = "/WEB-INF/accueilConnecte.jsp";
 		} else {
 			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
+		}
+		List<Utilisateur> lstUtilisateur;
+		try {
+			lstUtilisateur = manager.getAllUtilisateurs();
+			for (Utilisateur util : lstUtilisateur) {
+				if (util.getPseudo().equals(request.getSession().getAttribute("nom"))) {
+					HttpSession session = request.getSession();
+						session.setAttribute("NoUtilisateur", util.getNoUtilisateur());
+						System.out.println(util.getNoUtilisateur());
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 		if (request.getParameter("s'inscrire") != null) {

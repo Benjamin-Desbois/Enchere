@@ -50,17 +50,13 @@ public class VenteArticleServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nextPage = "/WEB-INF/venteArticle.jsp";
+		String nextPage = "/WEB-INF/ventearticle.jsp";
 		ArticleModel model = null;
 		RetraitModel retraitModel = null;
-		CategorieModel categorieModel = null;
-		UtilisateurModel utilisateurModel = null;
 		//boolean valide = true;
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
 			retraitModel = new RetraitModel(new Retrait(), retraitManager.getAllRetraits());
-			categorieModel = new CategorieModel(new Categorie(), categorieManager.getAllCategories());
-			utilisateurModel = new UtilisateurModel(new Utilisateur(), Utilisateurmanager.getAllUtilisateurs());
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -72,13 +68,21 @@ public class VenteArticleServlet extends HttpServlet {
 			model.getArticle().setDateDebutEncheres(LocalDateTime.parse(request.getParameter("dateDebut")));
 			model.getArticle().setDateFinEncheres(LocalDateTime.parse(request.getParameter("dateFin")));
 			model.getArticle().setMiseAPrix(Integer.parseInt(request.getParameter("prix")));
-			categorieModel.getCategorie().setLibelle(request.getParameter("categorie"));
 			retraitModel.getRetrait().setRue(request.getParameter("adresse"));
 			retraitModel.getRetrait().setCode_postal(request.getParameter("codePostal"));
 			retraitModel.getRetrait().setVille(request.getParameter("ville"));
-			utilisateurModel.getUtilisateur().setNoUtilisateur(Integer.parseInt((String) session.getAttribute("NoUtilisateur")));
+			model.getArticle().getVendeur().setNoUtilisateur((Integer) session.getAttribute(("NoUtilisateur")));
+			switch (request.getParameter("categorie")) {
+			case "Mobilier" : model.getArticle().getCategorieArticle().setNoCategorie(1);break;
+			case "Vehicule" : model.getArticle().getCategorieArticle().setNoCategorie(2);break;
+			case "Electronique" : model.getArticle().getCategorieArticle().setNoCategorie(3);break;
+			default : System.out.println("Sélectionnez une catégorie");
+			}
 
-			nextPage = "/WEB-INF/accueil.jsp";
+			
+			
+
+			nextPage = "/WEB-INF/accueilConnecte.jsp";
 			try {
 				model.setLstArticles(manager.getAllArticles());
 				manager.addArticles(model.getArticle());

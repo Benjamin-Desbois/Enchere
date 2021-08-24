@@ -53,7 +53,7 @@ public class InscriptionServlet extends HttpServlet {
 			model.getUtilisateur().setEmail(request.getParameter("email"));
 			model.getUtilisateur().setTelephone(request.getParameter("telephone"));
 			model.getUtilisateur().setRue(request.getParameter("rue"));
-			model.getUtilisateur().setCodePostal(request.getParameter("codePostal"));
+			model.getUtilisateur().setCodePostal(request.getParameter("codepostal"));
 			model.getUtilisateur().setVille(request.getParameter("ville"));
 			model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
@@ -77,10 +77,11 @@ public class InscriptionServlet extends HttpServlet {
 						try {
 							model.setLstUtilisateurs(manager.getAllUtilisateurs());
 							HttpSession session = request.getSession();
-							request.getSession().setAttribute("NoUtilisateur", request.getParameter(""));
 							session.setAttribute("NoUtilisateur", model.getUtilisateur());
+							session.setAttribute("nom", request.getParameter("nom"));
+							session.setAttribute("password", request.getParameter("password"));
 							System.out.println("je passe aussi par là ");
-							nextPage = "/WEB-INF/accueil.jsp";
+							nextPage = "/WEB-INF/accueilConnecte.jsp";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
