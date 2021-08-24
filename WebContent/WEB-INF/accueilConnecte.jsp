@@ -142,7 +142,7 @@ background-color:#e76f51;
 
 			<div class="row g-7 align-items-center mx-2 ">
 				<div class="col-12 col-md-3 py-2">
-					<label for="inputPassword6" class="col-form-label">Recherche</label>
+					<label for="inputPassword6" class="col-form-label"><b>Recherche</b></label>
 				</div>
 				<div class="col-12 col-md-3 py-2">
 					<input name="s" class="form-control" aria-describedby="Recherche"
