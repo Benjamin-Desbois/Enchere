@@ -31,7 +31,7 @@
 
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container mt-3">
 		<div class="card card-container d-flex justify-content-center ">
 			<h1 class="text-center my-3">Nouvelle Vente</h1>
 			<!-- Call to Action-->
@@ -131,7 +131,7 @@
 	</div>
 	<!-- /container -->
 		<!-- Footer-->
-	<footer class="py-5  my-navbar mt-5">
+	<footer class="py-5  my-navbar mt-2">
 		<div class="container  ">
 
 			<p class="m-0  text-white text-center ">

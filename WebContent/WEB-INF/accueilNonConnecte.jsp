@@ -334,7 +334,7 @@ background-color:transparent;
 		<!-- row -->
 	</div>
 	<!-- Footer-->
-	<footer class="py-5 bg-dark  my-navbar mt-5">
+	<footer class="py-5 bg-dark  my-navbar mt-2">
 		<div class="container  ">
 
 			<p class="m-0  text-white text-center ">

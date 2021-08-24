@@ -91,14 +91,12 @@ background-color:#e76f51;
 </style>
 </head>
 <body>
-
-	<nav class="navbar navbar-expand-lg  bg-dark my-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
 		<div class="container ">
-
+        
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
-			<a class="navbar-brand" href="AccueilServlet"> <img
-				class="logo-gris me-3" src="./images/auction.png" width="50">
-				ENI Enchère
+			<a class="navbar-brand" href="AccueilServlet"> <img class="logo-gris me-3"
+				src="./images/auction.png" width="50"> ENI Enchère
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -108,7 +106,6 @@ background-color:#e76f51;
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
 
 					<c:choose>
 						<c:when test="${nom == null}">
@@ -124,7 +121,6 @@ background-color:#e76f51;
 							<li class="nav-item"><a href="deconnect">Déconnexion</a></li>
 						</c:otherwise>
 					</c:choose>
-
 				</ul>
 				<!--
     <form class="d-flex">
@@ -250,7 +246,7 @@ background-color:#e76f51;
 				</div>
 			</div>
 			<!--   A supprimer -->
-			<div class="col-md-6 col-lg-4  mb-5">
+			<div class="col-md-6 col-lg-4  mb-3">
 				<div class="card h-100">
 					<div class="card-header">
 						Prix : <b>210</b> points
@@ -324,7 +320,7 @@ background-color:#e76f51;
 		<!-- row -->
 	</div>
 	<!-- Footer-->
-	<footer class="py-5  my-navbar mt-5">
+	<footer class="py-5  my-navbar mt-2">
 		<div class="container  ">
 
 			<p class="m-0  text-white text-center ">
