@@ -68,6 +68,7 @@ public class VenteArticleServlet extends HttpServlet {
 			case "Mobilier" : model.getArticle().getCategorieArticle().setNoCategorie(1);break;
 			case "Vehicule" : model.getArticle().getCategorieArticle().setNoCategorie(2);break;
 			case "Electronique" : model.getArticle().getCategorieArticle().setNoCategorie(3);break;
+			case "Autre" : model.getArticle().getCategorieArticle().setNoCategorie(4);break;
 			default : System.out.println("Sélectionnez une catégorie");
 			}
 
