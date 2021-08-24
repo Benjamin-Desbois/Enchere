@@ -80,7 +80,7 @@
 	</div>
 	<!-- /container -->
 	<!-- Footer-->
-	<footer class="py-5  my-navbar mt-5">
+	<footer class="py-5  my-navbar mt-3">
 		<div class="container  ">
 
 			<p class="m-0  text-white text-center ">
