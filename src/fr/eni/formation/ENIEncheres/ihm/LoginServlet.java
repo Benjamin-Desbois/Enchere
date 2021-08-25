@@ -46,9 +46,10 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nextPage = "/WEB-INF/logIn.jsp";
+		String nextPage = "LoginServlet";
 		UtilisateurModel model = null;
 		boolean existe = true;
+		boolean isForward = false;
 
 		try {
 			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
@@ -67,9 +68,10 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("password", request.getParameter("password"));
 			if ("".equals(request.getParameter("password"))) {
 				request.setAttribute("message", "Veuillez indiquer un mot de passe");
+				isForward = true;
 			}
 			if (request.getParameter("password") == null) {
-				nextPage = "/WEB-INF/logIn.jsp";
+				nextPage = "LoginServlet";
 			}
 		}
 		model.getUtilisateur().setPseudo(request.getParameter("nom"));
@@ -80,12 +82,14 @@ public class LoginServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		nextPage = "LoginServlet";
 		if (existe) {
 			nextPage = "AccueilServlet";
 		} else {
-			if (request.getParameter("nom") != null){
-			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");}
+			if (request.getParameter("nom") != null) {
+				request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
+				isForward = true;
+			}
 		}
 		List<Utilisateur> lstUtilisateur;
 		try {
@@ -93,7 +97,7 @@ public class LoginServlet extends HttpServlet {
 			for (Utilisateur util : lstUtilisateur) {
 				if (util.getPseudo().equals(request.getSession().getAttribute("nom"))) {
 					HttpSession session = request.getSession();
-						session.setAttribute("NoUtilisateur", util.getNoUtilisateur());
+					session.setAttribute("NoUtilisateur", util.getNoUtilisateur());
 				}
 			}
 		} catch (SQLException e) {
@@ -104,7 +108,11 @@ public class LoginServlet extends HttpServlet {
 		if (request.getParameter("s'inscrire") != null) {
 			nextPage = "InscriptionServlet";
 		}
-		response.sendRedirect(nextPage);
+		if (isForward) {
+			request.getRequestDispatcher("WEB-INF/logIn.jsp").forward(request, response);
+		} else {
+			response.sendRedirect(nextPage);
+		}
 	}
 
 }

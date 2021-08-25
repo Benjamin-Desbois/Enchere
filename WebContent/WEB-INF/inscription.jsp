@@ -311,7 +311,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="motdepasse" id="inputMotDePasse"
+										<input type="password" name="motdepasse" id="inputMotDePasse"
 											class="form-control" placeholder="******" required autofocus />
 									</div>
 
@@ -338,7 +338,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="confirmation" id="inputConfirmation"
+										<input type="password" name="confirmation" id="inputConfirmation"
 											class="form-control" placeholder="******" required autofocus />
 									</div>
 

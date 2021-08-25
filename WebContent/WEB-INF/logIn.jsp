@@ -70,7 +70,7 @@
 			</form>
 
 				
-				<a href="InscriptionServlet">Créer un compte</a>
+				<a href="InscriptionServlet">Créer un compte </a>
 			
 			${message}
 		</div>
