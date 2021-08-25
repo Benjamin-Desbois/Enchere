@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import fr.eni.formation.ENIEncheres.bo.Article;
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurFact;
@@ -84,5 +85,17 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
 		return alpha;
 
+	}
+
+	@Override
+	public Utilisateur getSelectById(int id) throws SQLException {
+		Utilisateur utilisateur = new Utilisateur();
+		List<Utilisateur> lstUtilisateur = dao.getAll();
+		for (Utilisateur user : lstUtilisateur) {
+			if (id == user.getNoUtilisateur()) {
+				utilisateur = user;
+			}
+		}
+		return utilisateur;
 	}
 }

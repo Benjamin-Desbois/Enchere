@@ -13,4 +13,6 @@ public interface UtilisateurManager {
 	public boolean isExist(Utilisateur utilisateur) throws SQLException;
 
 	public boolean isAlphanumeric(String pseudo);
+
+	public Utilisateur getSelectById(int id) throws SQLException;
 }

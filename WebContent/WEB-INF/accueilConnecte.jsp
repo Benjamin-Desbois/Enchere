@@ -108,7 +108,7 @@ background-color:#e76f51;
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
 					<c:choose>
-						<c:when test="${nom == null}">
+						<c:when test="${NoUtilisateur == null}">
 							<li class="nav-item"><a href="LoginServlet">Se connecter</a></li>
 							<li class="nav-item"><a href="InscriptionServlet">S'enregistrer</a></li>
 
