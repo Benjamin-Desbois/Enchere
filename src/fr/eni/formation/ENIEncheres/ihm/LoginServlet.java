@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		if ("".equals(request.getParameter("nom"))) {
-			request.setAttribute("message", "le nom ne peux pas ï¿½tre vide");
+			request.setAttribute("message", "le nom ne peux pas être vide");
 			if ("".equals(request.getParameter("password"))) {
 				request.setAttribute("message", "Veuillez indiquer un nom d'utilisateur et un mot de passe");
 			}
