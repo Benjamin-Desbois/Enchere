@@ -22,43 +22,64 @@ import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 public class MonProfilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtilisateurManager manager = UtilisateurManagerSingl.getInstance();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MonProfilServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	public MonProfilServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		UtilisateurModel model = null;
+		
 		HttpSession session = request.getSession();
-		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/afficherMonProfil.jsp").forward(request, response);
-		
+
 		try {
 			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
-			if (request.getParameter("nom") != null) {
-				model.getUtilisateur().setNoUtilisateur((Integer)session.getAttribute(("NoUtilisateur")));
-				
-			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		try {
+			model.getUtilisateur().setPseudo(manager.getSelectById((Integer) session.getAttribute("NoUtilisateur")).getPseudo());
+			request.setAttribute("pseudo",model.getUtilisateur().getPseudo());
+			System.out.println(model.getUtilisateur().getPseudo());
+			request.setAttribute("nom",model.getUtilisateur().getNom());
+			System.out.println(model.getUtilisateur().getNom());
+			request.setAttribute("prenom",model.getUtilisateur().getPrenom());
+			request.setAttribute("email",model.getUtilisateur().getEmail());
+			request.setAttribute("telephone",model.getUtilisateur().getTelephone());
+			request.setAttribute("rue",model.getUtilisateur().getRue());
+			System.out.println(model.getUtilisateur().getRue());
+			request.setAttribute("codepostal",model.getUtilisateur().getCodePostal());
+			request.setAttribute("ville",model.getUtilisateur().getVille());
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherMonProfil.jsp");
 		rd.forward(request, response);
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

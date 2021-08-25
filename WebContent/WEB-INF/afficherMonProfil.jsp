@@ -65,7 +65,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${utilisateur.pseudo}</p>
+										<p>${pseudo}</p>
 									</div>
 
 								</div>
@@ -91,7 +91,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${utilisateur.nom}</p>
+										<p>${nom}</p>
 									</div>
 
 								</div>
@@ -125,7 +125,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.prenom}</p>
+										<p>${prenom}</p>
 									</div>
 
 								</div>
@@ -151,7 +151,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.email}</p>
+										<p>${email}</p>
 									</div>
 
 								</div>
@@ -184,7 +184,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.telephone}</p>
+										<p>${telephone}</p>
 									</div>
 
 								</div>
@@ -210,7 +210,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.rue}</p>
+										<p>${rue}</p>
 									</div>
 
 								</div>
@@ -243,7 +243,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.codepostal}</p>
+										<p>${codepostal}</p>
 									</div>
 
 								</div>
@@ -269,7 +269,7 @@
 									</div>
 
 									<div class="col-7">
-										<p>${model.utilisateur.ville}</p>
+										<p>${ville}</p>
 									</div>
 
 								</div>
