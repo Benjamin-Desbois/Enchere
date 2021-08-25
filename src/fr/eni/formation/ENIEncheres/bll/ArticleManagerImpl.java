@@ -32,9 +32,8 @@ public class ArticleManagerImpl implements ArticleManager {
 		Article article = new Article();
 		Random rdm = new Random();
 		int min = 3;
-		int max = 9;
+		int max = 12;
 		int aleatoire = rdm.nextInt(max - min) + min;
-		System.out.println(aleatoire);
 		List<Article> lstArticles = dao.getAll();
 		for (Article art : lstArticles) {
 			if (aleatoire == art.getNoArticle()) {
