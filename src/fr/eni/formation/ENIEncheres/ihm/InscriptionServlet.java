@@ -36,6 +36,19 @@ public class InscriptionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		String nextPage = "/WEB-INF/inscription.jsp";
+
+		request.getRequestDispatcher(nextPage).forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String nextPage = "/WEB-INF/inscription.jsp";
 		UtilisateurModel model = null;
 		boolean valide = true;
@@ -57,7 +70,6 @@ public class InscriptionServlet extends HttpServlet {
 			model.getUtilisateur().setVille(request.getParameter("ville"));
 			model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
-			
 			if (manager.isAlphanumeric(request.getParameter("pseudo"))) {
 				request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
 
@@ -78,8 +90,8 @@ public class InscriptionServlet extends HttpServlet {
 							model.setLstUtilisateurs(manager.getAllUtilisateurs());
 							HttpSession session = request.getSession();
 							session.setAttribute("NoUtilisateur", model.getUtilisateur());
-							System.out.println("je passe aussi par là ");
-							nextPage = "/WEB-INF/accueilConnecte.jsp";
+							System.out.println(session.getAttribute("NoUtilisateur"));
+							nextPage = "AccueilServlet";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -90,17 +102,7 @@ public class InscriptionServlet extends HttpServlet {
 
 		}
 		request.setAttribute("model", model);
-		request.getRequestDispatcher(nextPage).forward(request, response);
-
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
+		response.sendRedirect(nextPage);
 	}
 
 }

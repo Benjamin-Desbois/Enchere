@@ -68,10 +68,10 @@
 					</div>
 				</div>
 			</form>
-			<form action="InscriptionServlet" method="post"
-				class="d-flex justify-content-center">
-				<button type="submit" class="btn btn-signin">Créer un compte</button>
-			</form>
+
+				
+				<a href="InscriptionServlet">Créer un compte</a>
+			
 			${message}
 		</div>
 		<!-- /card-container -->

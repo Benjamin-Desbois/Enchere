@@ -21,19 +21,21 @@ import fr.eni.formation.ENIEncheres.bo.Article;
 public class ListeEnchereConnecte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ArticleManager manager = ArticleManagerSingl.getInstance();
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ListeEnchereConnecte() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ListeEnchereConnecte() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 		ArticleModel model = null;
 		ArticleModel deuxiemeModel = null;
@@ -46,7 +48,6 @@ public class ListeEnchereConnecte extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 		try {
 			Article premierArticle = manager.getRandomArticle();
@@ -55,9 +56,11 @@ public class ListeEnchereConnecte extends HttpServlet {
 			while (premierArticle.getNoArticle() == deuxiemeArticle.getNoArticle()) {
 				deuxiemeArticle = manager.getRandomArticle();
 			}
-			while (premierArticle.getNoArticle() == troisiemeArticle.getNoArticle() || troisiemeArticle.getNoArticle() == deuxiemeArticle.getNoArticle()) {
+			while (premierArticle.getNoArticle() == troisiemeArticle.getNoArticle()
+					|| troisiemeArticle.getNoArticle() == deuxiemeArticle.getNoArticle()) {
 				troisiemeArticle = manager.getRandomArticle();
 			}
+
 			model.getArticle().setNomArticle(premierArticle.getNomArticle());
 			model.getArticle().setDateFinEncheres(premierArticle.getDateFinEncheres());
 			model.getArticle().setMiseAPrix(premierArticle.getMiseAPrix());
@@ -86,27 +89,16 @@ public class ListeEnchereConnecte extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		HttpSession session = request.getSession(true);
-
-		
-
-		if(session.getAttribute("NoUtilisateur") == null ){  
-
-            this.getServletContext().getRequestDispatcher("/AccueilServlet").forward(request, response);
-        }
-		
-		if (request.getParameter("profil") != null) {
-			nextPage = "/WEB-INF/afficherMonProfil.jsp";
-			
-		}
 
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

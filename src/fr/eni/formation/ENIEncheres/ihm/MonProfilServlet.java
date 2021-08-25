@@ -50,7 +50,7 @@ public class MonProfilServlet extends HttpServlet {
 		}
 
 		try {
-			model.getUtilisateur().setPseudo(manager.getSelectById((Integer) session.getAttribute("NoUtilisateur")).getPseudo());
+			model.setUtilisateur(manager.getSelectById((Integer) session.getAttribute("NoUtilisateur")));
 			request.setAttribute("pseudo",model.getUtilisateur().getPseudo());
 			System.out.println(model.getUtilisateur().getPseudo());
 			request.setAttribute("nom",model.getUtilisateur().getNom());

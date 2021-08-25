@@ -37,6 +37,16 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nextPage = "/WEB-INF/logIn.jsp";
+		request.getRequestDispatcher(nextPage).forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nextPage = "/WEB-INF/logIn.jsp";
 		UtilisateurModel model = null;
 		boolean existe = true;
 
@@ -70,10 +80,12 @@ public class LoginServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		if (existe) {
-			nextPage = "/WEB-INF/accueilConnecte.jsp";
+			nextPage = "AccueilServlet";
 		} else {
-			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");
+			if (request.getParameter("nom") != null){
+			request.setAttribute("message", "L'association du pseudo et du mot de passe n'existe pas");}
 		}
 		List<Utilisateur> lstUtilisateur;
 		try {
@@ -90,20 +102,9 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		if (request.getParameter("s'inscrire") != null) {
-			nextPage = "/WEB-INF/inscription.jsp";
+			nextPage = "InscriptionServlet";
 		}
-
-		request.getRequestDispatcher(nextPage).forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.sendRedirect(nextPage);
 	}
 
 }
