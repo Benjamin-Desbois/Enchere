@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fr.eni.formation.ENIEncheres.bo.Article;
 import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 import fr.eni.formation.ENIEncheres.dal.UtilisateurFact;
@@ -97,5 +96,36 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 			}
 		}
 		return utilisateur;
+	}
+
+	@Override
+	public void updateUtilisateur(Utilisateur utilisateur) throws BLLException {
+		Boolean valide = true;
+		try {
+			List<Utilisateur> lstUtilisateur = dao.getAll();
+
+			for (Utilisateur util : lstUtilisateur) {
+				if (util.getPseudo().equals(utilisateur.getPseudo())) {
+					valide = false;
+					throw new BLLException("Le pseudo est déjà attribué");
+				}
+				if (util.getEmail().equals(utilisateur.getEmail())) {
+					valide = false;
+					throw new BLLException("Cette adresse mail est déjà utilisée");
+				}
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+		try {
+			if (valide) {
+				dao.update(utilisateur);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

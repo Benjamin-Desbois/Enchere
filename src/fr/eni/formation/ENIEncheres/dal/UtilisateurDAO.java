@@ -9,6 +9,8 @@ public interface UtilisateurDAO {
 
 	public void insert(Utilisateur utilisateur) throws SQLException;
 	
+	public void update (Utilisateur utilisateur) throws SQLException;
+	
 	public List<Utilisateur> getAll() throws SQLException;
 	
 	

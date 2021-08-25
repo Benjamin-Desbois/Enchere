@@ -64,7 +64,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="pseudo" id="inputPseudo"
+										<input type="text" name="pseudo" id="inputPseudo" value = "${model.pseudo}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -91,7 +91,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="nom" id="inputNom"
+										<input type="text" name="nom" id="inputNom" value = "${model.utilisateur.nom}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -126,7 +126,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="prenom" id="inputPrenom"
+										<input type="text" name="prenom" id="inputPrenom" value ="${model.utilisateur.prenom}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -153,7 +153,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="email" name="email" id="inputEmail"
+										<input type="email" name="email" id="inputEmail" value ="${model.utilisateur.email}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -188,7 +188,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="number" name="telephone" id="inputPseudo"
+										<input type="number" name="telephone" id="inputPseudo" value = "${model.utilisateur.telephone}"
 											class="form-control" placeholder="06********" required
 											autofocus />
 									</div>
@@ -216,7 +216,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="rue" id="inputRue"
+										<input type="text" name="rue" id="inputRue" value = "${model.utilisateur.rue}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -250,7 +250,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="number" name="codepostal" id="inputCodePostal"
+										<input type="number" name="codepostal" id="inputCodePostal" value = "${model.utilisateur.codepostal}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -277,7 +277,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="ville" id="inputVille"
+										<input type="text" name="ville" id="inputVille" value = "${model.utilisateur.ville}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -324,7 +324,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="motdepasse" id="inputMotDePasse"
+										<input type="text" name="motdepasse" id="inputMotDePasse" value = "${model.utilisateur.motdepasse}"
 											class="form-control" placeholder="******" required autofocus />
 									</div>
 
@@ -351,7 +351,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="confirmation" id="inputConfirmation"
+										<input type="text" name="confirmation" id="inputConfirmation" value = "${model.utilisateur.motdepasse}"
 											class="form-control" placeholder="******" required autofocus />
 									</div>
 
@@ -372,9 +372,9 @@
 					<!--bigger container open -->
 					<div class="row">
 						<div class="col-6 ">
-						<a href="">
-							<button type="button" class="btn btn-success">Enregistrer</button>
-							</a>
+						<a href="MonProfilServlet">
+					<button type="button" class="btn btn-info text-center">Enregistrer</button>
+				</a>
 						</div>
 						<div class="col-6 ">
 						<a href="">
