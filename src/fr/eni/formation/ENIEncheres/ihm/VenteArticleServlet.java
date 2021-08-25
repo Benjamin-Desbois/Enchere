@@ -43,9 +43,19 @@ public class VenteArticleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nextPage = "/WEB-INF/ventearticle.jsp";
+		request.getRequestDispatcher(nextPage).forward(request, response);
+		/**
+		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+		 *      response)
+		 */
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nextPage = "/WEB-INF/ventearticle.jsp";
 		ArticleModel model = null;
 		RetraitModel retraitModel = null;
-		//boolean valide = true;
+		boolean isForward = false;
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
 			retraitModel = new RetraitModel(new Retrait(), retraitManager.getAllRetraits());
@@ -65,40 +75,40 @@ public class VenteArticleServlet extends HttpServlet {
 			retraitModel.getRetrait().setVille(request.getParameter("ville"));
 			model.getArticle().getVendeur().setNoUtilisateur((Integer) session.getAttribute(("NoUtilisateur")));
 			switch (request.getParameter("categorie")) {
-			case "Mobilier" : model.getArticle().getCategorieArticle().setNoCategorie(1);break;
-			case "Vehicule" : model.getArticle().getCategorieArticle().setNoCategorie(2);break;
-			case "Electronique" : model.getArticle().getCategorieArticle().setNoCategorie(3);break;
-			case "Autre" : model.getArticle().getCategorieArticle().setNoCategorie(4);break;
-			default : System.out.println("Sélectionnez une catégorie");
+			case "Mobilier":
+				model.getArticle().getCategorieArticle().setNoCategorie(1);
+				break;
+			case "Vehicule":
+				model.getArticle().getCategorieArticle().setNoCategorie(2);
+				break;
+			case "Electronique":
+				model.getArticle().getCategorieArticle().setNoCategorie(3);
+				break;
+			case "Autre":
+				model.getArticle().getCategorieArticle().setNoCategorie(4);
+				break;
+			default:
+				System.out.println("Sélectionnez une catégorie");
+				isForward = true;
+
 			}
 
-			
-			
-
-			nextPage = "/WEB-INF/accueilConnecte.jsp";
+			nextPage = "AccueilServlet";
 			try {
-				//Futures contraintes
+				// Futures contraintes
 				model.setLstArticles(manager.getAllArticles());
-				//Ajout dans la BDD
+				// Ajout dans la BDD
 				manager.addArticles(model.getArticle());
 				System.out.println("Ajout réussi (j'espère)");
 			} catch (SQLException | BLLException e) {
 				e.printStackTrace();
 			}
 		}
-
-		request.setAttribute("model", model);
-		request.getRequestDispatcher(nextPage).forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		if (isForward) {
+			request.getRequestDispatcher("WEB-INF/ventearticle.jsp").forward(request, response);
+		} else {
+			response.sendRedirect(nextPage);
+		}
 	}
 
 }

@@ -52,6 +52,7 @@ public class InscriptionServlet extends HttpServlet {
 		String nextPage = "InscriptionServlet";
 		UtilisateurModel model = null;
 		boolean valide = true;
+		boolean isForward = false;
 		try {
 			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
 		} catch (SQLException e) {
@@ -72,16 +73,19 @@ public class InscriptionServlet extends HttpServlet {
 
 			if (manager.isAlphanumeric(request.getParameter("pseudo"))) {
 				request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");
+				isForward = true;
 
 			} else {
 				if (request.getParameter("pseudo") == null) {
 					request.setAttribute("message", "Veuillez remplir tous les champs");
+					isForward = true;
 				} else {
 					try {
 						manager.addUtilisateur(model.getUtilisateur());
 					} catch (BLLException e) {
 						request.setAttribute("message", e.getMessage());
 						System.out.println("pas créé");
+						isForward = true;
 						valide = false;
 
 					}
@@ -102,7 +106,11 @@ public class InscriptionServlet extends HttpServlet {
 
 		}
 		request.setAttribute("model", model);
-		response.sendRedirect(nextPage);
+		if (isForward) {
+			request.getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
+		} else {
+			response.sendRedirect(nextPage);
+		}
 	}
 
 }
