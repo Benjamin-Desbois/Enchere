@@ -44,4 +44,17 @@ public class ArticleManagerImpl implements ArticleManager {
 
 	}
 
+	public Article getArticleById(int id) throws SQLException {
+		Article article = new Article();
+		List<Article> lstArticles = dao.getAll();
+		for (Article art : lstArticles) {
+			if (id == art.getNoArticle()) {
+				article = art;
+			}
+
+		}
+		return article;
+
+	}
+
 }
