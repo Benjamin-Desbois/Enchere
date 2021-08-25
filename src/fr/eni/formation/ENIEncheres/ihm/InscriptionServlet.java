@@ -49,7 +49,7 @@ public class InscriptionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String nextPage = "/WEB-INF/inscription.jsp";
+		String nextPage = "InscriptionServlet";
 		UtilisateurModel model = null;
 		boolean valide = true;
 		try {
@@ -89,7 +89,7 @@ public class InscriptionServlet extends HttpServlet {
 						try {
 							model.setLstUtilisateurs(manager.getAllUtilisateurs());
 							HttpSession session = request.getSession();
-							session.setAttribute("NoUtilisateur", model.getUtilisateur());
+							session.setAttribute("NoUtilisateur", model.getUtilisateur().getNoUtilisateur());
 							System.out.println(session.getAttribute("NoUtilisateur"));
 							nextPage = "AccueilServlet";
 						} catch (SQLException e) {

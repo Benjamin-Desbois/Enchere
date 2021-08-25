@@ -21,5 +21,11 @@ public class UtilisateurDAOMock implements UtilisateurDAO {
 		return null;
 	}
 
+	@Override
+	public void update(Utilisateur utilisateur) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

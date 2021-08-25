@@ -15,6 +15,7 @@ import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTALL = "SELECT * FROM UTILISATEURS";
+	private final String UPDATE = "UPDATE UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) VALUES (?,?,?,?,?,?,?,?,?)";
 
 	@Override
 	public void insert(Utilisateur utilisateur) throws SQLException {
@@ -67,6 +68,12 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		}
 
 		return result;
+	}
+
+	@Override
+	public void update(Utilisateur utilisateur) throws SQLException {
+		// TODO Auto-generated method stub
+		
 	}
 
 

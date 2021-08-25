@@ -7,6 +7,8 @@ import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
 public interface UtilisateurManager {
 	public void addUtilisateur(Utilisateur utilisateur) throws BLLException;
+	
+	public void updateUtilisateur(Utilisateur utilisateur) throws BLLException;
 
 	public List<Utilisateur> getAllUtilisateurs() throws SQLException;
 

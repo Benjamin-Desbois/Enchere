@@ -98,4 +98,10 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 		}
 		return utilisateur;
 	}
+
+	@Override
+	public void updateUtilisateur(Utilisateur utilisateur) throws BLLException {
+		// TODO Auto-generated method stub
+		
+	}
 }
