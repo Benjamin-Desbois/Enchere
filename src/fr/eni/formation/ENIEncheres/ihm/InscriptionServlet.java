@@ -89,7 +89,7 @@ public class InscriptionServlet extends HttpServlet {
 						try {
 							model.setLstUtilisateurs(manager.getAllUtilisateurs());
 							HttpSession session = request.getSession();
-							session.setAttribute("NoUtilisateur", model.getUtilisateur());
+							session.setAttribute("NoUtilisateur", model.getUtilisateur().getNoUtilisateur());
 							System.out.println(session.getAttribute("NoUtilisateur"));
 							nextPage = "AccueilServlet";
 						} catch (SQLException e) {

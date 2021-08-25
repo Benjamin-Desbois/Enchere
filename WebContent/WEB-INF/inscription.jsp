@@ -357,24 +357,23 @@
 
 				<div class="container mt-3 d-flex justify-content-between">
 					<!--bigger container open -->
-					
-						
-
-								<button type="submit" class="btn btn-success">Créer</button>
-
-						
-						
 
 
-								<a href="AccueilServlet">Annuler</a>
+					<div>
+						<button type="submit" class="btn btn-success">Créer</button>
+					</div>
 
-						
-			
+
+
+					<div>
+						<a href="AccueilServlet"><button type="submit"
+								class="btn btn-danger">Annuler</button></a>
+					</div>
+
+
 				</div>
-			
-		
-</div>
 		</div>
+	</div>
 
 	<!-- /card-container -->
 

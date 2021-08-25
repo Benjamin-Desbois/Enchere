@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nextPage = "/WEB-INF/logIn.jsp";
+		String nextPage = "LoginServlet";
 		UtilisateurModel model = null;
 		boolean existe = true;
 
