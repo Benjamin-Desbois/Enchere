@@ -54,8 +54,7 @@
 				</div>
 				<div class="groupeFormulaire row mt-3">
 					<div class="col-5 d-flex justify-content-center">
-						<input class="btn btn-lg btn-primary btn-block btn-signin"
-							type="submit" value="Connexion" class="bouton text-center" />
+						<button type="submit" class="btn btn-signin">Connexion</button>
 					</div>
 					<div class="col-7 divColumn ">
 						<div>
@@ -71,8 +70,7 @@
 			</form>
 			<form action="InscriptionServlet" method="post"
 				class="d-flex justify-content-center">
-				<input type="submit" value="Créer un compte"
-					class="btn btn-lg btn-primary btn-block btn-signin bouton" />
+				<button type="submit" class="btn btn-signin">Créer un compte</button>
 			</form>
 			${message}
 		</div>

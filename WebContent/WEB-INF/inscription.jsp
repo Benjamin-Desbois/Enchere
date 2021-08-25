@@ -307,7 +307,7 @@
 								<div class="groupeFormulaire row">
 
 									<div class="col-5">
-										<label>Mot de passe :</label>
+										<label class="text-nowrap">Mot de passe :</label>
 									</div>
 
 									<div class="col-7">
@@ -334,7 +334,7 @@
 								<div class="groupeFormulaire row">
 
 									<div class="col-5">
-										<label>Confirmation :</label>
+										<label class="text-nowrap">Confirmation :</label>
 									</div>
 
 									<div class="col-7">

@@ -66,7 +66,7 @@
 					<div class="col-md-6 col-sm-12">
 						​
 						<picture>
-						<source srcset="./images/auction3.jpg" type="image/svg+xml">
+						<source srcset="./images/switch.jpg" type="image/svg+xml">
 						<img src="..." class="img-fluid img-thumbnail" alt="..."> </picture>
 					</div>
 					<div class="col-md-6 col-sm-12">
