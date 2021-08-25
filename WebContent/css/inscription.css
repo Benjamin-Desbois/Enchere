@@ -28,14 +28,7 @@ a:hover {
 input{
 	width:100%;
 }
-.btn {
-  font-weight: 700;
-  height: 36px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
-}
+
  .my-navbar {
 	background-color: transparent !important;
 	/* background-color: none !important ; */

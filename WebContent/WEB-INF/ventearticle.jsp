@@ -24,7 +24,7 @@
 		<div class="container ">
 
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
-			<a class="navbar-brand" href="AccueilServlet"> <img
+			<a class="navbar-brand" href="ListeEnchereConnecte"> <img
 				class="logo-gris me-3" src="./images/auction.png" width="50">
 				ENI Enchères
 			</a>
