@@ -69,9 +69,11 @@
 				</div>
 			</form>
 
+
 				<div class="d-flex justify-content-center">
 				<a href="InscriptionServlet"><button type="submit" class="btn btn-signin">Créer un compte</button></a>
 			</div>
+
 			${message}
 		</div>
 		<!-- /card-container -->
