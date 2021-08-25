@@ -211,17 +211,17 @@ background-color:#e76f51;
 		<div class="row gx-4 gx-lg-5">
 
 			<!--   1 cards-->
-			<C:forEach items="${model. }" var="">
+			<C:forEach items="${model.lstArticles}" var="article">
 			<div class="col-md-6 col-lg-4  mb-5">
 				<div class="card h-100">
 					<div class="card-header">
-						Prix : <b>${prix1}</b> points
+						Prix : <b>${article.prix1}</b> points
 					</div>
 					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title">${nomarticle1}</h5>
+						<h5 class="card-title">${article.nomarticle1}</h5>
 							
 							
 							<!--  
@@ -235,11 +235,11 @@ background-color:#e76f51;
 							class="fas fa-star"></i> <i class="far fa-star"></i> <i
 							class="far fa-star"></i> <i class="far fa-star"></i></li>
 						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>${datefin1}</b></span></li>
+							class="ms-5"><b>${article.datefin1}</b></span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
 							12 rue de la Poste 44100 Nantes</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">${nomutilisateur1}</a></li>
+							<a href="#">${article.nomutilisateur1}</a></li>
 					</ul>
 					<div class="card-footer">
 						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
