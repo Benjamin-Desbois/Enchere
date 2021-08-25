@@ -211,6 +211,7 @@ background-color:#e76f51;
 		<div class="row gx-4 gx-lg-5">
 
 			<!--   1 cards-->
+			<C:forEach items="${model. }" var="">
 			<div class="col-md-6 col-lg-4  mb-5">
 				<div class="card h-100">
 					<div class="card-header">
@@ -245,6 +246,7 @@ background-color:#e76f51;
 					</div>
 				</div>
 			</div>
+			</C:forEach>
 			<!--   A supprimer -->
 			<div class="col-md-6 col-lg-4  mb-3">
 				<div class="card h-100">
