@@ -70,10 +70,9 @@ public class MonProfilServlet extends HttpServlet {
 
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/afficherMonProfil.jsp");
-		rd.forward(request, response);
+		rd.forward(request, response);}
 
-	}
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)

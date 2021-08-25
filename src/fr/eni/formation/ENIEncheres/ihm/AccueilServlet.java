@@ -2,6 +2,7 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,53 +39,38 @@ public class AccueilServlet extends HttpServlet {
 
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 		ArticleModel model = null;
-		ArticleModel deuxiemeModel = null;
-		ArticleModel troisiemeModel = null;
+		Integer i=1;
+	
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
-			deuxiemeModel = new ArticleModel(new Article(), manager.getAllArticles());
-			troisiemeModel = new ArticleModel(new Article(), manager.getAllArticles());
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
-			Article premierArticle = manager.getRandomArticle();
-			Article deuxiemeArticle = manager.getRandomArticle();
-			Article troisiemeArticle = manager.getRandomArticle();
-			while (premierArticle.getNoArticle() == deuxiemeArticle.getNoArticle()) {
-				deuxiemeArticle = manager.getRandomArticle();
+			for (Article art : manager.getAllArticles()) {
+				
+				model.setArticle(manager.getArticleById((Integer) art.getNoArticle()));
+				String str1 = "nomarticle";
+				String srt2 = String.valueOf(i);
+				String result = str1+srt2;
+				request.setAttribute(result, model.getArticle().getNomArticle());
+				str1 = "datefin";
+				result = str1+srt2;
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+				request.setAttribute(result, model.getArticle().getDateFinEncheres().format(formatter));
+				str1 = "prix";
+				result = str1+srt2;
+				request.setAttribute(result, model.getArticle().getMiseAPrix());
+				str1 = "nomutilisateur";
+				result = str1+srt2;
+				request.setAttribute(result, model.getArticle().getVendeur().getPseudo());
+				i++;
+				
 			}
-			while (premierArticle.getNoArticle() == troisiemeArticle.getNoArticle()
-					|| troisiemeArticle.getNoArticle() == deuxiemeArticle.getNoArticle()) {
-				troisiemeArticle = manager.getRandomArticle();
-			}
-
-			model.getArticle().setNomArticle(premierArticle.getNomArticle());
-			model.getArticle().setDateFinEncheres(premierArticle.getDateFinEncheres());
-			model.getArticle().setMiseAPrix(premierArticle.getMiseAPrix());
-			model.getArticle().getVendeur().setPseudo(premierArticle.getVendeur().getPseudo());
-			request.setAttribute("nomarticle", model.getArticle().getNomArticle());
-			request.setAttribute("datefin", model.getArticle().getDateFinEncheres());
-			request.setAttribute("prix", model.getArticle().getMiseAPrix());
-			request.setAttribute("nomutilisateur", model.getArticle().getVendeur().getPseudo());
-			deuxiemeModel.getArticle().setNomArticle(deuxiemeArticle.getNomArticle());
-			deuxiemeModel.getArticle().setDateFinEncheres(deuxiemeArticle.getDateFinEncheres());
-			deuxiemeModel.getArticle().setMiseAPrix(deuxiemeArticle.getMiseAPrix());
-			deuxiemeModel.getArticle().getVendeur().setPseudo(deuxiemeArticle.getVendeur().getPseudo());
-			request.setAttribute("nomarticle2", deuxiemeModel.getArticle().getNomArticle());
-			request.setAttribute("datefin2", deuxiemeModel.getArticle().getDateFinEncheres());
-			request.setAttribute("prix2", deuxiemeModel.getArticle().getMiseAPrix());
-			request.setAttribute("nomutilisateur2", deuxiemeModel.getArticle().getVendeur().getPseudo());
-			troisiemeModel.getArticle().setNomArticle(troisiemeArticle.getNomArticle());
-			troisiemeModel.getArticle().setDateFinEncheres(troisiemeArticle.getDateFinEncheres());
-			troisiemeModel.getArticle().setMiseAPrix(troisiemeArticle.getMiseAPrix());
-			troisiemeModel.getArticle().getVendeur().setPseudo(troisiemeArticle.getVendeur().getPseudo());
-			request.setAttribute("nomarticle3", troisiemeModel.getArticle().getNomArticle());
-			request.setAttribute("datefin3", troisiemeModel.getArticle().getDateFinEncheres());
-			request.setAttribute("prix3", troisiemeModel.getArticle().getMiseAPrix());
-			request.setAttribute("nomutilisateur3", troisiemeModel.getArticle().getVendeur().getPseudo());
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

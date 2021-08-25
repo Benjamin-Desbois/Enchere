@@ -12,4 +12,5 @@ public interface ArticleManager {
 
 	public List<Article> getAllArticles() throws SQLException;
 
+	public Article getArticleById(int id) throws SQLException;
 }
