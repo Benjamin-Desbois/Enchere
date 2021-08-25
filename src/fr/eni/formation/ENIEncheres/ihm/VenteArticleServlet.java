@@ -81,7 +81,7 @@ public class VenteArticleServlet extends HttpServlet {
 				model.setLstArticles(manager.getAllArticles());
 				//Ajout dans la BDD
 				manager.addArticles(model.getArticle());
-				System.out.println("Ajout réussi (normalement)");
+				System.out.println("Ajout réussi (j'espère)");
 			} catch (SQLException | BLLException e) {
 				e.printStackTrace();
 			}

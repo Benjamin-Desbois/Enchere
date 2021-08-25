@@ -151,10 +151,10 @@ background-color:#e76f51;
 				<div class="col-12 col-md-3 py-2">
 					<select class="form-select" aria-label="Default select example">
 						<option selected>Toutes les Categories</option>
-						<option value="informatique">Informatique</option>
-						<option value="ameublement">Ameublement</option>
-						<option value="vetement">vêtement</option>
-						<option value="sportLoisirs">Sport&Loisirs</option>
+						<option value="Mobilier">Mobilier</option>
+						<option value="Vehicule">Véhicule</option>
+						<option value="Electronique">Electronique</option>
+						<option value="Autre">Autre</option>
 					</select>
 				</div>
 				<div class="col-12 col-md-3 py-2">
@@ -214,15 +214,15 @@ background-color:#e76f51;
 			<div class="col-md-6 col-lg-4  mb-5">
 				<div class="card h-100">
 					<div class="card-header">
-						Prix : <b>210</b> points
+						Prix : <b>${prix}</b> points
 					</div>
 					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title">
-							PC gamer pour travailler
-							</h2>
+						<h5 class="card-title">${nomarticle}</h5>
+							
+							
 							<!--  
                         <p class="card-text">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
@@ -234,11 +234,11 @@ background-color:#e76f51;
 							class="fas fa-star"></i> <i class="far fa-star"></i> <i
 							class="far fa-star"></i> <i class="far fa-star"></i></li>
 						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>12/12/2021</b></span></li>
+							class="ms-5"><b>${datefin}</b></span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
 							12 rue de la Poste 44100 Nantes</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">jojo44</a></li>
+							<a href="#">${nomutilisateur}</a></li>
 					</ul>
 					<div class="card-footer">
 						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
@@ -249,15 +249,13 @@ background-color:#e76f51;
 			<div class="col-md-6 col-lg-4  mb-3">
 				<div class="card h-100">
 					<div class="card-header">
-						Prix : <b>210</b> points
+						Prix : <b>${prix2}</b> points
 					</div>
 					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title">
-							PC gamer pour travailler
-							</h2>
+						<h5 class="card-title">${nomarticle2}</h5>
 							<!--  
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
@@ -269,11 +267,11 @@ background-color:#e76f51;
 							class="fas fa-star"></i> <i class="far fa-star"></i> <i
 							class="far fa-star"></i> <i class="far fa-star"></i></li>
 						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>12/12/2021</b></span></li>
+							class="ms-5"><b>${datefin2}</b></span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
 							12 rue de la Poste 44100 Nantes</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">jojo44</a></li>
+							<a href="#">${nomutilisateur2}</a></li>
 					</ul>
 					<div class="card-footer">
 						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
@@ -283,15 +281,13 @@ background-color:#e76f51;
 			<div class="col-md-6 col-lg-4  mb-5">
 				<div class="card h-100">
 					<div class="card-header">
-						Prix : <b>210</b> points
+						Prix : <b>${prix3}</b> points
 					</div>
 					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title">
-							PC gamer pour travailler
-							</h2>
+						<h5 class="card-title">${nomarticle3}</h5>
 							<!--  
                                 <p class="card-text">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
@@ -303,11 +299,11 @@ background-color:#e76f51;
 							class="fas fa-star"></i> <i class="far fa-star"></i> <i
 							class="far fa-star"></i> <i class="far fa-star"></i></li>
 						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>12/12/2021</b></span></li>
+							class="ms-5"><b>${datefin}</b></span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
 							12 rue de la Poste 44100 Nantes</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">jojo44</a></li>
+							<a href="#">${nomutilisateur}</a></li>
 					</ul>
 					<div class="card-footer">
 						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>

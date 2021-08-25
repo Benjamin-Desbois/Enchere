@@ -10,7 +10,6 @@ public class ArticleModel {
 	private List<Article> lstArticles = new ArrayList<>();
 	
 	public ArticleModel() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public ArticleModel(Article article, List<Article> lstArticles) {
