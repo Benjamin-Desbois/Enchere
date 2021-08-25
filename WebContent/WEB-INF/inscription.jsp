@@ -359,16 +359,15 @@
 					<!--bigger container open -->
 					
 						
-							<form action="AccueilServlet" method="post">
 
 								<button type="submit" class="btn btn-success">Créer</button>
-							</form>
-						
-						
-							<form action="AccueilServlet" method="post">
 
-								<button type="submit" class="btn btn-danger">Annuler</button>
-							</form>
+						
+						
+
+
+								<a href="AccueilServlet">Annuler</a>
+
 						
 			
 				</div>
