@@ -15,7 +15,7 @@ import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTALL = "SELECT * FROM UTILISATEURS";
-	private final String UPDATE = "UPDATE UTILISATEURS (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) VALUES (?,?,?,?,?,?,?,?,?)";
+	private final String UPDATE = "UPDATE UTILISATEURS SET (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) WHERE (no_utilisateur) VALUES (?,?,?,?,?,?,?,?,?,?) ";
 
 	@Override
 	public void insert(Utilisateur utilisateur) throws SQLException {
@@ -72,8 +72,19 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 
 	@Override
 	public void update(Utilisateur utilisateur) throws SQLException {
-		// TODO Auto-generated method stub
-		
+		Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Projet", "sa",
+				"Pa$$w0rd");
+		PreparedStatement stmt = con.prepareStatement(UPDATE, Statement.RETURN_GENERATED_KEYS);
+		stmt.setString(1, utilisateur.getPseudo());
+		stmt.setString(2, utilisateur.getNom());
+		stmt.setString(3, utilisateur.getPrenom());
+		stmt.setString(4, utilisateur.getEmail());
+		stmt.setString(5, utilisateur.getTelephone());
+		stmt.setString(6, utilisateur.getRue());
+		stmt.setString(7, utilisateur.getCodePostal());
+		stmt.setString(8, utilisateur.getVille());
+		stmt.setString(9, utilisateur.getMotDePasse());
+		stmt.executeUpdate();
 	}
 
 
