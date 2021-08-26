@@ -351,6 +351,8 @@
 					</div>
 
 				</div>
+				
+				
 				<!-- ----------------------------------------------------------------- -->
 
 
@@ -369,11 +371,12 @@
 						<a href="AccueilServlet"><button type="submit"
 								class="btn btn-danger">Annuler</button></a>
 					</div>
-
+		</form>
 
 				</div>
 		</div>
 	</div>
+
 
 	<!-- /card-container -->
 

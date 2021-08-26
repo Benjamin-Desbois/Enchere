@@ -77,9 +77,11 @@ public class MonProfilServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String nextPage = "ModifierMonProfilServlet";
-		request.getRequestDispatcher(nextPage).forward(request, response);
+	
+		if (request.getParameter("modifier") != null) {
+			String nextPage = "ModifierMonProfilServlet";
+		}
 	}
-
 }
+
+
