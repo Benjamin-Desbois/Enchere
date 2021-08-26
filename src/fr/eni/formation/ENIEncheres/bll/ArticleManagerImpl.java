@@ -1,11 +1,11 @@
 package fr.eni.formation.ENIEncheres.bll;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 
 import fr.eni.formation.ENIEncheres.bo.Article;
-import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 import fr.eni.formation.ENIEncheres.dal.ArticleDAO;
 import fr.eni.formation.ENIEncheres.dal.ArticleFact;
 
@@ -22,6 +22,10 @@ public class ArticleManagerImpl implements ArticleManager {
 		if (article.getMiseAPrix()<=0) {
 			valide = false;
 			throw new BLLException("Le prix ne peut pas être inférieur à 10 points");
+		}
+		if (article.getDateDebutEncheres().isBefore(LocalDateTime.now())) {
+			valide = false;
+			throw new BLLException("Cet horaire est déjà dépassé");
 		}
 		
 		try {

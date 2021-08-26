@@ -35,7 +35,6 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		stmt.setInt(10, 0);
 		stmt.setBoolean(11, false);
 		int nb = stmt.executeUpdate();
-		System.out.println("nb=" + nb);
 		if (nb > 0) {
 			ResultSet rs = stmt.getGeneratedKeys();
 			if (rs.next()) {

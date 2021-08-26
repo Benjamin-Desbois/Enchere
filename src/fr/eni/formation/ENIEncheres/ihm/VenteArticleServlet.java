@@ -64,11 +64,7 @@ public class VenteArticleServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MM-DDThh:mm");
-		String today = String.valueOf(LocalDateTime.now().format(formatter));
-		request.setAttribute("dateDebutEnchere", today);
-		System.out.println(today);
-		request.setAttribute("dateFinEnchere", today);
+		
 		if (request.getParameter("nom") != null) {
 			HttpSession session = request.getSession();
 
