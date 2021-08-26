@@ -110,7 +110,7 @@
 						<label>Ville :</label>
 					<input class="form-control" type="text" name="ville">
 					</div>
-				
+				  ${message}
 				</div>
 				<!-- fin retrait -->
 				<div class="row align-items-center mx-2 my-5">
