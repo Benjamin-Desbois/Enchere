@@ -131,51 +131,9 @@
 							</a>
 						</div>
 					</div>
-				
-				</div>
-				<!--fin  prix initial dubut et fin de l'enchère -->
-				<!-- retrait -->
-				<div class="row align-items-center mx-2 my-5">
-				<h2 class="text-center text-dark">Retrait</h2>
-				<div class="col-12 col-md-4 py-2">
-					<label>Rue :</label>
-						<input  class="form-control" type="text" name="adresse" class="form-control" aria-describedby="Recherche"
-							step="10">
-					</div>
-					<div class="col-12 col-md-4 py-2">
-					<label>Code Postal :</label>
-						<input  class="form-control" type="number" name="codePostal" >
-					</div>
-					<div class="col-12 col-md-4 py-2">
-						<label>Ville :</label>
-					<input class="form-control" type="text" name="ville">
-					</div>
-				  ${message}
-				</div>
-				<!-- fin retrait -->
-				<div class="row align-items-center mx-2 my-5">
-				<div class="col-6">
-				<input type="submit" class="btn btn-success" name="Enregistrer" value="Enregistrer">
-				</div>
-				<div class="col-6">
-				<button type="button" class="btn btn-danger">Annuler</button>
-				</div>
-				</div>
-</form>
 
-			</div>
-			<!-- fin retrait -->
-			<div class="row align-items-center mx-2 my-5">
-				<div class="col-6">
-					<input type="submit" class="btn btn-success" name="Enregistrer"
-						value="Enregistrer">
-				</div>
-				<div class="col-6">
-					<button type="button" class="btn btn-danger">Annuler</button>
-				</div>
-			</div>
 			</form>
-
+			${message} 
 		</div>
 
 

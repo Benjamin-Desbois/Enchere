@@ -147,12 +147,12 @@ background-color:#e76f51;
 				<div class="col-12 col-md-3 py-2">
 					<input name="s" class="form-control" aria-describedby="Recherche"
 
-						placeholder="le nom de l'article contient" required autofocus>
+						placeholder="le nom de l'article contient" required >
 
 
 				</div>
 				<div class="col-12 col-md-3 py-2">
-					<select class="form-select" aria-label="Default select example" required autofocus>
+					<select class="form-select" aria-label="Default select example" required>
 						
 						<option value="Mobilier">Mobilier</option>
 						<option value="Vehicule">Véhicule</option>
