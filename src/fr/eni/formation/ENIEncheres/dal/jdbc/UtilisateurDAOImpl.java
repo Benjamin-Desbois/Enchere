@@ -15,7 +15,7 @@ import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTALL = "SELECT * FROM UTILISATEURS";
-	private final String DELETE = "DELETE FROM utilisateurs";
+	private final String DELETE = "DELETE FROM utilisateurs WHERE No_Utilisateur = ?";
 	private final String UPDATE = "UPDATE utilisateurs SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe=? WHERE No_Utilisateur = ?";
 
 	@Override
@@ -35,7 +35,6 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		stmt.setInt(10, 0);
 		stmt.setBoolean(11, false);
 		int nb = stmt.executeUpdate();
-		System.out.println("nb=" + nb);
 		if (nb > 0) {
 			ResultSet rs = stmt.getGeneratedKeys();
 			if (rs.next()) {

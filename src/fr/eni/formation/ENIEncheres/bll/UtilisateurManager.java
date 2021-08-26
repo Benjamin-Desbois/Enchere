@@ -17,4 +17,6 @@ public interface UtilisateurManager {
 	public boolean isAlphanumeric(String pseudo);
 
 	public Utilisateur getSelectById(int id) throws SQLException;
+	
+	public void deleteUtilisateur (Utilisateur utilisateur) throws SQLException;
 }

@@ -37,7 +37,6 @@ public class ArticleDAOImpl implements ArticleDAO {
 		stmt.setInt(6, article.getVendeur().getNoUtilisateur());
 		stmt.setInt(7, article.getCategorieArticle().getNoCategorie());
 		int nb = stmt.executeUpdate();
-		System.out.println("nb=" + nb);
 		if (nb > 0) {
 			ResultSet rs = stmt.getGeneratedKeys();
 			if (rs.next()) {
