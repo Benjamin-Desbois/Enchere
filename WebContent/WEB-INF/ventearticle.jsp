@@ -37,91 +37,96 @@
 			<!-- Call to Action-->
 			<div class="card text-white bg_nouvelleVente text-center">
 				<!-- article catégoreie description -->
-				<form action="VenteArticleServlet" method="post"> 
-				<div class="row align-items-center mx-2">
-					<div class="col-12 col-md-4 py-2">
-					<label>Article :</label>
-						<input class="form-control" aria-describedby="Recherche"
-							type="text" name="nom">
-					</div>
-					<div class="col-12 col-md-4 ">
-					<label>Catégorie :</label>
-						<select class="form-select" aria-label="Default select example" name="categorie">
-							<option selected>Toutes les Catégories</option>
-							<option value="Mobilier">Mobilier</option>
-							<option value="Vehicule">Véhicule</option>
-							<option value="Electronique">Electronique</option>
-							<option value="Autre">Autre (Précisez dans la description)</option>
-						</select>
-					</div>
-					<div class="col-12 col-md-4 py-2">
-						<label for="exampleFormControlTextarea1">Description :</label>
-						<textarea type="text" class="form-control" name="description"
-							rows="3"></textarea>
-					</div>
-				</div>
-				<!-- fin article catégoreie description -->
-				<!-- photo et upload photo -->
-				<div class="row align-items-center mx-2 my-5">
-					<div class="col-md-6 col-sm-12">
-						​
-						<picture>
-						<source srcset="./images/switch.jpg" type="image/svg+xml">
-						<img src="..." class="img-fluid img-thumbnail" alt="..."> </picture>
-					</div>
-					<div class="col-md-6 col-sm-12">
-						<label class="form-label" for="customFile">Upload une photo :</label> <input type="file" class="form-control"
-							id="customFile" />
-					</div>
+				<form action="VenteArticleServlet" method="post">
+					<div class="row align-items-center mx-2">
+						<div class="col-12 col-md-4 py-2">
+							<label>Article :</label> <input class="form-control"
+								aria-describedby="Recherche" type="text" name="nom" required
+								autofocus>
+						</div>
+						<div class="col-12 col-md-4 ">
+							<label>Catégorie :</label> <select class="form-select"
+								aria-label="Default select example" name="categorie">
 
-				</div>
-				<!--fin  photo et upload photo -->
-				<!-- prix initial dubut et fin de l'enchère -->
-				<div class="row align-items-center mx-2 my-5">
-				<div class="col-12 col-md-4 py-2">
-					<label>Prix initial :</label>
-						<input  class="form-control" type="number" name="prix" class="form-control" aria-describedby="Recherche"
-							step="10">
+								<option value="Mobilier">Mobilier</option>
+								<option value="Vehicule">Véhicule</option>
+								<option value="Electronique">Electronique</option>
+								<option value="Autre">Autre (Précisez dans la
+									description)</option>
+							</select>
+						</div>
+						<div class="col-12 col-md-4 py-2">
+							<label for="exampleFormControlTextarea1">Description :</label>
+							<textarea type="text" class="form-control" name="description"
+								rows="3" required autofocus></textarea>
+						</div>
 					</div>
-					<div class="col-12 col-md-4 py-2">
-					<label>Début de l'enchère :</label>
-						<input class="form-control" type="datetime-local" name="dateDebut" value="2021-08-20T19:30" min="2021-08-20T19:30" max="2021-12-31T00:00">
+					<!-- fin article catégoreie description -->
+					<!-- photo et upload photo -->
+					<div class="row align-items-center mx-2 my-5">
+						<div class="col-md-6 col-sm-12">
+							​
+							<picture>
+							<source srcset="./images/switch.jpg" type="image/svg+xml">
+							<img src="..." class="img-fluid img-thumbnail" alt="..."> </picture>
+						</div>
+						<div class="col-md-6 col-sm-12">
+							<label class="form-label" for="customFile">Upload une
+								photo :</label> <input type="file" class="form-control" id="customFile" />
+						</div>
+
 					</div>
-					<div class="col-12 col-md-4 py-2">
-						<label>Fin de l'enchère :</label>
-					<input class="form-control" type="datetime-local" name="dateFin" value="2021-08-21T19:30" min="2021-08-21T19:30" max="2021-12-31T00:00">
+					<!--fin  photo et upload photo -->
+					<!-- prix initial dubut et fin de l'enchère -->
+					<div class="row align-items-center mx-2 my-5">
+						<div class="col-12 col-md-4 py-2">
+							<label>Prix initial :</label> <input class="form-control"
+								type="number" name="prix" class="form-control"
+								aria-describedby="Recherche" step="10" required autofocus>
+						</div>
+						<div class="col-12 col-md-4 py-2">
+							<label>Début de l'enchère :</label> <input class="form-control"
+								type="datetime-local" name="dateDebut" value="2021-08-20T19:30"
+								min="2021-08-20T19:30" max="2021-12-31T00:00" required autofocus>
+						</div>
+						<div class="col-12 col-md-4 py-2">
+							<label>Fin de l'enchère :</label> <input class="form-control"
+								type="datetime-local" name="dateFin" value="2021-08-21T19:30"
+								min="2021-08-21T19:30" max="2021-12-31T00:00" required autofocus>
+						</div>
+
 					</div>
-				
-				</div>
-				<!--fin  prix initial dubut et fin de l'enchère -->
-				<!-- retrait -->
-				<div class="row align-items-center mx-2 my-5">
-				<h2 class="text-center text-dark">Retrait</h2>
-				<div class="col-12 col-md-4 py-2">
-					<label>Rue :</label>
-						<input  class="form-control" type="text" name="adresse" class="form-control" aria-describedby="Recherche"
-							step="10">
+					<!--fin  prix initial dubut et fin de l'enchère -->
+					<!-- retrait -->
+					<div class="row align-items-center mx-2 my-5">
+						<h2 class="text-center text-dark">Retrait</h2>
+						<div class="col-12 col-md-4 py-2">
+							<label>Rue :</label> <input class="form-control" type="text"
+								name="adresse" class="form-control" aria-describedby="Recherche"
+								step="10" required autofocus>
+						</div>
+						<div class="col-12 col-md-4 py-2">
+							<label>Code Postal :</label> <input class="form-control"
+								type="number" name="codePostal" required autofocus>
+						</div>
+						<div class="col-12 col-md-4 py-2">
+							<label>Ville :</label> <input class="form-control" type="text"
+								name="ville" required autofocus>
+						</div>
+
 					</div>
-					<div class="col-12 col-md-4 py-2">
-					<label>Code Postal :</label>
-						<input  class="form-control" type="number" name="codePostal" >
+					<!-- fin retrait -->
+					<div class="row align-items-center mx-2 my-5">
+						<div class="col-6">
+							<input type="submit" class="btn btn-success" name="Enregistrer"
+								value="Enregistrer">
+						</div>
+						<div class="col-6">
+							<a href="AccueilServlet">
+								<button type="button" class="btn btn-danger">Annuler</button></a>
+						</div>
 					</div>
-					<div class="col-12 col-md-4 py-2">
-						<label>Ville :</label>
-					<input class="form-control" type="text" name="ville">
-					</div>
-				
-				</div>
-				<!-- fin retrait -->
-				<div class="row align-items-center mx-2 my-5">
-				<div class="col-6">
-				<input type="submit" class="btn btn-success" name="Enregistrer" value="Enregistrer">
-				</div>
-				<div class="col-6">
-				<button type="button" class="btn btn-danger">Annuler</button>
-				</div>
-				</div>
-</form>
+				</form>
 			</div>
 
 
@@ -130,7 +135,7 @@
 		<!-- /card-container -->
 	</div>
 	<!-- /container -->
-		<!-- Footer-->
+	<!-- Footer-->
 	<footer class="py-5  my-navbar mt-2">
 		<div class="container  ">
 
