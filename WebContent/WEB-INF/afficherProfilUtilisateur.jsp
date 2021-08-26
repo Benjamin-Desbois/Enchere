@@ -40,7 +40,7 @@
 
 
 
-			<form action="AfficherProfilServlet" method="post"
+			<form action="MonProfilServlet" method="post"
 				class="form-inscription mb-5">
 				<h1 class="text-center mb-5">Mon Profil</h1>
 

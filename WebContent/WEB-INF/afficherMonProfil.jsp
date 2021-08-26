@@ -40,8 +40,7 @@
 
 
 
-			<form action="AfficherProfilServlet" method="post"
-				class="form-inscription mb-5">
+			
 				<h1 class="text-center mb-5">Mon Profil</h1>
 
 				<!-- ----------------------------------------------------------------- -->
@@ -283,11 +282,9 @@
 				</div>
 				<!-- ----------------------------------------------------------------- -->
 				<div class="text-center mt-3">
-				<a href="ModifierMonProfilServlet">
-					<button type="submit" class="btn btn-info text-center">Modifier</button>
-				</a>
+					<a href="ModifierMonProfilServlet" type="submit" class="btn btn-info text-center">Modifier</a>
 				</div>
-			</form>
+			
 
 		</div>
 	</div>

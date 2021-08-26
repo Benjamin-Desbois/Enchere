@@ -51,15 +51,13 @@ public class MonProfilServlet extends HttpServlet {
 
 		try {
 			model.setUtilisateur(manager.getSelectById((Integer) session.getAttribute("NoUtilisateur")));
+			System.out.println(session.getAttribute("NoUtilisateur"));
 			request.setAttribute("pseudo",model.getUtilisateur().getPseudo());
-			System.out.println(model.getUtilisateur().getPseudo());
 			request.setAttribute("nom",model.getUtilisateur().getNom());
-			System.out.println(model.getUtilisateur().getNom());
 			request.setAttribute("prenom",model.getUtilisateur().getPrenom());
 			request.setAttribute("email",model.getUtilisateur().getEmail());
 			request.setAttribute("telephone",model.getUtilisateur().getTelephone());
 			request.setAttribute("rue",model.getUtilisateur().getRue());
-			System.out.println(model.getUtilisateur().getRue());
 			request.setAttribute("codepostal",model.getUtilisateur().getCodePostal());
 			request.setAttribute("ville",model.getUtilisateur().getVille());
 
