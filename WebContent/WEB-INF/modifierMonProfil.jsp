@@ -360,12 +360,15 @@
 						<button class="btn btn-info text-center">Enregistrer</button>
 						</div>
 						<div class="col-6 ">
-							<a href ="AccueilServlet" class="btn btn-danger">Supprimer mon compte</a>
+							<button class="btn btn-danger">Supprimer mon compte</button>
 						</div>
 					</div>
 				</div>
 	
 		</div>
+		</form>
+		<form action="SupprimerProfilServlet" method ="POST">
+		<button class="btn btn-danger">Supprimer mon compte</button>
 		</form>
 	</div>
 	<!-- /card-container -->

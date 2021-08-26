@@ -128,4 +128,9 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void deleteUtilisateur(Utilisateur utilisateur) throws SQLException {
+		dao.delete(utilisateur);
+	}
 }

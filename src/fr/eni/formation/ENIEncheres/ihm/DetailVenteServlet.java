@@ -38,7 +38,7 @@ public class DetailVenteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		ArticleModel model = null;
 
-		
+
 
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
@@ -48,7 +48,7 @@ public class DetailVenteServlet extends HttpServlet {
 		}
 
 		try {
-			model.setArticle(manager.getArticleById((Integer) ("noArticle")));
+			model.setArticle(manager.getArticleById((("noArticle")));
 		
 			request.setAttribute("nom", model.getArticle().getNomArticle());
 			request.setAttribute("description", model.getArticle().getDescription());
