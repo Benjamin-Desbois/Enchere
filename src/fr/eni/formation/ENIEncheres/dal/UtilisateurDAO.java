@@ -11,6 +11,8 @@ public interface UtilisateurDAO {
 	
 	public void update (Utilisateur utilisateur) throws SQLException;
 	
+	public void delete (Utilisateur utilisateur) throws SQLException;
+	
 	public List<Utilisateur> getAll() throws SQLException;
 	
 	

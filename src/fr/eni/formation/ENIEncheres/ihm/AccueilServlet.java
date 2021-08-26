@@ -41,7 +41,6 @@ public class AccueilServlet extends HttpServlet {
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 
 		try {
-
 //			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //			for (Article art : manager.getAllArticles()) {
 //				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));

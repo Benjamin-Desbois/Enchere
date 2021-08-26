@@ -282,7 +282,9 @@
 				</div>
 				<!-- ----------------------------------------------------------------- -->
 				<div class="text-center mt-3">
-					<a href="ModifierMonProfilServlet" type="submit" class="btn btn-info text-center">Modifier</a>
+				
+					<a href="ModifierMonProfilServlet" class="btn btn-info text-center">Modifier</a>
+				
 				</div>
 			
 

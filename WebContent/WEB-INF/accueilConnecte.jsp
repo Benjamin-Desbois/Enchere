@@ -146,11 +146,14 @@ background-color:#e76f51;
 				</div>
 				<div class="col-12 col-md-3 py-2">
 					<input name="s" class="form-control" aria-describedby="Recherche"
-						placeholder="le nom de l'article contient">
+
+						placeholder="le nom de l'article contient" required autofocus>
+
+
 				</div>
 				<div class="col-12 col-md-3 py-2">
-					<select class="form-select" aria-label="Default select example">
-						<option selected>Toutes les Categories</option>
+					<select class="form-select" aria-label="Default select example" required autofocus>
+						
 						<option value="Mobilier">Mobilier</option>
 						<option value="Vehicule">Véhicule</option>
 						<option value="Electronique">Electronique</option>
@@ -206,6 +209,7 @@ background-color:#e76f51;
                 </div>
             </div>
         </div>
+       
        </c:if>
 	<!-- fin checkbox et radio  -->
 		<div class="row gx-4 gx-lg-5">
@@ -223,27 +227,24 @@ background-color:#e76f51;
 					</a>
 					<div class="card-body">
 						<h5 class="card-title">${article.nomArticle}</h5>
-							
-							
-							<!--  
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
-                            maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                    -->
-					</div>
+				
+				</div>
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item"><i class="fas fa-star"></i> <i
 							class="fas fa-star"></i> <i class="far fa-star"></i> <i
 							class="far fa-star"></i> <i class="far fa-star"></i></li>
-						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>${article.dateFinEncheres}</b></span></li>
+							<li class="list-group-item"><b>Description : </b><span
+							class="ms-5">${article.description}</span></li>
+						<li class="list-group-item"><b>Fin de l'enchère : </b><span
+							class="ms-5">${article.dateFinEncheres}</span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
 							${article.vendeur.rue} ${article.vendeur.codePostal} ${article.vendeur.ville}</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
 							<a href="#">${article.vendeur.pseudo}</a></li>
 					</ul>
+				
 					<div class="card-footer">
-						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
+						<a class="btn btn-jinyan btn-sm" href="DetailVenteServlet">Détail</a>
 					</div>
 				</div>
 			</div>

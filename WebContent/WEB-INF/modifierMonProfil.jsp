@@ -36,12 +36,11 @@
 		</div>
 	</nav>
 	<div class="container d-flex justify-content-center">
+	<form action="ModifierMonProfilServlet" method = "POST">
 		<div class="card card-container mt-5 ">
 
 
 
-			<form action="ModifierMonProfilServlet" method="post"
-				class="form-inscription mb-5">
 				<h1 class="text-center mb-5">Modifier Mon Profil</h1>
 
 				<!-- ----------------------------------------------------------------- -->
@@ -64,7 +63,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="pseudo" id="inputPseudo" value = "${model.pseudo}"
+										<input type="text" name="pseudo" id="inputPseudo" value = "${model.utilisateur.pseudo}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -250,7 +249,7 @@
 									</div>
 
 									<div class="col-7">
-										<input type="number" name="codepostal" id="inputCodePostal" value = "${model.utilisateur.codepostal}"
+										<input type="number" name="codepostal" id="inputCodePostal" value = "${model.utilisateur.codePostal}"
 											class="form-control" required autofocus />
 									</div>
 
@@ -342,21 +341,6 @@
 						<div class="col-lg-6 col-md-12 mb-3">
 							<!-- bigger col open(2nd) -->
 							<!-- ----------2---------- -->
-							<div class="container-fluid">
-								<!--small container open  -->
-								<div class="groupeFormulaire row">
-
-									<div class="col-5">
-										<label>Confirmation :</label>
-									</div>
-
-									<div class="col-7">
-										<input type="text" name="confirmation" id="inputConfirmation" value = "${model.utilisateur.motdepasse}"
-											class="form-control" placeholder="******" required autofocus />
-									</div>
-
-								</div>
-							</div>
 							<!-- small container close -->
 							<!-- -----------2--------- -->
 						</div>
@@ -364,6 +348,7 @@
 					</div>
 
 				</div>
+				
 				<!-- ----------------------------------------------------------------- -->
 
 
@@ -372,20 +357,16 @@
 					<!--bigger container open -->
 					<div class="row">
 						<div class="col-6 ">
-						<a href="MonProfilServlet">
-					<button type="button" class="btn btn-info text-center">Enregistrer</button>
-				</a>
+						<button class="btn btn-info text-center">Enregistrer</button>
 						</div>
 						<div class="col-6 ">
-						<a href="">
-							<button type="button" class="btn btn-danger">Supprimer mon compte</button>
-							</a>
+							<a href ="AccueilServlet" class="btn btn-danger">Supprimer mon compte</a>
 						</div>
 					</div>
 				</div>
-			</form>
-
+	
 		</div>
+		</form>
 	</div>
 	<!-- /card-container -->
 
