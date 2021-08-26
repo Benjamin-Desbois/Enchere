@@ -132,11 +132,11 @@ background-color:#e76f51;
 		</div>
 	</nav>
 	<h1 class="text-center my-5">Liste des enchères</h1>
-
 	<div class="container pt-3  px-4 px-lg-5 bg-white">
 
 		<!-- Heading Row-->
-
+		<form action="AccueilServlet" method="post">
+		
 		<!-- Call to Action-->
 		<div class="card text-white bg-search my-5  text-center">
 
@@ -147,12 +147,12 @@ background-color:#e76f51;
 				<div class="col-12 col-md-3 py-2">
 					<input name="s" class="form-control" aria-describedby="Recherche"
 
-						placeholder="le nom de l'article contient" required >
+						placeholder="le nom de l'article contient"  >
 
 
 				</div>
 				<div class="col-12 col-md-3 py-2">
-					<select class="form-select" aria-label="Default select example" required>
+					<select class="form-select" aria-label="Default select example">
 						
 						<option value="Mobilier">Mobilier</option>
 						<option value="Vehicule">Véhicule</option>
@@ -161,15 +161,15 @@ background-color:#e76f51;
 					</select>
 				</div>
 				<div class="col-12 col-md-3 py-2">
-					<button class="btn btn-jinyan ">
+					<input type="submit" class="btn btn-jinyan ">
 						<i class="fas fa-search"></i>
-					</button>
 				</div>
 			</div>
 
 		</div>
 		<!--checkbox et radio  -->
-		<c:if test= "${ NoUtilisateur!= null}" >
+		
+		<c:if test= "${NoUtilisateur!= null}" >
 			<div class=" my-3 d-flex justify-content-between" >
             <div class="form-check">
             
@@ -251,6 +251,7 @@ background-color:#e76f51;
 			</c:forEach>
 			
 		</div>
+		</form>
 		<!-- row -->
 	</div>
 	<!-- Footer-->

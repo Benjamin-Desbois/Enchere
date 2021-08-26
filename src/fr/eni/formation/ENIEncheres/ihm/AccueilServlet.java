@@ -39,36 +39,15 @@ public class AccueilServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
-
 		try {
-//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//			for (Article art : manager.getAllArticles()) {
-//				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));
-//			}
-			List<Article> lstArticle = new ArrayList<>();
 			String parameter = request.getParameter("type");
-			if ("vente".equals(parameter)) {
-				for (Article art : manager.getAllArticles()) {
-					if (art.getVendeur().getNoUtilisateur() != request.getSession().getAttribute("NoUtilisateur")) {
-						lstArticle.add(art);
-					}
-				}
-			} else if ("vente".equals(parameter)) {
-				for (Article art : manager.getAllArticles()) {
-					if (art.getVendeur().getNoUtilisateur() == request.getSession().getAttribute("NoUtilisateur")) {
-						lstArticle.add(art);
-					}
-				}
-			} else {
-				lstArticle = manager.getAllArticles();
+			if (parameter == null) {
+			request.setAttribute("lstArticle", manager.getAllArticles());
 			}
-			request.setAttribute("lstArticle", lstArticle);
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
@@ -81,8 +60,41 @@ public class AccueilServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String nextPage = "AccueilServlet";
+		try {
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//			for (Article art : manager.getAllArticles()) {
+//				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));
+//			}
+			List<Article> lstArticle = new ArrayList<>();
+			String parameter = null;
+			parameter = request.getParameter("type");
+			if ("achats".equals(parameter)) {
+				for (Article article : manager.getAllArticles()) {
+					System.out.println(article.getVendeur().getNoUtilisateur());
+					System.out.println(request.getSession().getAttribute("NoUtilisateur"));
+					if (article.getVendeur().getNoUtilisateur() != (int)request.getSession().getAttribute("NoUtilisateur")) {
+						lstArticle.add(article);
+					}
+				}
+			} else if ("vente".equals(parameter)) {
+				for (Article article : manager.getAllArticles()) {
+					if (article.getVendeur().getNoUtilisateur() == (int)request.getSession().getAttribute("NoUtilisateur")) {
+						lstArticle.add(article);
+					}
+				}
+			} else {
+				lstArticle = manager.getAllArticles();
+				System.out.println("non");
+			}
+			System.out.println(lstArticle);
+			request.setAttribute("lstArticle", lstArticle);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}response.sendRedirect(nextPage);
 	}
+	
 
 }

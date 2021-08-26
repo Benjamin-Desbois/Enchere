@@ -67,7 +67,7 @@ public class InscriptionServlet extends HttpServlet {
 			model.getUtilisateur().setEmail(request.getParameter("email"));
 			model.getUtilisateur().setTelephone(request.getParameter("telephone"));
 			model.getUtilisateur().setRue(request.getParameter("rue"));
-			model.getUtilisateur().setCodePostal(request.getParameter("codePostal"));
+			model.getUtilisateur().setCodePostal(request.getParameter("codepostal"));
 			model.getUtilisateur().setVille(request.getParameter("ville"));
 			model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
