@@ -134,22 +134,7 @@
 
 
 
-					<div class="col-12 col-md-4 py-2">
-						<label>Ville :</label> <input class="form-control" type="text"
-							name="ville">
-					</div>
-					${message}
-			</div>
-			<!-- fin retrait -->
-			<div class="row align-items-center mx-2 my-5">
-				<div class="col-6">
-					<input type="submit" class="btn btn-success" name="Enregistrer"
-						value="Enregistrer">
-				</div>
-				<div class="col-6">
-					<button type="button" class="btn btn-danger">Annuler</button>
-				</div>
-			</div>
+			
 			</form>
 
 		</div>
