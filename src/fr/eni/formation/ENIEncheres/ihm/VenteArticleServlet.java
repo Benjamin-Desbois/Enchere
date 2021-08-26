@@ -63,8 +63,12 @@ public class VenteArticleServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		String today = String.valueOf(LocalDateTime.now());
+		request.setAttribute("dateDebutEnchere", today);
+		request.setAttribute("dateFinEnchere", today);
 		if (request.getParameter("nom") != null) {
 			HttpSession session = request.getSession();
+			
 			model.getArticle().setNomArticle(request.getParameter("nom"));
 			model.getArticle().setDescription(request.getParameter("description"));
 			model.getArticle().setDateDebutEncheres(LocalDateTime.parse(request.getParameter("dateDebut")));

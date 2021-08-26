@@ -2,8 +2,8 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,14 +52,26 @@ public class AccueilServlet extends HttpServlet {
 		
 		
 		try {
+			
 //			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //			for (Article art : manager.getAllArticles()) {
 //				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));
 //			}
+			List<Article> lstArticle = new ArrayList<>();
 			if (request.getParameter("achats") != null) {
-				
+				for (Article art : manager.getAllArticles()) {
+					if (art.getVendeur().getNoUtilisateur() != request.getSession().getAttribute("NoUtilisateur")){
+						lstArticle.add(art);
+					}
+				}
+			} else {
+				for (Article art : manager.getAllArticles()) {
+					if (art.getVendeur().getNoUtilisateur() == request.getSession().getAttribute("NoUtilisateur")){
+						lstArticle.add(art);
+					}
+				}
 			}
-			request.setAttribute("lstArticle",  manager.getAllArticles());
+			request.setAttribute("lstArticle",  lstArticle);
 
 			
 		} catch (SQLException e) {
