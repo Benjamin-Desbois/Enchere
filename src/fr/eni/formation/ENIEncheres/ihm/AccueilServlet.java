@@ -39,7 +39,6 @@ public class AccueilServlet extends HttpServlet {
 
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 		ArticleModel model = null;
-		Integer i=1;
 	
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
@@ -49,9 +48,11 @@ public class AccueilServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		try {
 		
-			request.setAttribute("lstArticle", manager.getAllArticles());
+		
+		try {
+
+			request.setAttribute("lstArticle",  manager.getAllArticles());
 //			for (Article art : manager.getAllArticles()) {
 //				
 //				model.setArticle(manager.getArticleById((Integer) art.getNoArticle()));
@@ -61,7 +62,8 @@ public class AccueilServlet extends HttpServlet {
 //				request.setAttribute(result, model.getArticle().getNomArticle());
 //				str1 = "datefin";
 //				result = str1+srt2;
-
+//				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//				request.setAttribute(result, model.getArticle().getDateFinEncheres().format(formatter));
 //				str1 = "prix";
 //				result = str1+srt2;
 //				request.setAttribute(result, model.getArticle().getMiseAPrix());
