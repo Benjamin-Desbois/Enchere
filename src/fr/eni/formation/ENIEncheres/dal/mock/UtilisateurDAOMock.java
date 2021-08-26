@@ -27,5 +27,11 @@ public class UtilisateurDAOMock implements UtilisateurDAO {
 		
 	}
 
+	@Override
+	public void delete(Utilisateur utilisateur) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

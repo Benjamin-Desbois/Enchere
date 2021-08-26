@@ -36,7 +36,6 @@ public class ModifierMonProfilServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nextPage = "/WEB-INF/modifierMonProfil.jsp";
-
 		request.getRequestDispatcher(nextPage).forward(request, response);
 	}
 
@@ -44,13 +43,12 @@ public class ModifierMonProfilServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("je suis là");
 		String nextPage = "ModifierMonProfilServlet";
 		UtilisateurModel model = null;
 		boolean isForward = false;
 		boolean valide = true;
 		
-		HttpSession session = request.getSession();
-	
 		try {
 			model = new UtilisateurModel(new Utilisateur(), manager.getAllUtilisateurs());
 		} catch (SQLException e) {
@@ -58,8 +56,9 @@ public class ModifierMonProfilServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		HttpSession session = request.getSession();
+		
 		try {
-			
 			model.setUtilisateur(manager.getSelectById((Integer) session.getAttribute("NoUtilisateur")));
 			System.out.println(session.getAttribute("NoUtilisateur"));
 		} catch (SQLException e) {
@@ -78,6 +77,7 @@ public class ModifierMonProfilServlet extends HttpServlet {
 			model.getUtilisateur().setCodePostal(request.getParameter("codepostal"));
 			model.getUtilisateur().setVille(request.getParameter("ville"));
 			model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
+			model.getUtilisateur().setNoUtilisateur((Integer)session.getAttribute("NoUtilisateur"));
 
 			if (manager.isAlphanumeric(request.getParameter("pseudo"))) {
 				request.setAttribute("message", "Le pseudo ne peut contenir de caractères spéciaux");

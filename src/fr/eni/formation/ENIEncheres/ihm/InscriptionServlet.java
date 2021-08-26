@@ -67,7 +67,7 @@ public class InscriptionServlet extends HttpServlet {
 			model.getUtilisateur().setEmail(request.getParameter("email"));
 			model.getUtilisateur().setTelephone(request.getParameter("telephone"));
 			model.getUtilisateur().setRue(request.getParameter("rue"));
-			model.getUtilisateur().setCodePostal(request.getParameter("codepostal"));
+			model.getUtilisateur().setCodePostal(request.getParameter("codePostal"));
 			model.getUtilisateur().setVille(request.getParameter("ville"));
 			model.getUtilisateur().setMotDePasse(request.getParameter("motdepasse"));
 
@@ -94,7 +94,6 @@ public class InscriptionServlet extends HttpServlet {
 							model.setLstUtilisateurs(manager.getAllUtilisateurs());
 							HttpSession session = request.getSession();
 							session.setAttribute("NoUtilisateur", model.getUtilisateur().getNoUtilisateur());
-							System.out.println(session.getAttribute("NoUtilisateur"));
 							nextPage = "AccueilServlet";
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block

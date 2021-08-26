@@ -15,7 +15,8 @@ import fr.eni.formation.ENIEncheres.dal.UtilisateurDAO;
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	private final String INSERT = "INSERT INTO utilisateurs(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	private final String SELECTALL = "SELECT * FROM UTILISATEURS";
-	private final String UPDATE = "UPDATE UTILISATEURS SET (pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) WHERE (no_utilisateur) VALUES (?,?,?,?,?,?,?,?,?,?) ";
+	private final String DELETE = "DELETE FROM utilisateurs";
+	private final String UPDATE = "UPDATE utilisateurs SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe=? WHERE No_Utilisateur = ?";
 
 	@Override
 	public void insert(Utilisateur utilisateur) throws SQLException {
@@ -84,6 +85,16 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		stmt.setString(7, utilisateur.getCodePostal());
 		stmt.setString(8, utilisateur.getVille());
 		stmt.setString(9, utilisateur.getMotDePasse());
+		stmt.setInt(10, utilisateur.getNoUtilisateur());
+		stmt.executeUpdate();
+	}
+
+	@Override
+	public void delete(Utilisateur utilisateur) throws SQLException {
+		Connection con = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=Projet", "sa",
+				"Pa$$w0rd");
+		PreparedStatement stmt = con.prepareStatement(DELETE, Statement.RETURN_GENERATED_KEYS);
+		stmt.setInt(1, utilisateur.getNoUtilisateur());
 		stmt.executeUpdate();
 	}
 
