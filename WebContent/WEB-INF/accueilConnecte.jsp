@@ -170,37 +170,37 @@ background-color:#e76f51;
 			<div class=" my-3 d-flex justify-content-between" >
             <div class="form-check">
             
-                <input class="form-check-input" type="radio" id="achats" name="type" value="achats" checked>
+                <input class="form-check-input" type="radio" id="achats" name="achats" value="achats" checked>
                 <label for="achats"><b>Achats</b></label>
                 <div class="ml-4">
                     <div>
-                        <input class="form-check-input" type="checkbox" id="encheresouvertes" name="encheres" value="encheresouvertes" checked>
+                        <input class="form-check-input" type="checkbox" id="encheresouvertes" name="encheresouvertes" value="encheresouvertes" checked>
                         <label for="encheresouvertes">Enchères ouvertes</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="encheresencours" name="encheres" value="encheresencours">
+                        <input class="form-check-input" type="checkbox" id="encheresencours" name="encheresencours" value="encheresencours">
                         <label for="encheresencours">Mes enchères en cours</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="encheresremportees" name="encheres" value="encheresremportees">
+                        <input class="form-check-input" type="checkbox" id="encheresremportees" name="encheresremportees" value="encheresremportees">
                         <label for="encheresremportees">Mes enchères remportées</label>
                     </div>
                 </div>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" id="ventes" name="type" value="vente">
+                <input class="form-check-input" type="radio" id="ventes" name="ventes" value="vente">
                 <label for="ventes"><b>Mes Ventes</b></label>
                 <div id="ventesradio" class="ml-4">
                     <div>
-                        <input class="form-check-input" type="checkbox" id="ventesencours" name="ventes" value="ventesencours" >
+                        <input class="form-check-input" type="checkbox" id="ventesencours" name="ventesencours" value="ventesencours" >
                         <label for="ventesencours">Mes ventes en cours</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="ventesnondebutees" name="ventes" value="ventesnondebutees">
+                        <input class="form-check-input" type="checkbox" id="ventesnondebutees" name="ventesnondebutees" value="ventesnondebutees">
                         <label for="ventesnondebutees">Ventes non débutées</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="ventesterminees" name="ventes" value="ventesterminees">
+                        <input class="form-check-input" type="checkbox" id="ventesterminees" name="ventesterminees" value="ventesterminees">
                         <label for="ventesterminees">ventes terminées</label>
                     </div>
                 </div>

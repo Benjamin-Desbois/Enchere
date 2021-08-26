@@ -2,6 +2,7 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
@@ -51,28 +52,15 @@ public class AccueilServlet extends HttpServlet {
 		
 		
 		try {
-
-			request.setAttribute("lstArticle",  manager.getAllArticles());
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //			for (Article art : manager.getAllArticles()) {
-//				
-//				model.setArticle(manager.getArticleById((Integer) art.getNoArticle()));
-//				String str1 = "nomarticle";
-//				String srt2 = String.valueOf(i);
-//				String result = str1+srt2;
-//				request.setAttribute(result, model.getArticle().getNomArticle());
-//				str1 = "datefin";
-//				result = str1+srt2;
-//				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//				request.setAttribute(result, model.getArticle().getDateFinEncheres().format(formatter));
-//				str1 = "prix";
-//				result = str1+srt2;
-//				request.setAttribute(result, model.getArticle().getMiseAPrix());
-//				str1 = "nomutilisateur";
-//				result = str1+srt2;
-//				request.setAttribute(result, model.getArticle().getVendeur().getPseudo());
-//				i++;
-//				
+//				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));
 //			}
+			if (request.getParameter("achats") != null) {
+				
+			}
+			request.setAttribute("lstArticle",  manager.getAllArticles());
+
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
