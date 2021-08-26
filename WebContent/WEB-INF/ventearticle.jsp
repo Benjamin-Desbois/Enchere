@@ -61,6 +61,7 @@
 								rows="3" required autofocus></textarea>
 						</div>
 					</div>
+
 					<!-- fin article catégoreie description -->
 					<!-- photo et upload photo -->
 					<div class="row align-items-center mx-2 my-5">
@@ -75,7 +76,9 @@
 								photo :</label> <input type="file" class="form-control" id="customFile" />
 						</div>
 
+
 					</div>
+
 					<!--fin  photo et upload photo -->
 					<!-- prix initial dubut et fin de l'enchère -->
 					<div class="row align-items-center mx-2 my-5">
@@ -94,6 +97,7 @@
 								type="datetime-local" name="dateFin" value="2021-08-21T19:30"
 								min="2021-08-21T19:30" max="2021-12-31T00:00" required autofocus>
 						</div>
+
 
 					</div>
 					<!--fin  prix initial dubut et fin de l'enchère -->
@@ -123,16 +127,37 @@
 						</div>
 						<div class="col-6">
 							<a href="AccueilServlet">
-								<button type="button" class="btn btn-danger">Annuler</button></a>
+								<button type="button" class="btn btn-danger">Annuler</button>
+							</a>
 						</div>
 					</div>
-				</form>
+
+
+
+					<div class="col-12 col-md-4 py-2">
+						<label>Ville :</label> <input class="form-control" type="text"
+							name="ville">
+					</div>
+					${message}
 			</div>
-
-
+			<!-- fin retrait -->
+			<div class="row align-items-center mx-2 my-5">
+				<div class="col-6">
+					<input type="submit" class="btn btn-success" name="Enregistrer"
+						value="Enregistrer">
+				</div>
+				<div class="col-6">
+					<button type="button" class="btn btn-danger">Annuler</button>
+				</div>
+			</div>
+			</form>
 
 		</div>
-		<!-- /card-container -->
+
+
+
+	</div>
+	<!-- /card-container -->
 	</div>
 	<!-- /container -->
 	<!-- Footer-->

@@ -146,7 +146,10 @@ background-color:#e76f51;
 				</div>
 				<div class="col-12 col-md-3 py-2">
 					<input name="s" class="form-control" aria-describedby="Recherche"
-						placeholder="le nom de l'aricle contient" required autofocus>
+
+						placeholder="le nom de l'article contient" required autofocus>
+
+
 				</div>
 				<div class="col-12 col-md-3 py-2">
 					<select class="form-select" aria-label="Default select example" required autofocus>
@@ -174,15 +177,15 @@ background-color:#e76f51;
                 <label for="achats"><b>Achats</b></label>
                 <div class="ml-4">
                     <div>
-                        <input class="form-check-input" type="checkbox" id="encheresouvertes" name="encheres" value="encheresouvertes" checked>
+                        <input class="form-check-input" type="checkbox" id="encheresouvertes" name="encheresouvertes" value="encheresouvertes" checked>
                         <label for="encheresouvertes">Enchères ouvertes</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="encheresencours" name="encheres" value="encheresencours">
+                        <input class="form-check-input" type="checkbox" id="encheresencours" name="encheresencours" value="encheresencours">
                         <label for="encheresencours">Mes enchères en cours</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="encheresremportees" name="encheres" value="encheresremportees">
+                        <input class="form-check-input" type="checkbox" id="encheresremportees" name="encheresremportees" value="encheresremportees">
                         <label for="encheresremportees">Mes enchères remportées</label>
                     </div>
                 </div>
@@ -192,15 +195,15 @@ background-color:#e76f51;
                 <label for="ventes"><b>Mes Ventes</b></label>
                 <div id="ventesradio" class="ml-4">
                     <div>
-                        <input class="form-check-input" type="checkbox" id="ventesencours" name="ventes" value="ventesencours" >
+                        <input class="form-check-input" type="checkbox" id="ventesencours" name="ventesencours" value="ventesencours" >
                         <label for="ventesencours">Mes ventes en cours</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="ventesnondebutees" name="ventes" value="ventesnondebutees">
+                        <input class="form-check-input" type="checkbox" id="ventesnondebutees" name="ventesnondebutees" value="ventesnondebutees">
                         <label for="ventesnondebutees">Ventes non débutées</label>
                     </div>
                     <div>
-                        <input class="form-check-input" type="checkbox" id="ventesterminees" name="ventes" value="ventesterminees">
+                        <input class="form-check-input" type="checkbox" id="ventesterminees" name="ventesterminees" value="ventesterminees">
                         <label for="ventesterminees">ventes terminées</label>
                     </div>
                 </div>

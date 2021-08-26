@@ -3,6 +3,7 @@ package fr.eni.formation.ENIEncheres.ihm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -63,8 +64,14 @@ public class VenteArticleServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MM-DDThh:mm");
+		String today = String.valueOf(LocalDateTime.now().format(formatter));
+		request.setAttribute("dateDebutEnchere", today);
+		System.out.println(today);
+		request.setAttribute("dateFinEnchere", today);
 		if (request.getParameter("nom") != null) {
 			HttpSession session = request.getSession();
+
 			model.getArticle().setNomArticle(request.getParameter("nom"));
 			model.getArticle().setDescription(request.getParameter("description"));
 			model.getArticle().setDateDebutEncheres(LocalDateTime.parse(request.getParameter("dateDebut")));
@@ -88,20 +95,23 @@ public class VenteArticleServlet extends HttpServlet {
 				model.getArticle().getCategorieArticle().setNoCategorie(4);
 				break;
 			default:
-				System.out.println("Sélectionnez une catégorie");
+				request.setAttribute("message", "Sélectionnez une catégorie");
 				isForward = true;
 
 			}
 
 			nextPage = "AccueilServlet";
-			try {
-				// Futures contraintes
-				model.setLstArticles(manager.getAllArticles());
-				// Ajout dans la BDD
-				manager.addArticles(model.getArticle());
-				System.out.println("Ajout réussi (j'espère)");
-			} catch (SQLException | BLLException e) {
-				e.printStackTrace();
+			if (!isForward) {
+				try {
+					// Futures contraintes
+					model.setLstArticles(manager.getAllArticles());
+					// Ajout dans la BDD
+					manager.addArticles(model.getArticle());
+					System.out.println("Ajout réussi (j'espère)");
+				} catch (SQLException | BLLException e) {
+					request.setAttribute("message", e.getMessage());
+					isForward = true;
+				}
 			}
 		}
 		if (isForward) {

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import fr.eni.formation.ENIEncheres.bo.Article;
+import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 import fr.eni.formation.ENIEncheres.dal.ArticleDAO;
 import fr.eni.formation.ENIEncheres.dal.ArticleFact;
 
@@ -13,8 +14,20 @@ public class ArticleManagerImpl implements ArticleManager {
 
 	@Override
 	public void addArticles(Article article) throws BLLException {
+		Boolean valide = true;
+		if (article.getDateDebutEncheres().isAfter(article.getDateFinEncheres())) {
+			valide = false;
+			throw new BLLException("L'enchère ne peut pas commencer après la fin de l'enchère !");
+		}
+		if (article.getMiseAPrix()<=0) {
+			valide = false;
+			throw new BLLException("Le prix ne peut pas être inférieur à 10 points");
+		}
+		
 		try {
-			dao.insert(article);
+			if (valide) {
+				dao.insert(article);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
