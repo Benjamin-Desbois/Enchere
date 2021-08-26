@@ -68,8 +68,6 @@ public class AccueilServlet extends HttpServlet {
 			parameter = request.getParameter("type");
 			if ("achats".equals(parameter)) {
 				for (Article article : manager.getAllArticles()) {
-					System.out.println(article.getVendeur().getNoUtilisateur());
-					System.out.println(request.getSession().getAttribute("NoUtilisateur"));
 					if (article.getVendeur()
 							.getNoUtilisateur() != (int) request.getSession().getAttribute("NoUtilisateur")) {
 						lstArticle.add(article);
@@ -84,9 +82,7 @@ public class AccueilServlet extends HttpServlet {
 				}
 			} else {
 				lstArticle = manager.getAllArticles();
-				System.out.println("non");
 			}
-			System.out.println(lstArticle);
 			request.setAttribute("lstArticle", lstArticle);
 
 		} catch (SQLException e) {
