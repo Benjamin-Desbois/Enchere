@@ -24,7 +24,7 @@
 		<div class="container ">
 
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
-			<a class="navbar-brand" href="ListeEnchereConnecte"> <img
+			<a class="navbar-brand" href="AccueilServlet"> <img
 				class="logo-gris me-3" src="./images/auction.png" width="50">
 				ENI Enchères
 			</a>
@@ -85,11 +85,11 @@
 					</div>
 					<div class="col-12 col-md-4 py-2">
 					<label>Début de l'enchère :</label>
-						<input class="form-control" type="datetime-local" name="dateDebut" value="2021-08-20T19:30" min="2021-08-20T19:30" max="2021-12-31T00:00">
+						<input class="form-control" type="datetime-local" name="dateDebut" value="${dateDebutEnchere}" min="${dateDebutEnchere}" max="2021-12-31T00:00">
 					</div>
 					<div class="col-12 col-md-4 py-2">
 						<label>Fin de l'enchère :</label>
-					<input class="form-control" type="datetime-local" name="dateFin" value="2021-08-21T19:30" min="2021-08-21T19:30" max="2021-12-31T00:00">
+					<input class="form-control" type="datetime-local" name="dateFin" value="${dateFinEnchere}" min="${dateFinEnchere}" max="2021-12-31T00:00">
 					</div>
 				
 				</div>
@@ -110,7 +110,7 @@
 						<label>Ville :</label>
 					<input class="form-control" type="text" name="ville">
 					</div>
-				
+				  ${message}
 				</div>
 				<!-- fin retrait -->
 				<div class="row align-items-center mx-2 my-5">

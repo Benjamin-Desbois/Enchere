@@ -2,7 +2,8 @@ package fr.eni.formation.ENIEncheres.ihm;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,41 +40,40 @@ public class AccueilServlet extends HttpServlet {
 
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 		ArticleModel model = null;
-		Integer i=1;
-	
+
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		
-		
 		try {
-			request.setAttribute("lstArticle",  manager.getAllArticles());
+
+//			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //			for (Article art : manager.getAllArticles()) {
-//				
-//				model.setArticle(manager.getArticleById((Integer) art.getNoArticle()));
-//				String str1 = "nomarticle";
-//				String srt2 = String.valueOf(i);
-//				String result = str1+srt2;
-//				request.setAttribute(result, model.getArticle().getNomArticle());
-//				str1 = "datefin";
-//				result = str1+srt2;
-//				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//				request.setAttribute(result, model.getArticle().getDateFinEncheres().format(formatter));
-//				str1 = "prix";
-//				result = str1+srt2;
-//				request.setAttribute(result, model.getArticle().getMiseAPrix());
-//				str1 = "nomutilisateur";
-//				result = str1+srt2;
-//				request.setAttribute(result, model.getArticle().getVendeur().getPseudo());
-//				i++;
-//				
+//				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));
 //			}
-			
+			List<Article> lstArticle = new ArrayList<>();
+			String parameter = request.getParameter("type");
+			if ("vente".equals(parameter)) {
+				for (Article art : manager.getAllArticles()) {
+					if (art.getVendeur().getNoUtilisateur() != request.getSession().getAttribute("NoUtilisateur")) {
+						lstArticle.add(art);
+					}
+				}
+			} else if ("vente".equals(parameter)) {
+				for (Article art : manager.getAllArticles()) {
+					if (art.getVendeur().getNoUtilisateur() == request.getSession().getAttribute("NoUtilisateur")) {
+						lstArticle.add(art);
+					}
+				}
+			} else {
+				lstArticle = manager.getAllArticles();
+			}
+			request.setAttribute("lstArticle", lstArticle);
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +83,9 @@ public class AccueilServlet extends HttpServlet {
 	}
 
 	/**
-
-	/**
+	 * 
+	 * /**
+	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
