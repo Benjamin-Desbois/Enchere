@@ -211,17 +211,18 @@ background-color:#e76f51;
 		<div class="row gx-4 gx-lg-5">
 
 			<!--   1 cards-->
-			<C:forEach items="${model.lstArticles}" var="article">
+			<c:forEach items="${lstArticle}" var="article">
 			<div class="col-md-6 col-lg-4  mb-5">
+			
 				<div class="card h-100">
 					<div class="card-header">
-						Prix : <b>${article.prix1}</b> points
+						Prix : <b>${article.miseAPrix}</b> points
 					</div>
 					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
-						<h5 class="card-title">${article.nomarticle1}</h5>
+						<h5 class="card-title">${article.nomArticle}</h5>
 							
 							
 							<!--  
@@ -235,85 +236,19 @@ background-color:#e76f51;
 							class="fas fa-star"></i> <i class="far fa-star"></i> <i
 							class="far fa-star"></i> <i class="far fa-star"></i></li>
 						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>${article.datefin1}</b></span></li>
+							class="ms-5"><b>${article.dateFinEncheres}</b></span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
 							12 rue de la Poste 44100 Nantes</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">${article.nomutilisateur1}</a></li>
+							<a href="#">${article.vendeur.pseudo}</a></li>
 					</ul>
 					<div class="card-footer">
 						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
 					</div>
 				</div>
 			</div>
-			</C:forEach>
-			<!--   A supprimer -->
-			<div class="col-md-6 col-lg-4  mb-3">
-				<div class="card h-100">
-					<div class="card-header">
-						Prix : <b>${prix2}</b> points
-					</div>
-					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
-						class="card-img-top" alt="PC gamer pour travailler">
-					</a>
-					<div class="card-body">
-						<h5 class="card-title">${nomarticle2}</h5>
-							<!--  
-                            <p class="card-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
-                                maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                        -->
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><i class="fas fa-star"></i> <i
-							class="fas fa-star"></i> <i class="far fa-star"></i> <i
-							class="far fa-star"></i> <i class="far fa-star"></i></li>
-						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>${datefin2}</b></span></li>
-						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
-							12 rue de la Poste 44100 Nantes</li>
-						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">${nomutilisateur2}</a></li>
-					</ul>
-					<div class="card-footer">
-						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-4  mb-5">
-				<div class="card h-100">
-					<div class="card-header">
-						Prix : <b>${prix3}</b> points
-					</div>
-					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
-						class="card-img-top" alt="PC gamer pour travailler">
-					</a>
-					<div class="card-body">
-						<h5 class="card-title">${nomarticle3}</h5>
-							<!--  
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, 
-                                    maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                            -->
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><i class="fas fa-star"></i> <i
-							class="fas fa-star"></i> <i class="far fa-star"></i> <i
-							class="far fa-star"></i> <i class="far fa-star"></i></li>
-						<li class="list-group-item">Fin de l'enchère : <span
-							class="ms-5"><b>${datefin3}</b></span></li>
-						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
-							12 rue de la Poste 44100 Nantes</li>
-						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
-							<a href="#">${nomutilisateur3}</a></li>
-					</ul>
-					<div class="card-footer">
-						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
-					</div>
-				</div>
-			</div>
-
-			<!--   A supprimer FIN -->
+			</c:forEach>
+			
 		</div>
 		<!-- row -->
 	</div>
