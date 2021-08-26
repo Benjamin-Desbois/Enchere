@@ -85,11 +85,11 @@
 					</div>
 					<div class="col-12 col-md-4 py-2">
 					<label>Début de l'enchère :</label>
-						<input class="form-control" type="datetime-local" name="dateDebut" value="${dateDebutEnchere}" min="${dateDebutEnchere}" max="2021-12-31T00:00">
+						<input class="form-control" type="datetime-local" name="dateDebut" value="2021-08-27T12:00" min="2021-08-27T00:00" max="2021-12-31T00:00">
 					</div>
 					<div class="col-12 col-md-4 py-2">
 						<label>Fin de l'enchère :</label>
-					<input class="form-control" type="datetime-local" name="dateFin" value="${dateFinEnchere}" min="${dateFinEnchere}" max="2021-12-31T00:00">
+					<input class="form-control" type="datetime-local" name="dateFin" value="2021-08-28T12:00" min="2021-08-28T00:00" max="2021-12-31T00:00">
 					</div>
 				
 				</div>

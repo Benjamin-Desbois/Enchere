@@ -238,7 +238,7 @@ background-color:#e76f51;
 						<li class="list-group-item">Fin de l'enchère : <span
 							class="ms-5"><b>${article.dateFinEncheres}</b></span></li>
 						<li class="list-group-item"><i class="fas fa-map-marker-alt"></i>
-							12 rue de la Poste 44100 Nantes</li>
+							${article.vendeur.rue} ${article.vendeur.codePostal} ${article.vendeur.ville}</li>
 						<li class="list-group-item"><i class="fas fa-user-alt me-3"></i>
 							<a href="#">${article.vendeur.pseudo}</a></li>
 					</ul>

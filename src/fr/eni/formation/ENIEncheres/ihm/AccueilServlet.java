@@ -39,15 +39,6 @@ public class AccueilServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
-		ArticleModel model = null;
-
-		try {
-			model = new ArticleModel(new Article(), manager.getAllArticles());
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		try {
 
