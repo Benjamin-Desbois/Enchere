@@ -244,7 +244,7 @@ background-color:#e76f51;
 					</ul>
 				
 					<div class="card-footer">
-						<a class="btn btn-jinyan btn-sm" href="#!">Détail</a>
+						<a class="btn btn-jinyan btn-sm" href="DetailVenteServlet">Détail</a>
 					</div>
 				</div>
 			</div>

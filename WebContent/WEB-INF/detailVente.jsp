@@ -46,11 +46,10 @@
 
 					</div>
 					<div class="col-12 col-md-6 ">
-						<h5 class="text-center">Camera Vintage</h5>
-						<p class="text-center">Description:CAMERA CINE et OBJECTIF 9
-							mm 6.5 mm, WOLLENSAK CINE RAPTAR, Vendus en l'état - 21 x 5 x 12
-							cm.</p>
-						<p class="text-center">Catégorie: Informatique</p>
+						<h5 class="text-center">${nom}</h5>
+						<p class="text-center">
+			</p>
+						<p class="text-center">Description: ${description}</p>
 
 					</div>
 
@@ -60,12 +59,12 @@
 				<div class="col-12">
 					<form>
 						<h6 class="text-center">Meilleur offre: 210 pts par Bob</h6>
-						<h6 class="text-center">Mise à prix: 185 points</h6>
-						<h6 class="text-center">Fin de l'enchère: 09/10/2018</h6>
+						<h6 class="text-center">Mise à prix: ${miseAprix }</h6>
+						<h6 class="text-center">Fin de l'enchère: ${finDate }</h6>
 						<h6 class="text-center">
 							Retrait: 10 allée des Alouettes<br>44800 Saint Herblain
 						</h6>
-						<h6 class="text-center">Vendeur: jojo44</h6>
+						<h6 class="text-center">Vendeur: ${vendeur}</h6>
 						<label>Ma proposition :</label> <input class="form-control"
 							type="number" name="prix" class="form-control"
 							aria-describedby="maProposition" placeholder="220" step="10">
