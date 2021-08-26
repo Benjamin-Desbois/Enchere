@@ -146,7 +146,7 @@ background-color:#e76f51;
 				</div>
 				<div class="col-12 col-md-3 py-2">
 					<input name="s" class="form-control" aria-describedby="Recherche"
-						placeholder="le nom de l'aricle contient">
+						placeholder="le nom de l'article contient">
 				</div>
 				<div class="col-12 col-md-3 py-2">
 					<select class="form-select" aria-label="Default select example">
@@ -166,11 +166,11 @@ background-color:#e76f51;
 
 		</div>
 		<!--checkbox et radio  -->
-		
+		<c:if test= "${ NoUtilisateur!= null}" >
 			<div class=" my-3 d-flex justify-content-between" >
             <div class="form-check">
             
-                <input class="form-check-input" type="radio" id="achats" name="achats" value="achats" checked>
+                <input class="form-check-input" type="radio" id="achats" name="type" value="achats" checked>
                 <label for="achats"><b>Achats</b></label>
                 <div class="ml-4">
                     <div>
@@ -188,7 +188,7 @@ background-color:#e76f51;
                 </div>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" id="ventes" name="ventes" value="vente">
+                <input class="form-check-input" type="radio" id="ventes" name="type" value="vente">
                 <label for="ventes"><b>Mes Ventes</b></label>
                 <div id="ventesradio" class="ml-4">
                     <div>
@@ -206,7 +206,7 @@ background-color:#e76f51;
                 </div>
             </div>
         </div>
-       
+       </c:if>
 	<!-- fin checkbox et radio  -->
 		<div class="row gx-4 gx-lg-5">
 

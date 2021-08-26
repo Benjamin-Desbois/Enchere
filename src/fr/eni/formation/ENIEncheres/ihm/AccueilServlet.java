@@ -40,40 +40,40 @@ public class AccueilServlet extends HttpServlet {
 
 		String nextPage = "/WEB-INF/accueilConnecte.jsp";
 		ArticleModel model = null;
-	
+
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		
-		
 		try {
-			
+
 //			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //			for (Article art : manager.getAllArticles()) {
 //				art.setDateFinEncheres(LocalDateTime.parse(art.getDateDebutEncheres().format(formatter)));
 //			}
 			List<Article> lstArticle = new ArrayList<>();
-			if (request.getParameter("achats") != null) {
+			String parameter = request.getParameter("type");
+			if ("vente".equals(parameter)) {
 				for (Article art : manager.getAllArticles()) {
-					if (art.getVendeur().getNoUtilisateur() != request.getSession().getAttribute("NoUtilisateur")){
+					if (art.getVendeur().getNoUtilisateur() != request.getSession().getAttribute("NoUtilisateur")) {
+						lstArticle.add(art);
+					}
+				}
+			} else if ("vente".equals(parameter)) {
+				for (Article art : manager.getAllArticles()) {
+					if (art.getVendeur().getNoUtilisateur() == request.getSession().getAttribute("NoUtilisateur")) {
 						lstArticle.add(art);
 					}
 				}
 			} else {
-				for (Article art : manager.getAllArticles()) {
-					if (art.getVendeur().getNoUtilisateur() == request.getSession().getAttribute("NoUtilisateur")){
-						lstArticle.add(art);
-					}
-				}
+				lstArticle = manager.getAllArticles();
 			}
-			request.setAttribute("lstArticle",  lstArticle);
+			request.setAttribute("lstArticle", lstArticle);
 
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -83,8 +83,9 @@ public class AccueilServlet extends HttpServlet {
 	}
 
 	/**
-
-	/**
+	 * 
+	 * /**
+	 * 
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
