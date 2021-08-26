@@ -59,6 +59,7 @@ public class ModifierMonProfilServlet extends HttpServlet {
 		}
 		
 		try {
+			
 			model.setUtilisateur(manager.getSelectById((Integer) session.getAttribute("NoUtilisateur")));
 			System.out.println(session.getAttribute("NoUtilisateur"));
 		} catch (SQLException e) {
