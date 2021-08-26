@@ -47,22 +47,25 @@ public class DetailVenteServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		try {
-			model.setArticle(manager.getArticleById((Integer) ("noArticle")));
+		int id =Integer.parseInt(request.getParameter("id"));
 		
-			request.setAttribute("nom", model.getArticle().getNomArticle());
-			request.setAttribute("description", model.getArticle().getDescription());
-			request.setAttribute("categorie", model.getArticle().getCategorieArticle());
-		//request.setAttribute("meilleureOffre", model.getArticle().getEmail());
-			request.setAttribute("miseAprix", model.getArticle().getMiseAPrix());
-			request.setAttribute("finDate", model.getArticle().getDateFinEncheres());
-			request.setAttribute("retrait", model.getArticle().getLieuRetrait());
-			request.setAttribute("vendeur", model.getArticle().getVendeur());
-
+        try {
+			model.setArticle(manager.getArticleById(id));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		request.setAttribute("nom", model.getArticle().getNomArticle());
+		request.setAttribute("description", model.getArticle().getDescription());
+		request.setAttribute("categorie", model.getArticle().getCategorieArticle());
+		request.setAttribute("rue", model.getArticle().getVendeur().getRue());
+		request.setAttribute("codePostal", model.getArticle().getVendeur().getCodePostal());
+		request.setAttribute("ville", model.getArticle().getVendeur().getVille());
+		request.setAttribute("miseAprix", model.getArticle().getMiseAPrix());
+		request.setAttribute("finDate", model.getArticle().getDateFinEncheres());
+		request.setAttribute("retrait", model.getArticle().getLieuRetrait());
+		request.setAttribute("vendeur", model.getArticle().getVendeur().getPseudo());
+		
 
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/detailVente.jsp");
 		rd.forward(request, response);

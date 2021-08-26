@@ -222,7 +222,7 @@ background-color:#e76f51;
 					<div class="card-header">
 						Prix : <b>${article.miseAPrix}</b> points
 					</div>
-					<a href="#"> <img src="https://dummyimage.com/300x200/ccc/555"
+					<a href="#"> <img src="./images/avendre.jpg"
 						class="card-img-top" alt="PC gamer pour travailler">
 					</a>
 					<div class="card-body">
@@ -244,7 +244,7 @@ background-color:#e76f51;
 					</ul>
 				
 					<div class="card-footer">
-						<a class="btn btn-jinyan btn-sm" href="DetailVenteServlet">Détail</a>
+						<a class="btn btn-jinyan btn-sm" href="DetailVenteServlet?id=${article.noArticle }">Détail</a>
 					</div>
 				</div>
 			</div>

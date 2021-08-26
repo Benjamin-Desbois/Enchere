@@ -41,7 +41,12 @@ h1{
  .bg_nouvelleVente{
  background-color: #938e94 !important;
  }
-
+#bg_detailVente{
+	background-color:#f4a261 !important;
+}
+.detailHcolor{
+	color:#264653;
+}
 .profile-img-card {
   width: 120px;
   height: 120px;

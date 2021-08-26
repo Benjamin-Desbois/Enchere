@@ -16,6 +16,14 @@
 
 <!-- Custom styles for this template -->
 <link href="css/login.css" rel="stylesheet" />
+<style>
+h2{
+color:black;
+}
+.btn-encherir{
+background-color:#e76f51;
+}
+</style>
 </head>
 
 
@@ -35,7 +43,7 @@
 		<div class="card card-container d-flex justify-content-center ">
 			<h1 class="text-center my-3">Détail Vente</h1>
 			<!-- Call to Action-->
-			<div class="card text-white bg_nouvelleVente text-center">
+			<div class="card text-white text-center" id="bg_detailVente">
 				<!-- article catégoreie description -->
 
 				<div class="row align-items-center mx-2">
@@ -46,29 +54,32 @@
 
 					</div>
 					<div class="col-12 col-md-6 ">
-						<h5 class="text-center">${nom}</h5>
+						<h2 class="text-center">${nom}</h2>
 						<p class="text-center">
 			</p>
-						<p class="text-center">Description: ${description}</p>
+						<h4 class="text-center">${description}</h4>
 
 					</div>
 
 				</div>
 
-				<div class="row align-items-center mx-2">
+				<div class="row align-items-center my-4">
 				<div class="col-12">
 					<form>
-						<h6 class="text-center">Meilleur offre: 210 pts par Bob</h6>
-						<h6 class="text-center">Mise à prix: ${miseAprix }</h6>
-						<h6 class="text-center">Fin de l'enchère: ${finDate }</h6>
-						<h6 class="text-center">
-							Retrait: 10 allée des Alouettes<br>44800 Saint Herblain
-						</h6>
-						<h6 class="text-center">Vendeur: ${vendeur}</h6>
-						<label>Ma proposition :</label> <input class="form-control"
+						<h5 class="text-center"><span class="detailHcolor">Meilleur offre: </span>210 pts par Bob</h5>
+						<h5 class="text-center"><span class="detailHcolor">Mise à prix: </span>${miseAprix }</h5>
+						<h5 class="text-center"><span class="detailHcolor">Fin de l'enchère: </span>${finDate }</h5>
+						<h5 class="text-center">
+							<span class="detailHcolor">Retrait: </span>${rue}<br>${codePostal}&nbsp;&nbsp;${ville}
+						</h5>
+						<h5 class="text-center"><span class="detailHcolor">Vendeur: </span>${vendeur}</h5>
+						<div class="d-flex justify-content-between">
+						<label><span class="detailHcolor"><b>Ma proposition :</b></span> <input class="form-control"
 							type="number" name="prix" class="form-control"
-							aria-describedby="maProposition" placeholder="220" step="10">
-						<button type="submit" class="btn btn-info">Enchérir</button>
+							aria-describedby="maProposition" placeholder="220" step="10"></label>
+							
+						<button type="submit" class="btn-encherir"><b>Enchérir</b></button>
+					</div>
 					</form>
 
 				</div>

@@ -51,7 +51,7 @@ public class AccueilServlet extends HttpServlet {
 //			}
 			List<Article> lstArticle = new ArrayList<>();
 			String parameter = request.getParameter("type");
-			if ("vente".equals(parameter)) {
+			if ("achats".equals(parameter)) {
 				for (Article art : manager.getAllArticles()) {
 					if (art.getVendeur().getNoUtilisateur() != request.getSession().getAttribute("NoUtilisateur")) {
 						lstArticle.add(art);
