@@ -166,7 +166,7 @@ background-color:#e76f51;
 
 		</div>
 		<!--checkbox et radio  -->
-		
+		<c:if test= "${ NoUtilisateur!= null}" >
 			<div class=" my-3 d-flex justify-content-between" >
             <div class="form-check">
             
@@ -206,7 +206,7 @@ background-color:#e76f51;
                 </div>
             </div>
         </div>
-       
+       </c:if>
 	<!-- fin checkbox et radio  -->
 		<div class="row gx-4 gx-lg-5">
 
