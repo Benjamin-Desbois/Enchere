@@ -105,16 +105,16 @@
 					<div class="row align-items-center mx-2 my-5">
 						<h2 class="text-center text-dark">Retrait</h2>
 						<div class="col-12 col-md-4 py-2">
-							<label>Rue :</label> <input class="form-control" type="text"
+							<label>Rue :</label> <input class="form-control" placeholder="${rue}" type="text"
 								name="adresse" class="form-control" aria-describedby="Recherche"
 								step="10" required autofocus>
 						</div>
 						<div class="col-12 col-md-4 py-2">
-							<label>Code Postal :</label> <input class="form-control"
+							<label>Code Postal :</label> <input class="form-control" placeholder="${codepostal}"
 								type="number" name="codePostal" required autofocus>
 						</div>
 						<div class="col-12 col-md-4 py-2">
-							<label>Ville :</label> <input class="form-control" type="text"
+							<label>Ville :</label> <input class="form-control" type="text" placeholder="${ville}"
 								name="ville" required autofocus>
 						</div>
 
