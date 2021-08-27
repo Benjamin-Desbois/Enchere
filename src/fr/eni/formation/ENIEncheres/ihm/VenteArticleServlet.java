@@ -16,8 +16,11 @@ import fr.eni.formation.ENIEncheres.bll.ArticleManagerSingl;
 import fr.eni.formation.ENIEncheres.bll.BLLException;
 import fr.eni.formation.ENIEncheres.bll.RetraitManager;
 import fr.eni.formation.ENIEncheres.bll.RetraitManagerSingl;
+import fr.eni.formation.ENIEncheres.bll.UtilisateurManager;
+import fr.eni.formation.ENIEncheres.bll.UtilisateurManagerSingl;
 import fr.eni.formation.ENIEncheres.bo.Article;
 import fr.eni.formation.ENIEncheres.bo.Retrait;
+import fr.eni.formation.ENIEncheres.bo.Utilisateur;
 
 /**
  * Servlet implementation class VenteArticleServlet
@@ -27,6 +30,7 @@ public class VenteArticleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ArticleManager manager = ArticleManagerSingl.getInstance();
 	private RetraitManager retraitManager = RetraitManagerSingl.getInstance();
+	private UtilisateurManager utilisateurManager = UtilisateurManagerSingl.getInstance();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -43,6 +47,23 @@ public class VenteArticleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nextPage = "/WEB-INF/ventearticle.jsp";
+		HttpSession session = request.getSession();
+		UtilisateurModel utilisateurModel = null;
+		try {
+			utilisateurModel = new UtilisateurModel(new Utilisateur(), utilisateurManager.getAllUtilisateurs());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			utilisateurModel.setUtilisateur(utilisateurManager.getSelectById(((Integer) session.getAttribute("NoUtilisateur"))));
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		request.setAttribute("rue", utilisateurModel.getUtilisateur().getRue());
+		request.setAttribute("codepostal",utilisateurModel.getUtilisateur().getCodePostal());
+		request.setAttribute("ville",utilisateurModel.getUtilisateur().getVille());
 		request.getRequestDispatcher(nextPage).forward(request, response);
 		/**
 		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -55,17 +76,21 @@ public class VenteArticleServlet extends HttpServlet {
 		String nextPage = "/WEB-INF/ventearticle.jsp";
 		ArticleModel model = null;
 		RetraitModel retraitModel = null;
+		
 		boolean isForward = false;
+		HttpSession session = request.getSession();
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
 			retraitModel = new RetraitModel(new Retrait(), retraitManager.getAllRetraits());
+		
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
+		
 		if (request.getParameter("nom") != null) {
-			HttpSession session = request.getSession();
+			
 
 			model.getArticle().setNomArticle(request.getParameter("nom"));
 			model.getArticle().setDescription(request.getParameter("description"));
