@@ -314,12 +314,13 @@
 								<div class="groupeFormulaire row">
 
 									<div class="col-5">
-										<label>Mot de passe actuel :</label>
+										<label class="text-nowrap">Mot de passe actuel :</label>
 									</div>
 
 									<div class="col-7">
-										<input type="number" name="motdepasseactuel"
-											id="inputMotDePasseActuel" class="form-control" 
+
+										<input type="text" name="motdepasseactuel"
+											id="inputMotDePasseActuel" class="form-control"
 											autofocus />
 									</div>
 
@@ -342,7 +343,7 @@
 								<div class="groupeFormulaire row">
 
 									<div class="col-5">
-										<label>Nouveau mot de passe :</label>
+										<label class="text-nowrap">Nouveau mot de passe :</label>
 									</div>
 
 									<div class="col-7">
@@ -367,7 +368,10 @@
 					<!--bigger container open -->
 					<button class="btn btn-info text-center">Enregistrer</button>
 				</div>
+				<div class="container mt-3 text-center">
 
+					<h5 class="text-danger">${message}</h5>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -383,7 +387,6 @@
 
 
 
-	${message}
 	<!-- Footer-->
 	<footer class="py-5  my-navbar mt-5">
 		<div class="container  ">

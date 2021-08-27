@@ -371,6 +371,10 @@
 						<a href="AccueilServlet"><button type="submit"
 								class="btn btn-danger">Annuler</button></a>
 					</div>
+					<div class="container mt-3 text-center">
+
+					<h5 class="text-danger">${message}</h5>
+				</div>
 		</form>
 
 				</div>
@@ -381,7 +385,7 @@
 	<!-- /card-container -->
 
 
-	${message}
+	
 	<!-- Footer-->
 	<footer class="py-5  my-navbar mt-5">
 		<div class="container  ">
