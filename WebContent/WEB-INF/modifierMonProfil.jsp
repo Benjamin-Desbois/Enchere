@@ -36,10 +36,10 @@
 		</div>
 	</nav>
 	<div class="container d-flex justify-content-center">
-	<form action="ModifierMonProfilServlet" method = "POST">
+
 		<div class="card card-container mt-5 ">
 
-
+			<form action="ModifierMonProfilServlet" method="POST">
 
 				<h1 class="text-center mb-5">Modifier Mon Profil</h1>
 
@@ -63,8 +63,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="pseudo" id="inputPseudo" value = "${model.utilisateur.pseudo}"
-											class="form-control" required autofocus />
+										<input type="text" name="pseudo" id="inputPseudo"
+											value="${model.utilisateur.pseudo}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -90,8 +91,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="nom" id="inputNom" value = "${model.utilisateur.nom}"
-											class="form-control" required autofocus />
+										<input type="text" name="nom" id="inputNom"
+											value="${model.utilisateur.nom}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -125,8 +127,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="prenom" id="inputPrenom" value ="${model.utilisateur.prenom}"
-											class="form-control" required autofocus />
+										<input type="text" name="prenom" id="inputPrenom"
+											value="${model.utilisateur.prenom}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -152,8 +155,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="email" name="email" id="inputEmail" value ="${model.utilisateur.email}"
-											class="form-control" required autofocus />
+										<input type="email" name="email" id="inputEmail"
+											value="${model.utilisateur.email}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -187,9 +191,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="number" name="telephone" id="inputPseudo" value = "${model.utilisateur.telephone}"
-											class="form-control" placeholder="06********" required
-											autofocus />
+										<input type="number" name="telephone" id="inputPseudo"
+											value="${model.utilisateur.telephone}" class="form-control"
+											placeholder="06********" required autofocus />
 									</div>
 
 								</div>
@@ -215,8 +219,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="rue" id="inputRue" value = "${model.utilisateur.rue}"
-											class="form-control" required autofocus />
+										<input type="text" name="rue" id="inputRue"
+											value="${model.utilisateur.rue}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -249,8 +254,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="number" name="codepostal" id="inputCodePostal" value = "${model.utilisateur.codePostal}"
-											class="form-control" required autofocus />
+										<input type="number" name="codepostal" id="inputCodePostal"
+											value="${model.utilisateur.codePostal}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -276,8 +282,9 @@
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="ville" id="inputVille" value = "${model.utilisateur.ville}"
-											class="form-control" required autofocus />
+										<input type="text" name="ville" id="inputVille"
+											value="${model.utilisateur.ville}" class="form-control"
+											required autofocus />
 									</div>
 
 								</div>
@@ -290,20 +297,8 @@
 
 				</div>
 				<!-- ----------------------------------------------------------------- -->
-				<!-- ----------------------------------------------------------------- -->
-				<div class="container mt-3">
-				
-				<div class="row">
-				<div class="col-5">
-				<label> Mot de passe actuel :</label>
-				</div>
-				<div class="col-7">
-				<input type="text" name="motdepasseactuel"
-											class="form-control" placeholder="******" required autofocus />
-				</div>
-				</div>
-				</div>
 
+				<!-- ----------------------------------------------------------------- -->
 				<div class="container mt-3">
 					<!--bigger container open -->
 					<div class="row">
@@ -319,12 +314,13 @@
 								<div class="groupeFormulaire row">
 
 									<div class="col-5">
-										<label>Nouveau Mot de passe :</label>
+										<label>Mot de passe actuel :</label>
 									</div>
 
 									<div class="col-7">
-										<input type="text" name="motdepasse" id="inputMotDePasse" value = "${model.utilisateur.motdepasse}"
-											class="form-control" placeholder="******" required autofocus />
+										<input type="number" name="motdepasseactuel"
+											id="inputMotDePasseActuel" class="form-control" required
+											autofocus />
 									</div>
 
 								</div>
@@ -341,6 +337,22 @@
 						<div class="col-lg-6 col-md-12 mb-3">
 							<!-- bigger col open(2nd) -->
 							<!-- ----------2---------- -->
+							<div class="container-fluid">
+								<!--small container open  -->
+								<div class="groupeFormulaire row">
+
+									<div class="col-5">
+										<label>Nouveau mot de passe :</label>
+									</div>
+
+									<div class="col-7">
+										<input type="text" name="motdepasse" id="inputMotDePasse"
+											value="${model.utilisateur.motDePasse}" class="form-control"
+											required autofocus />
+									</div>
+
+								</div>
+							</div>
 							<!-- small container close -->
 							<!-- -----------2--------- -->
 						</div>
@@ -348,34 +360,31 @@
 					</div>
 
 				</div>
-				
 				<!-- ----------------------------------------------------------------- -->
 
 
-
-				<div class="container mt-3">
+				<div class="container mt-3 text-center">
 					<!--bigger container open -->
-					<div class="row">
-						<div class="col-6 ">
-						<button class="btn btn-info text-center">Enregistrer</button>
-						</div>
-						<div class="col-6 ">
-							
-						</div>
-					</div>
+					<button class="btn btn-info text-center">Enregistrer</button>
 				</div>
-	
+
+			</form>
 		</div>
-		</form>
-		<form action="SupprimerProfilServlet" method ="POST">
-							<button class="btn btn-danger">Supprimer mon compte</button>
-						</form>
 	</div>
-	<!-- /card-container -->
+
+
+	<div class="container mt-5 text-center">
+		<!--bigger container open -->
+		<form action="SupprimerProfilServlet" method="POST">
+			<button class="btn btn-danger">Supprimer mon compte</button>
+		</form>
+	</div>
+
+
 
 
 	${message}
-		<!-- Footer-->
+	<!-- Footer-->
 	<footer class="py-5  my-navbar mt-5">
 		<div class="container  ">
 
