@@ -47,6 +47,23 @@ public class VenteArticleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String nextPage = "/WEB-INF/ventearticle.jsp";
+		HttpSession session = request.getSession();
+		UtilisateurModel utilisateurModel = null;
+		try {
+			utilisateurModel = new UtilisateurModel(new Utilisateur(), utilisateurManager.getAllUtilisateurs());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			utilisateurModel.setUtilisateur(utilisateurManager.getSelectById(((Integer) session.getAttribute("NoUtilisateur"))));
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		request.setAttribute("rue", utilisateurModel.getUtilisateur().getRue());
+		request.setAttribute("codepostal",utilisateurModel.getUtilisateur().getCodePostal());
+		request.setAttribute("ville",utilisateurModel.getUtilisateur().getVille());
 		request.getRequestDispatcher(nextPage).forward(request, response);
 		/**
 		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -59,27 +76,19 @@ public class VenteArticleServlet extends HttpServlet {
 		String nextPage = "/WEB-INF/ventearticle.jsp";
 		ArticleModel model = null;
 		RetraitModel retraitModel = null;
-		UtilisateurModel utilisateurModel = null;
+		
 		boolean isForward = false;
 		HttpSession session = request.getSession();
 		try {
 			model = new ArticleModel(new Article(), manager.getAllArticles());
 			retraitModel = new RetraitModel(new Retrait(), retraitManager.getAllRetraits());
-			utilisateurModel = new UtilisateurModel(new Utilisateur(), utilisateurManager.getAllUtilisateurs());
+		
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		try {
-			utilisateurModel.setUtilisateur(utilisateurManager.getSelectById(((Integer) session.getAttribute("NoUtilisateur"))));
-		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		request.setAttribute("rue", utilisateurModel.getUtilisateur().getRue());
-		request.setAttribute("codepostal",utilisateurModel.getUtilisateur().getCodePostal());
-		request.setAttribute("ville",utilisateurModel.getUtilisateur().getVille());
+		
 		if (request.getParameter("nom") != null) {
 			
 
