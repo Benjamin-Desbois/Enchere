@@ -388,7 +388,7 @@
 
 			<p class="m-0  text-white text-center ">
 				<!-- <img class="me-3" src="./images/eni.jpg" width="100">-->
-				Copyright &copy; ENI Enchère ENI 2021
+				Copyright &copy; ENI Enchères ENI 2021
 			</p>
 		</div>
 	</footer>

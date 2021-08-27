@@ -204,7 +204,7 @@ background-color:#e76f51;
                     </div>
                     <div>
                         <input class="form-check-input" type="checkbox" id="ventesterminees" name="ventesterminees" value="ventesterminees">
-                        <label for="ventesterminees">ventes terminées</label>
+                        <label for="ventesterminees">Ventes terminées</label>
                     </div>
                 </div>
             </div>
@@ -260,7 +260,7 @@ background-color:#e76f51;
 
 			<p class="m-0  text-white text-center ">
 				<!-- <img class="me-3" src="./images/eni.jpg" width="100">-->
-				Copyright &copy; ENI Enchère ENI 2021
+				Copyright &copy; ENI Enchères ENI 2021
 			</p>
 		</div>
 	</footer>
