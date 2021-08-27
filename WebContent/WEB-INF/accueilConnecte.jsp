@@ -96,7 +96,7 @@ background-color:#e76f51;
         
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
 			<a class="navbar-brand" href="AccueilServlet"> <img class="logo-gris me-3"
-				src="./images/auction.png" width="50"> ENI Enchère
+				src="./images/auction.png" width="50"> ENI Enchères
 			</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

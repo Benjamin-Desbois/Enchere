@@ -30,7 +30,7 @@
 			<!--<img class="mr-3" src="eni.jpg" width="50">-->
 			<a class="navbar-brand" href="AccueilServlet"> <img
 				class="logo-gris me-3" src="./images/auction.png" width="50">
-				ENI Enchère
+				ENI Enchères
 			</a>
 
 		</div>
