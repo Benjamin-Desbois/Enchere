@@ -319,7 +319,7 @@
 
 									<div class="col-7">
 										<input type="number" name="motdepasseactuel"
-											id="inputMotDePasseActuel" class="form-control" required
+											id="inputMotDePasseActuel" class="form-control" 
 											autofocus />
 									</div>
 
