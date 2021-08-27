@@ -49,7 +49,7 @@ background-color:#e76f51;
 				<div class="row align-items-center mx-2">
 					<div class="col-12 col-md-6 ">
 						<picture>
-						<source srcset="./images/camera.jpg" type="image/svg+xml">
+						<source srcset="./images/avendre2.jpg" type="image/svg+xml">
 						<img src="..." class="img-fluid img-thumbnail" alt="..."> </picture>
 
 					</div>
